@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technical Jargon Decoder · BodhiProtocol</title>
+<meta name="description" content="63 terms your engineers, architects, and product teams use every day — API, sprint, Kubernetes, technical debt — decoded into plain language, with a note on why each one matters for a business analyst.">
+<meta name="theme-color" content="#14101F">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%2314101F%22/><text x=%2250%22 y=%2266%22 font-size=%2258%22 text-anchor=%22middle%22 fill=%22%239D7BEA%22 font-family=%22Georgia,serif%22>T</text></svg>">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Technical Jargon Decoder · BodhiProtocol">
+<meta property="og:description" content="63 terms your engineers, architects, and product teams use every day — decoded into plain language, with a note on why each one matters for a business analyst.">
+<meta property="og:url" content="https://bodhiprotocol.github.io/technical-jargon-decoder/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Technical Jargon Decoder · BodhiProtocol">
+<meta name="twitter:description" content="63 terms your engineers, architects, and product teams use every day — decoded into plain language, with a note on why each one matters for a business analyst.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14101F;
+  --panel:#201936;
+  --panel-2:#2A2145;
+  --lotus:#9D7BEA;
+  --lavender:#C9B8F5;
+  --gold:#E8B75A;
+  --mist:#EDE9F7;
+  --muted:#8B84A3;
+  --line:rgba(157,123,234,.22);
+  --on-accent:#14101F;
+}
+html.pastel{
+  --ink:#F7F4EF;
+  --panel:#FFFFFF;
+  --panel-2:#EFEAE0;
+  --lotus:#5B7FA6;
+  --lavender:#7B98B8;
+  --gold:#C97F3E;
+  --mist:#3A3630;
+  --muted:#8A8578;
+  --line:rgba(58,54,48,.15);
+  --on-accent:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  background:var(--ink);color:var(--mist);
+  font-family:'Inter',system-ui,sans-serif;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+
+header{padding:26px 0 0;display:flex;justify-content:center}
+.theme-toggle{position:fixed;top:20px;right:20px;z-index:10;display:flex;gap:0}
+.theme-btn{
+  background:var(--panel);border:1px solid var(--line);
+  color:var(--lavender);font-family:'Inter',sans-serif;font-weight:500;
+  font-size:.76rem;padding:7px 16px;cursor:pointer;transition:all .25s ease;
+}
+.theme-btn:first-child{border-radius:999px 0 0 999px;border-right:none}
+.theme-btn:last-child{border-radius:0 999px 999px 0}
+.theme-btn.active{background:var(--lotus);border-color:var(--lotus);color:var(--on-accent)}
+.theme-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media (max-width:640px){
+  .theme-toggle{top:12px;right:12px}
+  .theme-btn{padding:6px 12px;font-size:.7rem}
+}
+.brand{
+  font-family:'IBM Plex Mono',monospace;font-size:.78rem;
+  letter-spacing:.22em;color:var(--muted);text-transform:uppercase;
+}
+.brand b{color:var(--lotus);font-weight:500}
+
+.hero{padding:46px 0 26px;text-align:center}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:clamp(2.1rem,5.6vw,3.4rem);line-height:1.1;
+}
+.hero h1 em{font-style:italic;color:var(--lotus)}
+.hero p{margin:14px auto 0;max-width:560px;color:var(--muted);font-size:1rem}
+
+/* decode bar */
+.decode-zone{padding:8px 0 18px}
+.decode-bar{display:flex;gap:10px;max-width:620px;margin:0 auto}
+.decode-bar input{
+  flex:1;background:var(--panel);border:1.5px solid var(--line);
+  border-radius:999px;padding:15px 24px;color:var(--mist);
+  font-family:'Inter',sans-serif;font-size:1rem;outline:none;
+  transition:border-color .25s ease;
+}
+.decode-bar input::placeholder{color:var(--muted)}
+.decode-bar input:focus{border-color:var(--gold)}
+.decode-bar button{
+  background:var(--lotus);border:none;border-radius:999px;
+  padding:0 26px;color:var(--on-accent);font-weight:600;font-size:.92rem;
+  cursor:pointer;font-family:'Inter',sans-serif;transition:background .25s ease;
+  white-space:nowrap;
+}
+.decode-bar button:hover{background:var(--gold)}
+.decode-bar button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.count{
+  text-align:center;margin-top:14px;
+  font-family:'IBM Plex Mono',monospace;font-size:.72rem;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+}
+.count b{color:var(--gold);font-weight:500}
+
+/* filter groups */
+.filter-group{padding:16px 0 0}
+.filter-label{
+  text-align:center;font-family:'IBM Plex Mono',monospace;font-size:.64rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;
+}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding-bottom:20px}
+.chip{
+  background:none;border:1px solid var(--line);border-radius:999px;
+  padding:6px 16px;color:var(--lavender);font-size:.8rem;font-weight:500;
+  cursor:pointer;font-family:'Inter',sans-serif;transition:all .25s ease;
+}
+.chip:hover{border-color:var(--lotus);background:var(--panel)}
+.chip:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.chip.active{background:var(--lotus);border-color:var(--lotus);color:var(--on-accent)}
+
+/* term cards */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-bottom:40px}
+.card{
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:16px;padding:22px 24px;
+  transition:border-color .25s ease;
+}
+.card:hover{border-color:var(--lotus)}
+.card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px}
+.card .cat{
+  font-family:'IBM Plex Mono',monospace;font-size:.62rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+  display:flex;flex-wrap:wrap;align-items:center;gap:7px;
+}
+.top-actions{display:flex;gap:6px;align-items:center;flex-shrink:0}
+.badge{
+  font-family:'IBM Plex Mono',monospace;font-size:.6rem;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--on-accent);background:var(--gold);border-radius:999px;
+  padding:2px 10px;cursor:pointer;border:none;transition:background .25s ease;
+  white-space:nowrap;
+}
+.badge:hover{background:var(--lavender)}
+.badge:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.link-badge{
+  font-family:'IBM Plex Mono',monospace;font-size:.6rem;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--lavender);background:none;border:1px solid var(--line);border-radius:999px;
+  padding:1px 9px;cursor:pointer;transition:all .25s ease;
+}
+.link-badge:hover{border-color:var(--lotus)}
+.link-badge:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.link-badge.copied{border-color:var(--gold);color:var(--gold)}
+.card h3{
+  font-family:'IBM Plex Mono',monospace;font-weight:500;
+  font-size:1.05rem;color:var(--mist);margin-bottom:2px;letter-spacing:.02em;
+}
+.card .full{font-size:.78rem;color:var(--muted);margin-bottom:10px}
+.card .plain{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:1.1rem;color:var(--lavender);line-height:1.45;margin-bottom:10px;
+}
+.card .more{font-size:.86rem;color:var(--muted)}
+.card .why{
+  display:none;margin-top:16px;padding-top:16px;
+  border-top:1px dashed var(--line);font-size:.86rem;color:var(--mist);
+}
+.card .why b{
+  display:block;font-family:'IBM Plex Mono',monospace;font-size:.62rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:500;
+}
+.card.open .why{display:block}
+.empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)}
+.empty .big{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:1.4rem;color:var(--lavender);margin-bottom:8px;
+}
+
+footer{border-top:1px solid var(--line);padding:32px 0 44px;text-align:center}
+footer .om{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  color:var(--lavender);font-size:1.02rem;margin-bottom:14px;
+}
+footer .related{
+  font-family:'IBM Plex Mono',monospace;font-size:.68rem;
+  letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:10px;
+}
+footer .related a{color:var(--lotus);text-decoration:none}
+footer .related a:hover{color:var(--gold)}
+footer .meta{
+  font-family:'IBM Plex Mono',monospace;font-size:.72rem;
+  letter-spacing:.16em;color:var(--muted);text-transform:uppercase;
+}
+footer .meta a{color:var(--lotus);text-decoration:none}
+footer .meta a:hover{color:var(--gold)}
+
+@media (max-width:640px){
+  .grid{grid-template-columns:1fr}
+  .decode-bar{flex-direction:column}
+  .decode-bar button{padding:13px 26px}
+  .badge{padding:10px 16px}
+  .chip{padding:10px 16px}
+  footer .related{line-height:2.2}
+}
+</style>
+</head>
+<body>
+
+<div class="theme-toggle" role="group" aria-label="Theme">
+  <button class="theme-btn active" id="themeDark" type="button">Dark</button>
+  <button class="theme-btn" id="themeLight" type="button">Light</button>
+</div>
+
+<header>
+  <div class="brand">Bodhi<b>Protocol</b></div>
+</header>
+
+<section class="hero wrap">
+  <h1>Sixty-three terms.<br><em>Zero confusion.</em></h1>
+  <p>The words engineers, architects, and product teams use every day — decoded into plain language, with a note on why each one actually matters for a business analyst.</p>
+</section>
+
+<section class="decode-zone wrap">
+  <div class="decode-bar">
+    <input id="q" type="text" placeholder="Search API, sprint, Kubernetes, technical debt..." aria-label="Search technical terms" autocomplete="off">
+    <button id="surprise" type="button">Surprise me</button>
+  </div>
+  <div class="count" id="count"></div>
+</section>
+
+<section class="wrap">
+  <div class="filter-group">
+    <div class="filter-label">Category</div>
+    <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+  </div>
+  <div class="grid" id="grid" aria-live="polite"></div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="om">"If you can't explain it simply, you don't understand it well enough." — attributed to Einstein</div>
+    <div class="related">Part of the BodhiProtocol toolkit — <a href="https://bodhiprotocol.github.io/jargon-decoder/">Capital Markets Jargon Decoder</a> · <a href="https://bodhiprotocol.github.io/trade-lifecycle-explorer/">Trade Lifecycle Explorer</a> · <a href="https://bodhiprotocol.github.io/capital-markets-blueprint-explorer/">Capital Markets Blueprint Explorer</a> · <a href="https://bodhiprotocol.github.io/llm-wiki/">LLM Wiki</a> · <a href="https://bodhiprotocol.github.io/layering-spoofing-order-book/">Layering & Spoofing Order Book Replay</a></div>
+    <div class="meta">Built by a business analyst who builds · <a href="https://github.com/BodhiProtocol" target="_blank" rel="noopener">github.com/BodhiProtocol</a></div>
+  </div>
+</footer>
+
+<script>
+/* ---------- theme toggle ---------- */
+const THEME_KEY = "tech-jargon-theme";
+const themeDarkBtn = document.getElementById("themeDark");
+const themeLightBtn = document.getElementById("themeLight");
+function applyTheme(theme){
+  document.documentElement.classList.toggle("pastel", theme === "light");
+  themeDarkBtn.classList.toggle("active", theme === "dark");
+  themeLightBtn.classList.toggle("active", theme === "light");
+  localStorage.setItem(THEME_KEY, theme);
+}
+let savedTheme = localStorage.getItem(THEME_KEY) || "dark";
+applyTheme(savedTheme);
+themeDarkBtn.addEventListener("click", () => applyTheme("dark"));
+themeLightBtn.addEventListener("click", () => applyTheme("light"));
+
+const CATS = ["Software & Dev","Cloud & Infrastructure","Data & AI/ML","Agile & Delivery"];
+
+const ITEMS = [
+{t:"API",full:"Application Programming Interface",c:0,p:"A defined way for two pieces of software to talk to each other, without either needing to know how the other works inside.",m:"Think of it as a restaurant menu — you order by name, not by walking into the kitchen. Systems expose an API so other systems (or other teams) can request data or trigger actions in a controlled, documented way.",w:"When someone says \"we'll just integrate via API,\" they mean two systems will exchange data through a defined contract — not that someone will manually copy data between them. That contract is usually what you're documenting in requirements."},
+{t:"Database",full:"Where an application's data actually lives",c:0,p:"An organized system for storing data so it can be reliably saved, retrieved, and updated by an application.",m:"Nearly every application has one sitting behind it — user accounts, transactions, content — all living in a database, kept separate from the application code that reads and writes to it.",w:"When behavior changes but \"the data still looks wrong,\" the database (not the code) is usually where to look first — they're separate things that can each be right or wrong independently."},
+{t:"Function",full:"A reusable, named block of code",c:0,p:"A named, reusable block of code that performs one specific task, which other code can call whenever it needs that task done.",m:"Instead of rewriting the same logic everywhere it's needed, a developer writes it once as a function and calls it by name from anywhere — write once, use many times.",w:"Explains why fixing a bug \"in one place\" can fix it everywhere it shows up — if many parts of the product call the same function, one fix ripples through all of them at once."},
+{t:"Repository (Repo)",full:"Where a project's code and history live",c:0,p:"The folder where all of a project's code lives, plus its full history of changes.",m:"Hosted on platforms like GitHub or GitLab. Every saved change (a \"commit\") is kept forever, so nothing is ever truly lost — you can always go back.",w:"If a developer says \"it's in the repo,\" they mean the source of truth for the code, not a shared drive or a ticket. Requirements and specs usually live somewhere else."},
+{t:"Git / Version Control",full:"Tracking every change to a codebase",c:0,p:"The system that tracks every change ever made to a codebase, by whom, and why.",m:"Lets multiple developers work on the same code simultaneously without overwriting each other, and lets any change be undone.",w:"Explains why developers rarely fear \"breaking\" something — almost everything is recoverable. It's also why you can ask \"when did this change and why\" and actually get an answer."},
+{t:"Branch",full:"An isolated copy of the codebase",c:0,p:"A parallel, isolated copy of the codebase where someone can work without affecting the main version.",m:"Developers create a branch per feature or fix, then merge it back into the main branch (often called \"main\") once it's reviewed and tested.",w:"If a feature is \"on a branch,\" it exists but isn't live yet — useful to know when you're asked to test something that isn't in the production environment."},
+{t:"Pull Request (PR)",full:"A request to merge reviewed code",c:0,p:"A formal request to merge one branch's changes into the main codebase, opened for teammates to review first.",m:"Nothing gets merged silently — a PR is where other developers comment, request changes, or approve before the code becomes official.",w:"This is the checkpoint where code gets reviewed — if you're tracking whether a fix is \"done,\" merged (not just written) is the real finish line."},
+{t:"CI/CD",full:"Continuous Integration / Continuous Deployment",c:0,p:"Automated pipelines that test and ship code every time it changes, instead of a person manually doing it.",m:"CI automatically runs tests on new code; CD automatically pushes code that passes into staging or production. Together they mean releases can happen daily instead of once a quarter.",w:"Explains why some teams can ship a fix same-day while others need a multi-week release cycle — it's the pipeline, not developer speed."},
+{t:"Microservices",full:"Many small, independent services",c:0,p:"An architecture where an application is built as many small, independent services instead of one big program.",m:"Each service owns one job (payments, notifications, search) and can be updated or scaled on its own without touching the others.",w:"If one \"part\" of a product is down while the rest works fine, that's microservices at work — it also explains why a single bug rarely takes the whole system down."},
+{t:"Monolith",full:"One single, tightly-connected codebase",c:0,p:"An application built as one single, tightly-connected codebase, where every part depends on every other part.",m:"Simpler to build and deploy early on, but a small change can require retesting the entire application — and it can only be scaled as one whole unit.",w:"If \"that would touch too much of the system\" is a common answer to your change requests, you're likely dealing with a monolith."},
+{t:"Framework vs. Library",full:"Who's in control of your code",c:0,p:"A library is a tool you call when you need it; a framework is a structure that calls your code, on its terms.",m:"Using a library is like hiring a contractor for one job. Using a framework is like moving into a pre-built house — you work within its walls.",w:"Explains why \"switching frameworks\" is a much bigger, riskier undertaking than \"swapping a library\" — it's a foundational decision, not a swap."},
+{t:"Technical Debt",full:"Shortcuts that cost more later",c:0,p:"Shortcuts taken to ship faster now, at the cost of extra work required later.",m:"Like financial debt, it accrues \"interest\" — the longer it's left, the harder and riskier it becomes to fix, and it slows down every future change nearby.",w:"When engineering pushes back on a \"quick\" request, technical debt is often why — they're not being difficult, they're flagging a cost you can't see in the UI."},
+{t:"Refactoring",full:"Rewriting code without changing behavior",c:0,p:"Rewriting existing code to be cleaner or more maintainable, without changing what it actually does.",m:"No new features, no visible change to the user — it's an investment in future speed, which makes it a hard thing to justify on a roadmap.",w:"If a sprint is spent \"refactoring,\" nothing will look different to stakeholders afterward — that's expected, not a failure to deliver."},
+{t:"Regression",full:"Something that used to work, breaking again",c:0,p:"A bug where something that used to work breaks again, usually because of an unrelated change elsewhere.",m:"The reason automated tests exist — to catch when fixing A accidentally breaks B.",w:"If a resolved issue reappears after an unrelated release, that's a regression — worth flagging specifically, since it usually points to a gap in test coverage."},
+{t:"Environment (Dev/Staging/Prod)",full:"Separate copies of a system, by stage",c:0,p:"Separate, identical-ish copies of a system used at different stages before real users see anything.",m:"Dev is where developers experiment; Staging (or UAT) mirrors production for final testing; Production (\"prod\") is the real, live system users actually use.",w:"Critical distinction for testing — a bug you can't reproduce in \"prod\" might only exist in staging, or vice versa. Always confirm which environment a defect was found in."},
+{t:"Legacy System",full:"An older system still relied on",c:0,p:"An older system still in active use, often because it's too risky, costly, or poorly documented to replace.",m:"Not necessarily bad — often it's just old, undocumented, and nobody currently on the team fully understands every part of it.",w:"Explains why \"small\" change requests against legacy systems often get inflated estimates — the risk isn't the change, it's the unknowns around it."},
+{t:"Bug vs. Feature vs. Enhancement",full:"Three different reasons work gets requested",c:0,p:"A bug is something broken relative to spec; a feature is something new; an enhancement improves something that already works as intended.",m:"The distinction matters for prioritization — bugs are usually treated as unplanned/urgent work, while features and enhancements compete for the same planned capacity.",w:"Miscategorizing a request (calling an enhancement a \"bug\" to jump the queue) is a common friction point between BAs and engineering — get the label right and the conversation gets easier."},
+{t:"Deployment / Release",full:"Pushing code live vs. showing it to users",c:0,p:"The act of making a new version of software available — pushing code from built to live.",m:"Not the same as \"done\" — code can be deployed to an environment without being visible to real users yet, depending on release strategy.",w:"When you ask \"is it live,\" you're really asking about release, not deployment — the two can happen at different times."},
+
+{t:"Cloud Computing",full:"Running software on someone else's servers",c:1,p:"Running software and storing data on someone else's servers, accessed over the internet, instead of your own local hardware.",m:"Major providers: AWS, Microsoft Azure, Google Cloud. You pay for what you use, and capacity can grow or shrink on demand.",w:"Explains why IT can spin up new infrastructure in minutes instead of ordering physical servers — \"the cloud\" is really just someone else's data center, rented flexibly."},
+{t:"SaaS / PaaS / IaaS",full:"How much of the stack a vendor manages",c:1,p:"Three levels of how much of the technology stack a cloud provider manages for you.",m:"SaaS (Software as a Service) — you just use the app, like Salesforce. PaaS (Platform as a Service) — you deploy your own code onto managed infrastructure. IaaS (Infrastructure as a Service) — you rent raw servers and manage everything yourself.",w:"Helps you scope vendor conversations correctly — a SaaS vendor owns far more responsibility (and risk) than an IaaS one."},
+{t:"Server",full:"A computer that answers requests",c:1,p:"A computer (physical or virtual) whose job is to respond to requests from other computers.",m:"Could be one physical machine in a data center, or a \"virtual\" slice of a much bigger machine shared with others — from the outside, they behave the same.",w:"When something is \"down,\" it usually means a server (or the service running on it) stopped responding — worth asking which one, since systems rarely share a single point of failure by design."},
+{t:"Container (Docker)",full:"A self-contained package that runs anywhere",c:1,p:"A lightweight, self-contained package of an application plus everything it needs to run, so it behaves identically anywhere.",m:"Solves the classic \"it works on my machine\" problem — the container carries its own environment with it, rather than depending on whatever's installed on the host.",w:"Explains why deployments have gotten more reliable in recent years — much of the \"it broke in production but not in testing\" class of bug has shrunk."},
+{t:"Kubernetes",full:"Automatically managing containers at scale",c:1,p:"A system that automatically manages, scales, and restarts containers across many servers.",m:"If a container crashes, Kubernetes restarts it automatically. If traffic spikes, it can spin up more copies without a human intervening.",w:"You'll hear this name a lot in infrastructure conversations — it's the reason many outages self-heal in seconds rather than requiring a 3am page."},
+{t:"Serverless",full:"Code that runs without managing servers",c:1,p:"Running code without provisioning or managing any servers yourself — the cloud provider handles it entirely, on demand.",m:"Confusingly, servers are still involved — you just never see or manage them. Code runs only when triggered, and you're billed only for that execution time.",w:"A cost and speed lever: good for infrequent or spiky workloads, since you're not paying for idle server time between requests."},
+{t:"Load Balancer",full:"Spreading traffic across servers",c:1,p:"A traffic director that spreads incoming requests across multiple servers so no single one gets overwhelmed.",m:"If one server fails, the load balancer stops sending it traffic and routes around it — often invisibly to the end user.",w:"Part of why large systems can handle sudden traffic spikes (a product launch, a marketing push) without falling over."},
+{t:"API Gateway",full:"The single front door for external requests",c:1,p:"A single front door that all external requests pass through before reaching internal services.",m:"Handles shared concerns once — authentication, rate limiting, logging — instead of every individual service reimplementing them.",w:"Relevant when scoping integrations: external partners usually talk to the gateway, not directly to the internal system doing the actual work."},
+{t:"Uptime / SLA",full:"Service Level Agreement",c:1,p:"Uptime is the percentage of time a system is actually available; an SLA is the contractual promise about what that percentage must be.",m:"\"99.9% uptime\" sounds high but still allows about 8.7 hours of downtime a year. \"Five nines\" (99.999%) allows only around 5 minutes.",w:"When negotiating with a vendor, the SLA percentage — and what penalty applies if they miss it — is often more important than the feature list."},
+{t:"Scalability",full:"Handling more load without falling over",c:1,p:"A system's ability to handle more load — more users, more data, more requests — without falling over or slowing down.",m:"\"Horizontal\" scaling adds more machines; \"vertical\" scaling makes one machine bigger. Most modern cloud systems favor horizontal, since it has no hard ceiling.",w:"Worth asking about explicitly before a big launch or campaign — \"does this scale\" is really asking \"will this survive a traffic spike.\""},
+{t:"Latency",full:"The delay before a response comes back",c:1,p:"The delay between a request being made and a response coming back.",m:"Measured in milliseconds. Caused by physical distance, network congestion, or slow processing — often a mix of all three.",w:"If users report something \"feels slow\" rather than \"broken,\" that's usually a latency issue, not a functional bug — worth routing to infrastructure, not the feature team."},
+{t:"Downtime / Outage",full:"When a system is unavailable",c:1,p:"A period where a system is unavailable or not functioning as expected.",m:"Can be planned (scheduled maintenance) or unplanned (a failure). Most mature teams run a \"postmortem\" after unplanned outages to document root cause.",w:"If you're gathering requirements around reliability, ask about historical outage frequency and cause — it tells you far more than an uptime percentage alone."},
+{t:"Firewall",full:"A filter for network traffic",c:1,p:"A security barrier that filters network traffic, allowing only approved connections in or out.",m:"Sits at the edge of a network (or around individual services) deciding, connection by connection, what's allowed through.",w:"Relevant when an integration \"can't connect\" — a firewall rule blocking the specific port or address is one of the most common culprits."},
+{t:"VPN",full:"Virtual Private Network",c:1,p:"An encrypted tunnel that lets a device securely access a private network over the public internet.",m:"Makes a remote laptop behave, from the network's point of view, as if it were physically inside the office.",w:"Explains why some internal tools are only reachable \"on VPN\" — it's a deliberate access boundary, not a technical limitation to work around."},
+{t:"CDN",full:"Content Delivery Network",c:1,p:"A network of servers spread across the world that cache and serve content from the location nearest the user.",m:"Instead of every request traveling to one central server, a CDN serves a cached copy from a nearby node — much faster, especially for images, video, and static files.",w:"Explains why a website can load fast for someone in Singapore and someone in London simultaneously, without one central server buckling under global traffic."},
+
+{t:"Database (SQL vs. NoSQL)",full:"Structured vs. flexible data storage",c:2,p:"A structured system for storing and retrieving data — SQL databases organize it into strict tables; NoSQL databases allow more flexible, less rigid structures.",m:"SQL (e.g. PostgreSQL, Oracle) is ideal when relationships between data matter and structure won't change often. NoSQL (e.g. MongoDB) suits data whose shape varies or evolves quickly.",w:"When a request is \"just add a new field,\" whether that's trivial or a real migration project often comes down to which type of database is underneath."},
+{t:"Data Warehouse",full:"A central repository built for analysis",c:2,p:"A large, central repository built specifically for analysis and reporting, pulling data together from many source systems.",m:"Unlike an operational database (built for day-to-day transactions), a warehouse is optimized for big, complex queries across historical data — dashboards, trend analysis, reporting.",w:"If you're asked to define reporting requirements, this is usually where the numbers will actually come from — not the live production system."},
+{t:"ETL / ELT",full:"Extract, Transform, Load (or Load, then Transform)",c:2,p:"The process of pulling data out of source systems, reshaping it, and loading it somewhere it can be analyzed.",m:"ETL transforms data before loading it into the warehouse; ELT loads raw data first and transforms it afterward, taking advantage of modern warehouses' processing power.",w:"When a report shows stale or wrong-looking numbers, the ETL/ELT pipeline schedule and logic is often where to look first — not the report tool itself."},
+{t:"Data Pipeline",full:"Automated movement of data between systems",c:2,p:"An automated sequence of steps that moves data from one system to another, reliably and on a schedule.",m:"Pipelines can run every few minutes (near real-time) or once a day (batch) — the choice trades freshness against cost and complexity.",w:"If stakeholders want \"real-time\" reporting, ask what pipeline currently feeds that data — real-time is a meaningfully bigger ask than daily batch, and should be scoped (and costed) as one."},
+{t:"Machine Learning",full:"Software that learns patterns from data",c:2,p:"Software that learns patterns from data, rather than being explicitly programmed with fixed rules for every scenario.",m:"Instead of writing \"if X then Y\" for every case, you show the system many examples and it learns the pattern itself — which is why it can handle cases it's never explicitly seen.",w:"Useful for distinguishing genuinely \"intelligent\" automation (which can generalize and improve with more data) from simple rules-based automation (which only does exactly what it's told, every time)."},
+{t:"Algorithm",full:"A step-by-step procedure",c:2,p:"A defined, step-by-step procedure for solving a problem or completing a task.",m:"Every piece of software is built from algorithms, whether it's sorting a list or deciding what content to show a user — \"the algorithm\" isn't one mysterious thing, it's shorthand for whichever specific logic is running.",w:"When someone says \"that's just how the algorithm works,\" it's worth asking which specific logic they mean — it's rarely as immutable or mysterious as the phrase implies."},
+{t:"Data Lake",full:"Raw data stored in its original format",c:2,p:"A large storage pool that holds raw data in its original format, structured or not, until someone needs it.",m:"Unlike a warehouse (structured, ready for analysis), a lake stores everything cheaply now and figures out structure later — flexible, but easier to end up messy and hard to query.",w:"If data \"exists somewhere\" but nobody can easily report on it, it's often sitting unstructured in a lake, waiting for a pipeline to shape it into something usable."},
+{t:"Data Model / Schema",full:"The blueprint that defines what data exists",c:2,p:"The blueprint that defines what data exists, what type it is, and how different pieces of data relate to each other.",m:"Changing a schema (adding a field, changing a data type) can ripple through every system and report that depends on it — it's rarely a one-line change.",w:"When scoping a \"simple\" data change, always ask what schema it touches — that's usually the real driver of effort and risk, not the visible feature."},
+{t:"Structured vs. Unstructured Data",full:"Rows and columns vs. everything else",c:2,p:"Structured data fits neatly into rows and columns, like a spreadsheet; unstructured data doesn't — think emails, PDFs, images, free-text notes.",m:"Structured data is easy to query and report on directly. Unstructured data usually needs extra processing (or AI) before it can be analyzed at scale.",w:"Explains why \"just analyze all our customer emails\" is a much bigger project than \"just analyze our sales table\" — the data shape drives the effort, not just the volume."},
+{t:"Data Governance",full:"Rules about who owns and can trust data",c:2,p:"The rules, ownership, and processes that determine who can access, change, or rely on a given piece of data.",m:"Covers things like: who owns this field, what does it actually mean, who's allowed to see it, and how do we know it's still accurate.",w:"Central to a BA's job whenever two teams disagree about \"the real number\" — that's usually a governance gap (different definitions or owners), not a data quality bug."},
+{t:"Master Data",full:"The authoritative version of core entities",c:2,p:"The core, authoritative version of key business entities — customers, products, accounts — that many systems reference.",m:"When master data is inconsistent across systems (a customer's address differs in three places), every report and process built on top of it inherits that inconsistency.",w:"Often the real root cause behind \"the numbers don't match\" complaints — worth tracing back to which system is supposed to be the master before assuming it's a calculation error."},
+{t:"Dashboard / BI",full:"Business Intelligence",c:2,p:"Tools and visual reports that turn raw data into something people can actually read and act on.",m:"BI tools (Tableau, Power BI, Looker) sit on top of a data warehouse, letting non-technical users explore and visualize data without writing queries themselves.",w:"When defining reporting requirements, be specific about the underlying metric definitions — a dashboard is only as trustworthy as the data governance behind it."},
+{t:"Query",full:"A request for specific data",c:2,p:"A request for specific data from a database, written in a language the database understands, usually SQL.",m:"Ranges from simple (\"give me all customers in France\") to highly complex (joining a dozen tables with conditional logic) — complexity is a major driver of how long a report takes to build.",w:"If a \"simple\" report request actually requires a complex query across many systems, that's worth surfacing early — it changes the estimate significantly."},
+{t:"Metadata",full:"Data about data",c:2,p:"Data about data — labels describing what a piece of data is, where it came from, and what it means.",m:"Examples: a field's name, its data type, when it was last updated, who owns it. Good metadata is what makes a data catalog searchable and trustworthy.",w:"When data feels \"undocumented,\" it usually means the metadata is missing or stale — a foundational (if unglamorous) gap that undermines every downstream analysis."},
+{t:"API Integration",full:"An ongoing, automated connection between systems",c:2,p:"Connecting two systems so they can automatically exchange data, using one system's API rather than manual export/import.",m:"Distinct from a one-time data migration — an integration is an ongoing, automated connection that keeps both systems in sync.",w:"When scoping \"connect System A to System B,\" clarify whether it's a one-time transfer or an ongoing integration — the effort and design differ enormously."},
+
+{t:"Sprint",full:"A fixed, short work cycle",c:3,p:"A fixed, short time period — usually 1 to 4 weeks — during which a team commits to completing a specific set of work.",m:"At the end of a sprint, the team reviews what was finished, demos it if possible, and plans the next one — a steady, repeating rhythm rather than one long project timeline.",w:"When you're told something will happen \"next sprint,\" that's a concrete, bounded commitment — worth confirming the actual sprint length and start date, since teams vary."},
+{t:"Backlog",full:"The full, prioritized list of possible work",c:3,p:"The full, prioritized list of everything a team could work on — features, bugs, technical debt — not yet scheduled into a sprint.",m:"Living and constantly reprioritized, not a fixed queue processed in strict order — new information can, and should, reshuffle it.",w:"\"It's in the backlog\" isn't the same as \"it's planned\" — worth asking where in the backlog, and what would need to happen for it to get pulled into an actual sprint."},
+{t:"User Story",full:"A feature described from the user's view",c:3,p:"A short description of a feature from the end user's perspective, usually in the form \"As a [user], I want [goal], so that [reason].\"",m:"Deliberately focused on the who and why, not the how — the implementation detail is left to engineering to figure out.",w:"Writing clear user stories with solid acceptance criteria is core BA work — a vague story is the single biggest cause of \"that's not what I meant\" after delivery."},
+{t:"Epic",full:"A large body of work spanning sprints",c:3,p:"A large body of work, too big to finish in one sprint, made up of multiple smaller user stories.",m:"Epics get broken down over time as understanding improves — you rarely need to fully define every story inside an epic upfront.",w:"If a stakeholder wants one big feature \"done next sprint,\" checking whether it's really an epic (multiple sprints' worth of stories) resets expectations early."},
+{t:"Story Points",full:"A relative measure of effort",c:3,p:"A relative measure of effort or complexity for a piece of work — not a direct measure of time.",m:"Usually estimated by the team using a scale like 1, 2, 3, 5, 8, 13 — a story pointed \"8\" isn't \"8 hours,\" it's \"roughly as complex as our other 8s.\"",w:"Resist converting story points directly into days for external commitments — they're a team's internal calibration tool, not a client-facing time estimate."},
+{t:"Velocity",full:"Average points completed per sprint",c:3,p:"The average number of story points a team completes per sprint, tracked over time.",m:"Used to forecast how much a team can realistically commit to in future sprints — not as a performance score to compare between teams.",w:"Useful for realistic roadmap forecasting (\"at this velocity, the backlog will take roughly 6 sprints\") — but comparing velocity across different teams is close to meaningless, since point scales aren't standardized between them."},
+{t:"Standup (Daily Scrum)",full:"A short daily team check-in",c:3,p:"A short, daily check-in where each team member briefly shares what they did, what's next, and any blockers.",m:"Meant to stay brief, 15 minutes or less, and surface blockers fast — not a status report for management, and not a place to solve problems in the room.",w:"The fastest way to learn about a blocker before it derails a deadline — worth attending or getting a summary of, especially near a release."},
+{t:"Sprint Planning",full:"Deciding what a sprint will include",c:3,p:"A meeting at the start of a sprint where the team decides exactly what work they'll commit to completing.",m:"The team pulls prioritized items from the backlog and estimates whether they realistically fit in the sprint's capacity.",w:"The right moment to get new requirements considered for the upcoming sprint — after planning is locked, adding scope usually means something else gets bumped out."},
+{t:"Sprint Retrospective",full:"Reviewing how the team worked",c:3,p:"A meeting at the end of a sprint focused on how the team worked, not what they built — what went well, what didn't, what to change.",m:"Distinct from a sprint review (which demos the actual output) — retros are about process improvement.",w:"A good venue to raise recurring friction, like unclear requirements or late-breaking changes, constructively, rather than letting it fester silently."},
+{t:"Kanban",full:"A continuous-flow visual workflow",c:3,p:"A visual workflow method that tracks work as it moves through stages, To Do, In Progress, Done, with a limit on how much can be in progress at once.",m:"Unlike sprints, Kanban has no fixed time-boxed cycle — work flows continuously, pulled one item at a time as capacity frees up.",w:"Teams supporting live systems (bug fixes, ops requests) often prefer Kanban over sprints, since incoming work is unpredictable and needs to be handled as it arrives."},
+{t:"MVP",full:"Minimum Viable Product",c:3,p:"The smallest version of a product or feature that's still genuinely usable and delivers real value — not a rough draft, a real (if limited) release.",m:"Built to test a hypothesis or get real feedback fast, before investing in every planned feature — deliberately incomplete by design, not by accident.",w:"When scoping a new initiative, pushing for a true MVP (not a Frankenstein of \"must-haves\") is often the highest-leverage thing a BA can do to get something shipped sooner."},
+{t:"Acceptance Criteria",full:"The testable conditions for \"complete\"",c:3,p:"The specific, testable conditions a piece of work must meet to be considered complete and correct.",m:"Written before development starts, ideally by or with the BA — they're what a story gets tested against, not a vague sense of \"looks right.\"",w:"Weak acceptance criteria is the single most common cause of scope disputes at delivery — \"that's not what we agreed\" almost always traces back to criteria that were too loose."},
+{t:"Definition of Done (DoD)",full:"The team's checklist for \"complete\"",c:3,p:"A team-wide checklist of what \"complete\" means for any piece of work — coded, tested, documented, reviewed, deployed, and so on.",m:"Applies to every story a team completes, distinct from the acceptance criteria specific to one particular story.",w:"Worth knowing explicitly — \"done\" can silently mean very different things (code merged vs. tested vs. actually live) depending on a team's DoD."},
+{t:"Stakeholder",full:"Anyone with a stake in the outcome",c:3,p:"Anyone with an interest in, or influence over, a project's outcome — not just the people paying for it.",m:"Includes end users, sponsors, compliance/legal, support teams, and anyone whose work changes because of what's being built.",w:"Mapping stakeholders early — and who actually has sign-off authority versus just an opinion — prevents late-stage surprises when someone unexpected objects."},
+{t:"UAT",full:"User Acceptance Testing",c:3,p:"The final round of testing, done by real end users or their representatives, in a production-like environment, before something goes live.",m:"Distinct from QA testing (which checks the software works as built) — UAT checks it actually solves the real business problem.",w:"Often the BA's most hands-on delivery moment — writing UAT scripts and coordinating sign-off is frequently the actual gate that determines go-live."}
+];
+
+/* ---------- decode mode ---------- */
+const grid=document.getElementById("grid");
+const countEl=document.getElementById("count");
+const q=document.getElementById("q");
+const chipsEl=document.getElementById("chips");
+let activeCat=-1;
+
+function esc(s){const d=document.createElement("div");d.textContent=s;return d.innerHTML;}
+
+function render(){
+  const query=q.value.trim().toLowerCase();
+  const list=ITEMS.filter(x=>{
+    const catOk = activeCat===-1 || x.c===activeCat;
+    const qOk = !query || x.t.toLowerCase().includes(query) || x.full.toLowerCase().includes(query) || x.p.toLowerCase().includes(query) || x.m.toLowerCase().includes(query) || x.w.toLowerCase().includes(query);
+    return catOk && qOk;
+  });
+  if(!list.length){
+    grid.innerHTML=`<div class="empty"><div class="big">Not on the page — yet.</div>Try another term, or clear a filter.</div>`;
+  }else{
+    grid.innerHTML=list.map(x=>{
+      return `
+      <div class="card" data-term="${esc(x.t)}">
+        <div class="top">
+          <div class="cat">${CATS[x.c]}</div>
+          <div class="top-actions">
+            <button class="link-badge" type="button" data-term="${esc(x.t)}">copy link</button>
+            <button class="badge" type="button" data-why="${esc(x.t)}">why it matters</button>
+          </div>
+        </div>
+        <h3>${esc(x.t)}</h3>
+        <div class="full">${esc(x.full)}</div>
+        <p class="plain">${esc(x.p)}</p>
+        <p class="more">${esc(x.m)}</p>
+        <div class="why"><b>Why it matters</b>${esc(x.w)}</div>
+      </div>`;
+    }).join("");
+    grid.querySelectorAll(".badge").forEach(b=>{
+      b.addEventListener("click",e=>{
+        e.currentTarget.closest(".card").classList.toggle("open");
+      });
+    });
+    grid.querySelectorAll(".link-badge").forEach(b=>{
+      b.addEventListener("click",e=>{
+        const btn=e.currentTarget;
+        const term=btn.getAttribute("data-term");
+        const url=`${window.location.origin}${window.location.pathname}?term=${encodeURIComponent(term)}`;
+        const showState=(text,cls)=>{
+          const original="copy link";
+          btn.textContent=text;
+          if(cls)btn.classList.add(cls);
+          setTimeout(()=>{btn.textContent=original;btn.classList.remove("copied");},1500);
+        };
+        const fallbackCopy=()=>{
+          const ta=document.createElement("textarea");
+          ta.value=url;ta.style.position="fixed";ta.style.opacity="0";
+          document.body.appendChild(ta);ta.select();
+          try{
+            document.execCommand("copy");
+            showState("copied!","copied");
+          }catch(err){
+            showState("couldn't copy");
+          }
+          document.body.removeChild(ta);
+        };
+        if(navigator.clipboard&&navigator.clipboard.writeText){
+          navigator.clipboard.writeText(url).then(()=>showState("copied!","copied")).catch(fallbackCopy);
+        }else{
+          fallbackCopy();
+        }
+      });
+    });
+  }
+  countEl.innerHTML = `<b>${list.length}</b> of ${ITEMS.length} terms mapped`;
+}
+
+const allChip=document.createElement("button");
+allChip.className="chip active";allChip.textContent="All";
+allChip.addEventListener("click",()=>{activeCat=-1;setChip(allChip,chipsEl);render();});
+chipsEl.appendChild(allChip);
+CATS.forEach((c,i)=>{
+  const b=document.createElement("button");
+  b.className="chip";b.textContent=c;
+  b.addEventListener("click",()=>{activeCat=i;setChip(b,chipsEl);render();});
+  chipsEl.appendChild(b);
+});
+
+function setChip(el,container){container.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));el.classList.add("active");}
+
+q.addEventListener("input",render);
+document.getElementById("surprise").addEventListener("click",()=>{
+  const t=ITEMS[Math.floor(Math.random()*ITEMS.length)];
+  activeCat=-1;setChip(allChip,chipsEl);
+  q.value=t.t;render();
+  const card=grid.querySelector(`.card[data-term="${CSS.escape(t.t)}"]`);
+  if(card)card.classList.add("open");
+});
+
+render();
+
+/* ---------- deep link: ?term=API ---------- */
+const linkedTerm = new URLSearchParams(window.location.search).get("term");
+if (linkedTerm) {
+  const match = ITEMS.find(x => x.t.toLowerCase() === linkedTerm.toLowerCase());
+  if (match) {
+    q.value = match.t;
+    render();
+    const card = grid.querySelector(`.card[data-term="${CSS.escape(match.t)}"]`);
+    if (card) card.classList.add("open");
+  }
+}
+</script>
+</body>
+</html>
