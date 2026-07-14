@@ -4,501 +4,699 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Technical Jargon Decoder · BodhiProtocol</title>
-<meta name="description" content="116 terms your engineers, architects, and product teams use every day — databases, data warehousing, libraries, testing, sprints — decoded into plain language, with a note on why each one matters for a business analyst or tester.">
-<meta name="theme-color" content="#14101F">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%2314101F%22/><text x=%2250%22 y=%2266%22 font-size=%2258%22 text-anchor=%22middle%22 fill=%22%239D7BEA%22 font-family=%22Georgia,serif%22>T</text></svg>">
+<meta name="description" content="Understand 116+ technical terms in plain English — software, cloud, databases, data warehousing, architecture, testing and agile — each with a plain-English definition, a 'think of it like' analogy, and why it matters for a business analyst or tester.">
+<meta name="theme-color" content="#7C5CFC">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%237C5CFC%22/><text x=%2250%22 y=%2268%22 font-size=%2258%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Georgia,serif%22>T</text></svg>">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Technical Jargon Decoder · BodhiProtocol">
-<meta property="og:description" content="116 terms your engineers, architects, and product teams use every day — decoded into plain language, with a note on why each one matters for a business analyst or tester.">
+<meta property="og:description" content="Understand 116+ technical terms in plain English — with a real-world analogy and a note on why each one matters for a BA or tester.">
 <meta property="og:url" content="https://bodhiprotocol.github.io/technical-jargon-decoder/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Technical Jargon Decoder · BodhiProtocol">
-<meta name="twitter:description" content="116 terms your engineers, architects, and product teams use every day — decoded into plain language, with a note on why each one matters for a business analyst or tester.">
+<meta name="twitter:description" content="Understand 116+ technical terms in plain English — with a real-world analogy and a note on why each one matters for a BA or tester.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#14101F;
-  --panel:#201936;
-  --panel-2:#2A2145;
-  --lotus:#9D7BEA;
-  --lavender:#C9B8F5;
-  --gold:#E8B75A;
-  --mist:#EDE9F7;
-  --muted:#8B84A3;
-  --line:rgba(157,123,234,.22);
-  --on-accent:#14101F;
-}
-html.pastel{
-  --ink:#F7F4EF;
-  --panel:#FFFFFF;
-  --panel-2:#EFEAE0;
-  --lotus:#5B7FA6;
-  --lavender:#7B98B8;
-  --gold:#C97F3E;
-  --mist:#3A3630;
-  --muted:#8A8578;
-  --line:rgba(58,54,48,.15);
+  --bg:#F6F7FB;
+  --card:#FFFFFF;
+  --card-2:#FBFAFF;
+  --border:#E8E9F3;
+  --border-strong:#DADCEC;
+  --text:#191C2B;
+  --muted:#6B7085;
+  --faint:#9AA0B4;
+  --accent:#7C5CFC;
+  --accent-ink:#5B3FD1;
+  --accent-soft:#EFECFE;
+  --accent-2:#EC4899;
+  --shadow:0 1px 2px rgba(20,20,50,.04), 0 8px 24px rgba(30,25,80,.06);
+  --shadow-hover:0 2px 6px rgba(20,20,50,.06), 0 16px 40px rgba(30,25,80,.12);
   --on-accent:#FFFFFF;
+}
+html.dark{
+  --bg:#120E1F;
+  --card:#1D1731;
+  --card-2:#241C3D;
+  --border:rgba(157,123,234,.18);
+  --border-strong:rgba(157,123,234,.32);
+  --text:#EDE9F7;
+  --muted:#9A93B4;
+  --faint:#6F6890;
+  --accent:#9D7BEA;
+  --accent-ink:#C9B8F5;
+  --accent-soft:#2A2145;
+  --accent-2:#F472B6;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+  --shadow-hover:0 2px 6px rgba(0,0,0,.4), 0 16px 40px rgba(0,0,0,.45);
+  --on-accent:#160F26;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 @media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+html{scroll-behavior:smooth}
 body{
-  background:var(--ink);color:var(--mist);
+  background:var(--bg);color:var(--text);
   font-family:'Inter',system-ui,sans-serif;line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+a{color:inherit}
 
-header{padding:26px 0 0;display:flex;justify-content:center}
-.theme-toggle{position:fixed;top:20px;right:20px;z-index:10;display:flex;gap:0}
-.theme-btn{
-  background:var(--panel);border:1px solid var(--line);
-  color:var(--lavender);font-family:'Inter',sans-serif;font-weight:500;
-  font-size:.76rem;padding:7px 16px;cursor:pointer;transition:all .25s ease;
+/* ---------- top nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid var(--border);
 }
-.theme-btn:first-child{border-radius:999px 0 0 999px;border-right:none}
-.theme-btn:last-child{border-radius:0 999px 999px 0}
-.theme-btn.active{background:var(--lotus);border-color:var(--lotus);color:var(--on-accent)}
-.theme-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-@media (max-width:640px){
-  .theme-toggle{top:12px;right:12px}
-  .theme-btn{padding:6px 12px;font-size:.7rem}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;font-size:1.02rem;text-decoration:none}
+.logo .mark{
+  width:30px;height:30px;border-radius:9px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:grid;place-items:center;color:#fff;
 }
-.brand{
-  font-family:'IBM Plex Mono',monospace;font-size:.78rem;
-  letter-spacing:.22em;color:var(--muted);text-transform:uppercase;
+.logo .mark svg{width:17px;height:17px}
+.logo b{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:6px}
+.nav-link{
+  font-size:.9rem;font-weight:500;color:var(--muted);text-decoration:none;
+  padding:8px 12px;border-radius:9px;transition:all .18s ease;display:inline-flex;align-items:center;gap:6px;
 }
-.brand b{color:var(--lotus);font-weight:500}
+.nav-link:hover{color:var(--text);background:var(--card)}
+.nav-link svg{width:14px;height:14px;opacity:.7}
+.nav-search{
+  display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:7px 10px 7px 12px;color:var(--faint);font-size:.86rem;transition:all .18s ease;
+}
+.nav-search:hover{border-color:var(--border-strong);color:var(--muted)}
+.nav-search svg{width:14px;height:14px}
+.kbd{
+  font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:500;
+  background:var(--bg);border:1px solid var(--border);border-radius:5px;
+  padding:2px 6px;color:var(--muted);
+}
+.icon-btn{
+  width:38px;height:38px;border-radius:10px;border:1px solid var(--border);
+  background:var(--card);color:var(--muted);cursor:pointer;display:grid;place-items:center;
+  transition:all .18s ease;
+}
+.icon-btn:hover{color:var(--text);border-color:var(--border-strong)}
+.icon-btn svg{width:17px;height:17px}
+.icon-btn:focus-visible,.nav-search:focus-visible,.nav-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-.hero{padding:46px 0 26px;text-align:center}
+/* ---------- hero ---------- */
+.hero{text-align:center;padding:60px 0 30px}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:500;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;
+}
 .hero h1{
-  font-family:'Cormorant Garamond',serif;font-weight:600;
-  font-size:clamp(2.1rem,5.6vw,3.4rem);line-height:1.1;
+  font-size:clamp(2.1rem,5.4vw,3.6rem);font-weight:800;line-height:1.08;
+  letter-spacing:-.025em;
 }
-.hero h1 em{font-style:italic;color:var(--lotus)}
-.hero p{margin:14px auto 0;max-width:560px;color:var(--muted);font-size:1rem}
+.hero h1 .grad{
+  background:linear-gradient(100deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p{margin:18px auto 0;max-width:540px;color:var(--muted);font-size:1.05rem}
 
-/* decode bar */
-.decode-zone{padding:8px 0 18px}
-.decode-bar{display:flex;gap:10px;max-width:620px;margin:0 auto}
-.decode-bar input{
-  flex:1;background:var(--panel);border:1.5px solid var(--line);
-  border-radius:999px;padding:15px 24px;color:var(--mist);
-  font-family:'Inter',sans-serif;font-size:1rem;outline:none;
-  transition:border-color .25s ease;
+/* ---------- search ---------- */
+.search-zone{padding:14px 0 6px}
+.search-bar{
+  position:relative;max-width:640px;margin:0 auto;
 }
-.decode-bar input::placeholder{color:var(--muted)}
-.decode-bar input:focus{border-color:var(--gold)}
-.decode-bar button{
-  background:var(--lotus);border:none;border-radius:999px;
-  padding:0 26px;color:var(--on-accent);font-weight:600;font-size:.92rem;
-  cursor:pointer;font-family:'Inter',sans-serif;transition:background .25s ease;
-  white-space:nowrap;
+.search-bar .sicon{
+  position:absolute;left:20px;top:50%;transform:translateY(-50%);
+  width:19px;height:19px;color:var(--faint);pointer-events:none;
 }
-.decode-bar button:hover{background:var(--gold)}
-.decode-bar button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.count{
-  text-align:center;margin-top:14px;
-  font-family:'IBM Plex Mono',monospace;font-size:.72rem;
-  letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+.search-bar input{
+  width:100%;background:var(--card);border:1.5px solid var(--border);
+  border-radius:14px;padding:16px 58px 16px 50px;color:var(--text);
+  font-family:'Inter',sans-serif;font-size:1.02rem;outline:none;
+  box-shadow:var(--shadow);transition:border-color .2s ease, box-shadow .2s ease;
 }
-.count b{color:var(--gold);font-weight:500}
+.search-bar input::placeholder{color:var(--faint)}
+.search-bar input:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.search-bar .kbd{position:absolute;right:16px;top:50%;transform:translateY(-50%)}
 
-/* filter groups */
-.filter-group{padding:16px 0 0}
-.filter-label{
-  text-align:center;font-family:'IBM Plex Mono',monospace;font-size:.64rem;
-  letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;
+.popular{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center}
+.popular .plabel{font-size:.82rem;color:var(--faint);margin-right:2px}
+.pchip{
+  background:var(--card);border:1px solid var(--border);border-radius:999px;
+  padding:5px 13px;font-size:.8rem;font-weight:500;color:var(--muted);cursor:pointer;
+  font-family:'Inter',sans-serif;transition:all .18s ease;
 }
-.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding-bottom:20px}
-.chip{
-  background:none;border:1px solid var(--line);border-radius:999px;
-  padding:6px 16px;color:var(--lavender);font-size:.8rem;font-weight:500;
-  cursor:pointer;font-family:'Inter',sans-serif;transition:all .25s ease;
-}
-.chip:hover{border-color:var(--lotus);background:var(--panel)}
-.chip:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.chip.active{background:var(--lotus);border-color:var(--lotus);color:var(--on-accent)}
+.pchip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.pchip.dice{color:var(--accent);border-color:var(--accent-soft);background:var(--accent-soft)}
+.pchip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-/* term cards */
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-bottom:40px}
+/* ---------- category tabs ---------- */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:30px 0 6px}
+.tab{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--card);border:1px solid var(--border);border-radius:11px;
+  padding:9px 15px;font-size:.86rem;font-weight:500;color:var(--muted);cursor:pointer;
+  font-family:'Inter',sans-serif;transition:all .18s ease;
+}
+.tab svg{width:15px;height:15px;opacity:.8}
+.tab:hover{border-color:var(--border-strong);color:var(--text)}
+.tab.active{background:var(--accent);border-color:var(--accent);color:var(--on-accent);box-shadow:0 6px 16px -6px var(--accent)}
+.tab.active svg{opacity:1}
+.tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.resultline{
+  text-align:center;padding:22px 0 6px;
+  font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--faint);
+}
+.resultline b{color:var(--accent);font-weight:500}
+
+/* ---------- grid & cards ---------- */
+.grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  padding:16px 0 50px;align-items:start;
+}
 .card{
-  background:var(--panel);border:1px solid var(--line);
-  border-radius:16px;padding:22px 24px;
-  transition:border-color .25s ease;
+  background:var(--card);border:1px solid var(--border);border-radius:18px;
+  padding:22px;box-shadow:var(--shadow);transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  display:flex;flex-direction:column;
 }
-.card:hover{border-color:var(--lotus)}
-.card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px}
-.card .cat{
-  font-family:'IBM Plex Mono',monospace;font-size:.62rem;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
-  display:flex;flex-wrap:wrap;align-items:center;gap:7px;
+.card:hover{border-color:var(--border-strong);box-shadow:var(--shadow-hover);transform:translateY(-2px)}
+.chead{display:flex;align-items:flex-start;gap:13px;margin-bottom:18px}
+.cico{
+  width:42px;height:42px;border-radius:12px;flex-shrink:0;display:grid;place-items:center;
 }
-.top-actions{display:flex;gap:6px;align-items:center;flex-shrink:0}
-.badge{
-  font-family:'IBM Plex Mono',monospace;font-size:.6rem;
-  letter-spacing:.1em;text-transform:uppercase;
-  color:var(--on-accent);background:var(--gold);border-radius:999px;
-  padding:2px 10px;cursor:pointer;border:none;transition:background .25s ease;
-  white-space:nowrap;
+.cico svg{width:21px;height:21px}
+.ctitles{flex:1;min-width:0}
+.ctitles h3{font-size:1.08rem;font-weight:700;letter-spacing:-.01em;line-height:1.25}
+.ctitles .full{font-size:.82rem;color:var(--muted);margin-top:2px}
+.bookmark{
+  flex-shrink:0;width:32px;height:32px;border-radius:8px;border:none;background:none;
+  color:var(--faint);cursor:pointer;display:grid;place-items:center;transition:all .18s ease;
 }
-.badge:hover{background:var(--lavender)}
-.badge:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.link-badge{
-  font-family:'IBM Plex Mono',monospace;font-size:.6rem;
-  letter-spacing:.14em;text-transform:uppercase;
-  color:var(--lavender);background:none;border:1px solid var(--line);border-radius:999px;
-  padding:1px 9px;cursor:pointer;transition:all .25s ease;
-}
-.link-badge:hover{border-color:var(--lotus)}
-.link-badge:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.link-badge.copied{border-color:var(--gold);color:var(--gold)}
-.card h3{
-  font-family:'IBM Plex Mono',monospace;font-weight:500;
-  font-size:1.05rem;color:var(--mist);margin-bottom:2px;letter-spacing:.02em;
-}
-.card .full{font-size:.78rem;color:var(--muted);margin-bottom:10px}
-.card .plain{
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:1.1rem;color:var(--lavender);line-height:1.45;margin-bottom:10px;
-}
-.card .more{font-size:.86rem;color:var(--muted)}
-.card .why{
-  display:none;margin-top:16px;padding-top:16px;
-  border-top:1px dashed var(--line);font-size:.86rem;color:var(--mist);
-}
-.card .why b{
-  display:block;font-family:'IBM Plex Mono',monospace;font-size:.62rem;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:500;
-}
-.card.open .why{display:block}
-.empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)}
-.empty .big{
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:1.4rem;color:var(--lavender);margin-bottom:8px;
-}
+.bookmark:hover{background:var(--accent-soft);color:var(--accent)}
+.bookmark svg{width:17px;height:17px}
+.bookmark.saved{color:var(--accent)}
+.bookmark.saved svg{fill:currentColor}
+.bookmark:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 
-footer{border-top:1px solid var(--line);padding:32px 0 44px;text-align:center}
-footer .om{
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  color:var(--lavender);font-size:1.02rem;margin-bottom:14px;
+.sec{margin-bottom:15px}
+.sec:last-of-type{margin-bottom:0}
+.slabel{
+  display:flex;align-items:center;gap:6px;
+  font-size:.7rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--accent-ink);margin-bottom:5px;
 }
-footer .related{
-  font-family:'IBM Plex Mono',monospace;font-size:.68rem;
-  letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:10px;
-}
-footer .related a{color:var(--lotus);text-decoration:none}
-footer .related a:hover{color:var(--gold)}
-footer .meta{
-  font-family:'IBM Plex Mono',monospace;font-size:.72rem;
-  letter-spacing:.16em;color:var(--muted);text-transform:uppercase;
-}
-footer .meta a{color:var(--lotus);text-decoration:none}
-footer .meta a:hover{color:var(--gold)}
+.slabel svg{width:13px;height:13px}
+.stext{font-size:.9rem;color:var(--text);line-height:1.5}
+.sec.analogy .stext{color:var(--muted);font-style:italic}
 
-@media (max-width:640px){
+.related-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.rtag{
+  background:var(--card-2);border:1px solid var(--border);border-radius:7px;
+  padding:3px 9px;font-size:.75rem;font-weight:500;color:var(--muted);cursor:pointer;
+  font-family:'Inter',sans-serif;transition:all .16s ease;
+}
+.rtag:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.rtag:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+
+.details{
+  display:none;margin-top:4px;padding:13px 14px;border-radius:11px;
+  background:var(--card-2);border:1px solid var(--border);
+  font-size:.86rem;color:var(--muted);line-height:1.5;
+}
+.card.open .details{display:block}
+
+.cfoot{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:18px;padding-top:14px;border-top:1px solid var(--border);
+}
+.detail-toggle{
+  background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;
+  font-size:.84rem;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:5px;
+  padding:0;transition:gap .18s ease;
+}
+.detail-toggle:hover{gap:8px}
+.detail-toggle svg{width:14px;height:14px;transition:transform .2s ease}
+.card.open .detail-toggle svg{transform:rotate(90deg)}
+.detail-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.copy-link{
+  background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;
+  font-size:.82rem;font-weight:500;color:var(--faint);display:inline-flex;align-items:center;gap:5px;
+  padding:0;transition:color .18s ease;
+}
+.copy-link:hover{color:var(--muted)}
+.copy-link svg{width:14px;height:14px}
+.copy-link.copied{color:var(--accent)}
+.copy-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+.empty{grid-column:1/-1;text-align:center;padding:70px 20px;color:var(--muted)}
+.empty .big{font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:8px}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--border);background:var(--card);padding:40px 0}
+.foot-top{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start;margin-bottom:28px}
+.foot-brand{max-width:320px}
+.foot-brand .logo{margin-bottom:10px}
+.foot-brand p{font-size:.88rem;color:var(--muted)}
+.foot-links{font-size:.82rem;color:var(--faint);line-height:2;text-align:right}
+.foot-links .rt{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;color:var(--faint)}
+.foot-links a{color:var(--accent);text-decoration:none}
+.foot-links a:hover{color:var(--accent-2)}
+.foot-bottom{
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;
+  padding-top:22px;border-top:1px solid var(--border);
+  font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;color:var(--faint);
+}
+.foot-bottom a{color:var(--accent);text-decoration:none}
+
+@media (max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .nav-link.hide-sm{display:none}
+}
+@media (max-width:600px){
   .grid{grid-template-columns:1fr}
-  .decode-bar{flex-direction:column}
-  .decode-bar button{padding:13px 26px}
-  .badge{padding:10px 16px}
-  .chip{padding:10px 16px}
-  footer .related{line-height:2.2}
+  .nav-search .stext-sm{display:none}
+  .foot-top{flex-direction:column}
+  .foot-links{text-align:left}
+  .hero{padding:40px 0 20px}
 }
 </style>
 </head>
 <body>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button class="theme-btn active" id="themeDark" type="button">Dark</button>
-  <button class="theme-btn" id="themeLight" type="button">Light</button>
-</div>
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg></span>
+      Bodhi<b>Protocol</b>
+    </a>
+    <div class="nav-right">
+      <button class="nav-search" id="navSearch" type="button" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+        <span class="stext-sm">Search</span><span class="kbd">⌘K</span>
+      </button>
+      <a class="nav-link hide-sm" href="#tabs">Categories</a>
+      <a class="nav-link hide-sm" href="https://github.com/BodhiProtocol/technical-jargon-decoder" target="_blank" rel="noopener">About</a>
+      <a class="nav-link" href="https://github.com/BodhiProtocol/technical-jargon-decoder" target="_blank" rel="noopener">GitHub
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme"></button>
+    </div>
+  </div>
+</nav>
 
-<header>
-  <div class="brand">Bodhi<b>Protocol</b></div>
+<span id="top"></span>
+<header class="hero wrap">
+  <div class="eyebrow">Technical Jargon Decoder</div>
+  <h1>Understand technical terms<br>in <span class="grad">plain English.</span></h1>
+  <p>Search 116+ concepts across software, cloud, databases, architecture, testing and agile. Learn faster. Remember longer.</p>
 </header>
 
-<section class="hero wrap">
-  <h1>A hundred-plus terms.<br><em>Zero confusion.</em></h1>
-  <p>The words engineers, architects, DBAs, and product teams use every day — databases, data warehousing, libraries, testing, and delivery — decoded into plain language, with a note on why each one actually matters for a business analyst or tester.</p>
-</section>
-
-<section class="decode-zone wrap">
-  <div class="decode-bar">
-    <input id="q" type="text" placeholder="Search primary key, star schema, regression testing..." aria-label="Search technical terms" autocomplete="off">
-    <button id="surprise" type="button">Surprise me</button>
+<section class="search-zone wrap">
+  <div class="search-bar">
+    <svg class="sicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+    <input id="q" type="text" placeholder="Search API, SQL, star schema, regression testing…" aria-label="Search technical terms" autocomplete="off">
+    <span class="kbd">⌘K</span>
   </div>
-  <div class="count" id="count"></div>
+  <div class="popular" id="popular">
+    <span class="plabel">Popular:</span>
+  </div>
 </section>
 
 <section class="wrap">
-  <div class="filter-group">
-    <div class="filter-label">Category</div>
-    <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
-  </div>
+  <span id="tabs"></span>
+  <div class="tabs" id="tabsRow" role="group" aria-label="Filter by category"></div>
+  <div class="resultline" id="count"></div>
   <div class="grid" id="grid" aria-live="polite"></div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="om">"If you can't explain it simply, you don't understand it well enough." — attributed to Einstein</div>
-    <div class="related">Part of the BodhiProtocol toolkit — <a href="https://bodhiprotocol.github.io/jargon-decoder/">Capital Markets Jargon Decoder</a> · <a href="https://bodhiprotocol.github.io/trade-lifecycle-explorer/">Trade Lifecycle Explorer</a> · <a href="https://bodhiprotocol.github.io/capital-markets-blueprint-explorer/">Capital Markets Blueprint Explorer</a> · <a href="https://bodhiprotocol.github.io/llm-wiki/">LLM Wiki</a> · <a href="https://bodhiprotocol.github.io/layering-spoofing-order-book/">Layering & Spoofing Order Book Replay</a></div>
-    <div class="meta">Built by a business analyst who builds · <a href="https://github.com/BodhiProtocol" target="_blank" rel="noopener">github.com/BodhiProtocol</a></div>
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="#top">
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg></span>
+          Bodhi<b>Protocol</b>
+        </a>
+        <p>Making complex terms simple, one concept at a time. Built by a business analyst who builds.</p>
+      </div>
+      <div class="foot-links">
+        <div class="rt">Part of the BodhiProtocol toolkit</div>
+        <a href="https://bodhiprotocol.github.io/jargon-decoder/">Capital Markets Jargon Decoder</a><br>
+        <a href="https://bodhiprotocol.github.io/trade-lifecycle-explorer/">Trade Lifecycle Explorer</a><br>
+        <a href="https://bodhiprotocol.github.io/capital-markets-blueprint-explorer/">Capital Markets Blueprint Explorer</a><br>
+        <a href="https://bodhiprotocol.github.io/llm-wiki/">LLM Wiki</a><br>
+        <a href="https://bodhiprotocol.github.io/layering-spoofing-order-book/">Layering &amp; Spoofing Order Book</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Open source · MIT License</span>
+      <span><a href="https://github.com/BodhiProtocol" target="_blank" rel="noopener">github.com/BodhiProtocol</a></span>
+    </div>
   </div>
 </footer>
 
 <script>
-/* ---------- theme toggle ---------- */
-const THEME_KEY = "tech-jargon-theme";
-const themeDarkBtn = document.getElementById("themeDark");
-const themeLightBtn = document.getElementById("themeLight");
-function applyTheme(theme){
-  document.documentElement.classList.toggle("pastel", theme === "light");
-  themeDarkBtn.classList.toggle("active", theme === "dark");
-  themeLightBtn.classList.toggle("active", theme === "light");
-  localStorage.setItem(THEME_KEY, theme);
-}
-let savedTheme = localStorage.getItem(THEME_KEY) || "dark";
-applyTheme(savedTheme);
-themeDarkBtn.addEventListener("click", () => applyTheme("dark"));
-themeLightBtn.addEventListener("click", () => applyTheme("light"));
-
-const CATS = ["Software & Dev","Cloud & Infrastructure","Data & Databases","Agile & Delivery","Testing & QA"];
-
-const ITEMS = [
-{t:"API",full:"Application Programming Interface",c:0,p:"A defined way for two pieces of software to talk to each other, without either needing to know how the other works inside.",m:"Think of it as a restaurant menu — you order by name, not by walking into the kitchen. Systems expose an API so other systems (or other teams) can request data or trigger actions in a controlled, documented way.",w:"When someone says \"we'll just integrate via API,\" they mean two systems will exchange data through a defined contract — not that someone will manually copy data between them. That contract is usually what you're documenting in requirements."},
-{t:"Database",full:"Where an application's data actually lives",c:0,p:"An organized system for storing data so it can be reliably saved, retrieved, and updated by an application.",m:"Nearly every application has one sitting behind it — user accounts, transactions, content — all living in a database, kept separate from the application code that reads and writes to it.",w:"When behavior changes but \"the data still looks wrong,\" the database (not the code) is usually where to look first — they're separate things that can each be right or wrong independently."},
-{t:"Function",full:"A reusable, named block of code",c:0,p:"A named, reusable block of code that performs one specific task, which other code can call whenever it needs that task done.",m:"Instead of rewriting the same logic everywhere it's needed, a developer writes it once as a function and calls it by name from anywhere — write once, use many times.",w:"Explains why fixing a bug \"in one place\" can fix it everywhere it shows up — if many parts of the product call the same function, one fix ripples through all of them at once."},
-{t:"Repository (Repo)",full:"Where a project's code and history live",c:0,p:"The folder where all of a project's code lives, plus its full history of changes.",m:"Hosted on platforms like GitHub or GitLab. Every saved change (a \"commit\") is kept forever, so nothing is ever truly lost — you can always go back.",w:"If a developer says \"it's in the repo,\" they mean the source of truth for the code, not a shared drive or a ticket. Requirements and specs usually live somewhere else."},
-{t:"Git / Version Control",full:"Tracking every change to a codebase",c:0,p:"The system that tracks every change ever made to a codebase, by whom, and why.",m:"Lets multiple developers work on the same code simultaneously without overwriting each other, and lets any change be undone.",w:"Explains why developers rarely fear \"breaking\" something — almost everything is recoverable. It's also why you can ask \"when did this change and why\" and actually get an answer."},
-{t:"Branch",full:"An isolated copy of the codebase",c:0,p:"A parallel, isolated copy of the codebase where someone can work without affecting the main version.",m:"Developers create a branch per feature or fix, then merge it back into the main branch (often called \"main\") once it's reviewed and tested.",w:"If a feature is \"on a branch,\" it exists but isn't live yet — useful to know when you're asked to test something that isn't in the production environment."},
-{t:"Pull Request (PR)",full:"A request to merge reviewed code",c:0,p:"A formal request to merge one branch's changes into the main codebase, opened for teammates to review first.",m:"Nothing gets merged silently — a PR is where other developers comment, request changes, or approve before the code becomes official.",w:"This is the checkpoint where code gets reviewed — if you're tracking whether a fix is \"done,\" merged (not just written) is the real finish line."},
-{t:"CI/CD",full:"Continuous Integration / Continuous Deployment",c:0,p:"Automated pipelines that test and ship code every time it changes, instead of a person manually doing it.",m:"CI automatically runs tests on new code; CD automatically pushes code that passes into staging or production. Together they mean releases can happen daily instead of once a quarter.",w:"Explains why some teams can ship a fix same-day while others need a multi-week release cycle — it's the pipeline, not developer speed."},
-{t:"Microservices",full:"Many small, independent services",c:0,p:"An architecture where an application is built as many small, independent services instead of one big program.",m:"Each service owns one job (payments, notifications, search) and can be updated or scaled on its own without touching the others.",w:"If one \"part\" of a product is down while the rest works fine, that's microservices at work — it also explains why a single bug rarely takes the whole system down."},
-{t:"Monolith",full:"One single, tightly-connected codebase",c:0,p:"An application built as one single, tightly-connected codebase, where every part depends on every other part.",m:"Simpler to build and deploy early on, but a small change can require retesting the entire application — and it can only be scaled as one whole unit.",w:"If \"that would touch too much of the system\" is a common answer to your change requests, you're likely dealing with a monolith."},
-{t:"Framework vs. Library",full:"Who's in control of your code",c:0,p:"A library is a tool you call when you need it; a framework is a structure that calls your code, on its terms.",m:"Using a library is like hiring a contractor for one job. Using a framework is like moving into a pre-built house — you work within its walls.",w:"Explains why \"switching frameworks\" is a much bigger, riskier undertaking than \"swapping a library\" — it's a foundational decision, not a swap."},
-{t:"Library",full:"Pre-written code you plug into your project",c:0,p:"A collection of pre-written, reusable code that a developer pulls into their own project instead of writing that functionality from scratch.",m:"Examples: a library for formatting dates, one for drawing charts, one for talking to a payment processor. Almost no application is written 100% from scratch — most of it is libraries, glued together by code the team actually wrote.",w:"Explains why a \"simple\" feature can sometimes ship in a day — if a trusted library already does most of the work, the team isn't building it, just wiring it in."},
-{t:"Package / Dependency",full:"A library your project relies on",c:0,p:"A package is a library published for others to install; once your project uses one, it becomes a \"dependency\" — something your code now relies on to run.",m:"Installed and tracked via a package manager (npm for JavaScript, pip for Python, NuGet for .NET). A project can easily have hundreds of dependencies, most of them indirect — libraries that other libraries depend on.",w:"When engineering says a delay is caused by \"updating dependencies,\" they mean updating these external packages — often necessary for security fixes, but risky since an update can subtly change behavior elsewhere."},
-{t:"SDK",full:"Software Development Kit",c:0,p:"A bundled kit of libraries, tools, and documentation a platform provides to help developers build on top of it.",m:"Broader than a single library — an SDK (e.g. a payments SDK, a maps SDK) typically includes everything needed to integrate with that specific platform: code, sample projects, and reference docs.",w:"If a vendor says \"just use our SDK,\" they mean integration will lean on their pre-built toolkit rather than your team building the connection from raw API calls alone — usually faster, but ties you to how that SDK works."},
-{t:"Technical Debt",full:"Shortcuts that cost more later",c:0,p:"Shortcuts taken to ship faster now, at the cost of extra work required later.",m:"Like financial debt, it accrues \"interest\" — the longer it's left, the harder and riskier it becomes to fix, and it slows down every future change nearby.",w:"When engineering pushes back on a \"quick\" request, technical debt is often why — they're not being difficult, they're flagging a cost you can't see in the UI."},
-{t:"Refactoring",full:"Rewriting code without changing behavior",c:0,p:"Rewriting existing code to be cleaner or more maintainable, without changing what it actually does.",m:"No new features, no visible change to the user — it's an investment in future speed, which makes it a hard thing to justify on a roadmap.",w:"If a sprint is spent \"refactoring,\" nothing will look different to stakeholders afterward — that's expected, not a failure to deliver."},
-{t:"Regression",full:"Something that used to work, breaking again",c:0,p:"A bug where something that used to work breaks again, usually because of an unrelated change elsewhere.",m:"The reason automated tests exist — to catch when fixing A accidentally breaks B.",w:"If a resolved issue reappears after an unrelated release, that's a regression — worth flagging specifically, since it usually points to a gap in test coverage."},
-{t:"Environment (Dev/Staging/Prod)",full:"Separate copies of a system, by stage",c:0,p:"Separate, identical-ish copies of a system used at different stages before real users see anything.",m:"Dev is where developers experiment; Staging (or UAT) mirrors production for final testing; Production (\"prod\") is the real, live system users actually use.",w:"Critical distinction for testing — a bug you can't reproduce in \"prod\" might only exist in staging, or vice versa. Always confirm which environment a defect was found in."},
-{t:"Legacy System",full:"An older system still relied on",c:0,p:"An older system still in active use, often because it's too risky, costly, or poorly documented to replace.",m:"Not necessarily bad — often it's just old, undocumented, and nobody currently on the team fully understands every part of it.",w:"Explains why \"small\" change requests against legacy systems often get inflated estimates — the risk isn't the change, it's the unknowns around it."},
-{t:"Bug vs. Feature vs. Enhancement",full:"Three different reasons work gets requested",c:0,p:"A bug is something broken relative to spec; a feature is something new; an enhancement improves something that already works as intended.",m:"The distinction matters for prioritization — bugs are usually treated as unplanned/urgent work, while features and enhancements compete for the same planned capacity.",w:"Miscategorizing a request (calling an enhancement a \"bug\" to jump the queue) is a common friction point between BAs and engineering — get the label right and the conversation gets easier."},
-{t:"Deployment / Release",full:"Pushing code live vs. showing it to users",c:0,p:"The act of making a new version of software available — pushing code from built to live.",m:"Not the same as \"done\" — code can be deployed to an environment without being visible to real users yet, depending on release strategy.",w:"When you ask \"is it live,\" you're really asking about release, not deployment — the two can happen at different times."},
-
-{t:"Cloud Computing",full:"Running software on someone else's servers",c:1,p:"Running software and storing data on someone else's servers, accessed over the internet, instead of your own local hardware.",m:"Major providers: AWS, Microsoft Azure, Google Cloud. You pay for what you use, and capacity can grow or shrink on demand.",w:"Explains why IT can spin up new infrastructure in minutes instead of ordering physical servers — \"the cloud\" is really just someone else's data center, rented flexibly."},
-{t:"SaaS / PaaS / IaaS",full:"How much of the stack a vendor manages",c:1,p:"Three levels of how much of the technology stack a cloud provider manages for you.",m:"SaaS (Software as a Service) — you just use the app, like Salesforce. PaaS (Platform as a Service) — you deploy your own code onto managed infrastructure. IaaS (Infrastructure as a Service) — you rent raw servers and manage everything yourself.",w:"Helps you scope vendor conversations correctly — a SaaS vendor owns far more responsibility (and risk) than an IaaS one."},
-{t:"Server",full:"A computer that answers requests",c:1,p:"A computer (physical or virtual) whose job is to respond to requests from other computers.",m:"Could be one physical machine in a data center, or a \"virtual\" slice of a much bigger machine shared with others — from the outside, they behave the same.",w:"When something is \"down,\" it usually means a server (or the service running on it) stopped responding — worth asking which one, since systems rarely share a single point of failure by design."},
-{t:"Container (Docker)",full:"A self-contained package that runs anywhere",c:1,p:"A lightweight, self-contained package of an application plus everything it needs to run, so it behaves identically anywhere.",m:"Solves the classic \"it works on my machine\" problem — the container carries its own environment with it, rather than depending on whatever's installed on the host.",w:"Explains why deployments have gotten more reliable in recent years — much of the \"it broke in production but not in testing\" class of bug has shrunk."},
-{t:"Kubernetes",full:"Automatically managing containers at scale",c:1,p:"A system that automatically manages, scales, and restarts containers across many servers.",m:"If a container crashes, Kubernetes restarts it automatically. If traffic spikes, it can spin up more copies without a human intervening.",w:"You'll hear this name a lot in infrastructure conversations — it's the reason many outages self-heal in seconds rather than requiring a 3am page."},
-{t:"Serverless",full:"Code that runs without managing servers",c:1,p:"Running code without provisioning or managing any servers yourself — the cloud provider handles it entirely, on demand.",m:"Confusingly, servers are still involved — you just never see or manage them. Code runs only when triggered, and you're billed only for that execution time.",w:"A cost and speed lever: good for infrequent or spiky workloads, since you're not paying for idle server time between requests."},
-{t:"Load Balancer",full:"Spreading traffic across servers",c:1,p:"A traffic director that spreads incoming requests across multiple servers so no single one gets overwhelmed.",m:"If one server fails, the load balancer stops sending it traffic and routes around it — often invisibly to the end user.",w:"Part of why large systems can handle sudden traffic spikes (a product launch, a marketing push) without falling over."},
-{t:"API Gateway",full:"The single front door for external requests",c:1,p:"A single front door that all external requests pass through before reaching internal services.",m:"Handles shared concerns once — authentication, rate limiting, logging — instead of every individual service reimplementing them.",w:"Relevant when scoping integrations: external partners usually talk to the gateway, not directly to the internal system doing the actual work."},
-{t:"Uptime / SLA",full:"Service Level Agreement",c:1,p:"Uptime is the percentage of time a system is actually available; an SLA is the contractual promise about what that percentage must be.",m:"\"99.9% uptime\" sounds high but still allows about 8.7 hours of downtime a year. \"Five nines\" (99.999%) allows only around 5 minutes.",w:"When negotiating with a vendor, the SLA percentage — and what penalty applies if they miss it — is often more important than the feature list."},
-{t:"Scalability",full:"Handling more load without falling over",c:1,p:"A system's ability to handle more load — more users, more data, more requests — without falling over or slowing down.",m:"\"Horizontal\" scaling adds more machines; \"vertical\" scaling makes one machine bigger. Most modern cloud systems favor horizontal, since it has no hard ceiling.",w:"Worth asking about explicitly before a big launch or campaign — \"does this scale\" is really asking \"will this survive a traffic spike.\""},
-{t:"Latency",full:"The delay before a response comes back",c:1,p:"The delay between a request being made and a response coming back.",m:"Measured in milliseconds. Caused by physical distance, network congestion, or slow processing — often a mix of all three.",w:"If users report something \"feels slow\" rather than \"broken,\" that's usually a latency issue, not a functional bug — worth routing to infrastructure, not the feature team."},
-{t:"Downtime / Outage",full:"When a system is unavailable",c:1,p:"A period where a system is unavailable or not functioning as expected.",m:"Can be planned (scheduled maintenance) or unplanned (a failure). Most mature teams run a \"postmortem\" after unplanned outages to document root cause.",w:"If you're gathering requirements around reliability, ask about historical outage frequency and cause — it tells you far more than an uptime percentage alone."},
-{t:"Firewall",full:"A filter for network traffic",c:1,p:"A security barrier that filters network traffic, allowing only approved connections in or out.",m:"Sits at the edge of a network (or around individual services) deciding, connection by connection, what's allowed through.",w:"Relevant when an integration \"can't connect\" — a firewall rule blocking the specific port or address is one of the most common culprits."},
-{t:"VPN",full:"Virtual Private Network",c:1,p:"An encrypted tunnel that lets a device securely access a private network over the public internet.",m:"Makes a remote laptop behave, from the network's point of view, as if it were physically inside the office.",w:"Explains why some internal tools are only reachable \"on VPN\" — it's a deliberate access boundary, not a technical limitation to work around."},
-{t:"CDN",full:"Content Delivery Network",c:1,p:"A network of servers spread across the world that cache and serve content from the location nearest the user.",m:"Instead of every request traveling to one central server, a CDN serves a cached copy from a nearby node — much faster, especially for images, video, and static files.",w:"Explains why a website can load fast for someone in Singapore and someone in London simultaneously, without one central server buckling under global traffic."},
-{t:"Authentication vs. Authorization",full:"Who you are vs. what you're allowed to do",c:1,p:"Authentication verifies who you are (logging in); authorization determines what you're allowed to do once you're in — which pages, data, or actions you can access.",m:"A classic mix-up: \"the login is broken\" (authentication) is a completely different problem from \"this user can see data they shouldn't\" (authorization) — they fail in different systems and need different fixes.",w:"When writing or testing access-control requirements, always specify both separately — \"only managers can approve requests\" is an authorization rule, entirely independent of how a manager logs in."},
-{t:"Encryption",full:"Scrambling data so only authorized parties can read it",c:1,p:"Converting data into a scrambled form that's unreadable without the right key, protecting it from anyone who intercepts or steals it.",m:"\"In transit\" encryption protects data while it's traveling over a network (like HTTPS); \"at rest\" encryption protects data while it's stored on disk. A system can have one without the other, which matters for compliance.",w:"When a requirement says \"sensitive data must be encrypted,\" always clarify whether that means in transit, at rest, or both — they're separate technical implementations, and \"encrypted\" alone is an incomplete requirement."},
-{t:"Role-Based Access Control (RBAC)",full:"Permissions assigned by role, not by person",c:1,p:"An access-control model where permissions are assigned to roles — Admin, Manager, Viewer — rather than to individual people, and users get access by being assigned a role.",m:"Makes access far easier to manage at scale — promote someone to Manager and they instantly inherit everything a Manager can do, rather than manually granting a dozen individual permissions.",w:"When testing access control, the efficient approach is testing each role's boundaries once, rather than testing every individual user — the role, not the person, is what actually determines behavior."},
-
-{t:"Database (SQL vs. NoSQL)",full:"Structured vs. flexible data storage",c:2,p:"A structured system for storing and retrieving data — SQL databases organize it into strict tables; NoSQL databases allow more flexible, less rigid structures.",m:"SQL (e.g. PostgreSQL, Oracle) is ideal when relationships between data matter and structure won't change often. NoSQL (e.g. MongoDB) suits data whose shape varies or evolves quickly.",w:"When a request is \"just add a new field,\" whether that's trivial or a real migration project often comes down to which type of database is underneath."},
-{t:"Data Warehouse",full:"A central repository built for analysis",c:2,p:"A large, central repository built specifically for analysis and reporting, pulling data together from many source systems.",m:"Unlike an operational database (built for day-to-day transactions), a warehouse is optimized for big, complex queries across historical data — dashboards, trend analysis, reporting.",w:"If you're asked to define reporting requirements, this is usually where the numbers will actually come from — not the live production system."},
-{t:"ETL / ELT",full:"Extract, Transform, Load (or Load, then Transform)",c:2,p:"The process of pulling data out of source systems, reshaping it, and loading it somewhere it can be analyzed.",m:"ETL transforms data before loading it into the warehouse; ELT loads raw data first and transforms it afterward, taking advantage of modern warehouses' processing power.",w:"When a report shows stale or wrong-looking numbers, the ETL/ELT pipeline schedule and logic is often where to look first — not the report tool itself."},
-{t:"Data Pipeline",full:"Automated movement of data between systems",c:2,p:"An automated sequence of steps that moves data from one system to another, reliably and on a schedule.",m:"Pipelines can run every few minutes (near real-time) or once a day (batch) — the choice trades freshness against cost and complexity.",w:"If stakeholders want \"real-time\" reporting, ask what pipeline currently feeds that data — real-time is a meaningfully bigger ask than daily batch, and should be scoped (and costed) as one."},
-{t:"Machine Learning",full:"Software that learns patterns from data",c:2,p:"Software that learns patterns from data, rather than being explicitly programmed with fixed rules for every scenario.",m:"Instead of writing \"if X then Y\" for every case, you show the system many examples and it learns the pattern itself — which is why it can handle cases it's never explicitly seen.",w:"Useful for distinguishing genuinely \"intelligent\" automation (which can generalize and improve with more data) from simple rules-based automation (which only does exactly what it's told, every time)."},
-{t:"Algorithm",full:"A step-by-step procedure",c:2,p:"A defined, step-by-step procedure for solving a problem or completing a task.",m:"Every piece of software is built from algorithms, whether it's sorting a list or deciding what content to show a user — \"the algorithm\" isn't one mysterious thing, it's shorthand for whichever specific logic is running.",w:"When someone says \"that's just how the algorithm works,\" it's worth asking which specific logic they mean — it's rarely as immutable or mysterious as the phrase implies."},
-{t:"Data Lake",full:"Raw data stored in its original format",c:2,p:"A large storage pool that holds raw data in its original format, structured or not, until someone needs it.",m:"Unlike a warehouse (structured, ready for analysis), a lake stores everything cheaply now and figures out structure later — flexible, but easier to end up messy and hard to query.",w:"If data \"exists somewhere\" but nobody can easily report on it, it's often sitting unstructured in a lake, waiting for a pipeline to shape it into something usable."},
-{t:"Data Model / Schema",full:"The blueprint that defines what data exists",c:2,p:"The blueprint that defines what data exists, what type it is, and how different pieces of data relate to each other.",m:"Changing a schema (adding a field, changing a data type) can ripple through every system and report that depends on it — it's rarely a one-line change.",w:"When scoping a \"simple\" data change, always ask what schema it touches — that's usually the real driver of effort and risk, not the visible feature."},
-{t:"Structured vs. Unstructured Data",full:"Rows and columns vs. everything else",c:2,p:"Structured data fits neatly into rows and columns, like a spreadsheet; unstructured data doesn't — think emails, PDFs, images, free-text notes.",m:"Structured data is easy to query and report on directly. Unstructured data usually needs extra processing (or AI) before it can be analyzed at scale.",w:"Explains why \"just analyze all our customer emails\" is a much bigger project than \"just analyze our sales table\" — the data shape drives the effort, not just the volume."},
-{t:"Data Governance",full:"Rules about who owns and can trust data",c:2,p:"The rules, ownership, and processes that determine who can access, change, or rely on a given piece of data.",m:"Covers things like: who owns this field, what does it actually mean, who's allowed to see it, and how do we know it's still accurate.",w:"Central to a BA's job whenever two teams disagree about \"the real number\" — that's usually a governance gap (different definitions or owners), not a data quality bug."},
-{t:"Master Data",full:"The authoritative version of core entities",c:2,p:"The core, authoritative version of key business entities — customers, products, accounts — that many systems reference.",m:"When master data is inconsistent across systems (a customer's address differs in three places), every report and process built on top of it inherits that inconsistency.",w:"Often the real root cause behind \"the numbers don't match\" complaints — worth tracing back to which system is supposed to be the master before assuming it's a calculation error."},
-{t:"Dashboard / BI",full:"Business Intelligence",c:2,p:"Tools and visual reports that turn raw data into something people can actually read and act on.",m:"BI tools (Tableau, Power BI, Looker) sit on top of a data warehouse, letting non-technical users explore and visualize data without writing queries themselves.",w:"When defining reporting requirements, be specific about the underlying metric definitions — a dashboard is only as trustworthy as the data governance behind it."},
-{t:"Query",full:"A request for specific data",c:2,p:"A request for specific data from a database, written in a language the database understands, usually SQL.",m:"Ranges from simple (\"give me all customers in France\") to highly complex (joining a dozen tables with conditional logic) — complexity is a major driver of how long a report takes to build.",w:"If a \"simple\" report request actually requires a complex query across many systems, that's worth surfacing early — it changes the estimate significantly."},
-{t:"Metadata",full:"Data about data",c:2,p:"Data about data — labels describing what a piece of data is, where it came from, and what it means.",m:"Examples: a field's name, its data type, when it was last updated, who owns it. Good metadata is what makes a data catalog searchable and trustworthy.",w:"When data feels \"undocumented,\" it usually means the metadata is missing or stale — a foundational (if unglamorous) gap that undermines every downstream analysis."},
-{t:"API Integration",full:"An ongoing, automated connection between systems",c:2,p:"Connecting two systems so they can automatically exchange data, using one system's API rather than manual export/import.",m:"Distinct from a one-time data migration — an integration is an ongoing, automated connection that keeps both systems in sync.",w:"When scoping \"connect System A to System B,\" clarify whether it's a one-time transfer or an ongoing integration — the effort and design differ enormously."},
-{t:"Primary Key",full:"The field that uniquely identifies a row",c:2,p:"A field (or combination of fields) that uniquely identifies each row in a table — no two rows can ever share one, and it can never be blank.",m:"Usually a simple ID number, assigned automatically when a row is created. Every other table that needs to reference that row does so by storing its primary key.",w:"If two records ever appear to be \"the same\" but behave differently, checking whether they actually have different primary keys is a good first step — visually identical data can still be two separate rows."},
-{t:"Foreign Key",full:"A field that links to another table's primary key",c:2,p:"A field in one table that stores the primary key of a row in another table, creating a link between the two.",m:"This is how relational databases represent relationships — an \"order\" row doesn't repeat all of a customer's details, it just stores that customer's primary key as a foreign key.",w:"Explains why deleting a record can be blocked or cause cascading effects elsewhere — if other rows hold a foreign key pointing to it, the database has to decide what happens to those too."},
-{t:"Referential Integrity",full:"The rule that foreign keys must point somewhere real",c:2,p:"A database rule ensuring a foreign key always points to a record that actually exists — never a dead reference.",m:"Enforced by the database itself in well-designed systems, which is why you often can't delete a \"parent\" record (like a customer) while related \"child\" records (like their orders) still reference it.",w:"When a migration or bulk data load throws unexpected errors on delete or insert, referential integrity rules are frequently the reason — worth checking before assuming it's a bug."},
-{t:"Index (Database)",full:"A shortcut that speeds up searches",c:2,p:"A lookup structure built on a table that dramatically speeds up searches, the same way a book's index lets you skip straight to a page instead of reading cover to cover.",m:"Comes at a cost: indexes take up extra storage and slightly slow down writes (since the index has to update too), so they're added deliberately on fields that get searched often, not on everything.",w:"If a specific search or report is mysteriously slow while everything else is fine, ask whether the field being searched on is indexed — a missing index is one of the most common, and cheapest to fix, causes."},
-{t:"Normalization",full:"Splitting data to eliminate duplication",c:2,p:"Organizing a database by splitting data across multiple related tables so no piece of information is stored more than once.",m:"Example: instead of repeating a customer's address on every one of their orders, the address lives once in a Customers table, and each order just links to it via a foreign key.",w:"Explains why fixing a customer's address in one place updates it everywhere instantly — the data was never duplicated to begin with, so there's nothing else to keep in sync."},
-{t:"Denormalization",full:"Deliberately duplicating data for speed",c:2,p:"The opposite of normalization — deliberately duplicating data across tables so a query doesn't have to gather it from many places, at the cost of extra storage and more complex updates.",m:"Common in data warehouses and reporting systems, where fast reads matter more than avoiding duplication — the tradeoff normalization makes is flipped on purpose.",w:"If a reporting table looks \"messier\" or more repetitive than the source system, that's often intentional denormalization for speed, not a data quality problem."},
-{t:"OLTP vs. OLAP",full:"Transactional systems vs. analytical systems",c:2,p:"OLTP systems handle fast, everyday transactions (placing an order, updating a balance); OLAP systems are built for complex analysis over large volumes of historical data.",m:"OLTP databases are optimized for many small, quick reads and writes. OLAP systems (like a data warehouse) are optimized for big, slow-moving queries across millions of rows at once.",w:"Explains why running a huge report directly against the live production system is risky — that system (OLTP) wasn't built for it, which is exactly why data warehouses (OLAP) exist."},
-{t:"Star Schema",full:"A data warehouse's typical table layout",c:2,p:"A data warehouse design with one central \"fact\" table surrounded by several \"dimension\" tables it links out to — visually resembling a star.",m:"Deliberately denormalized and simple by design, so reporting tools can query it fast without complicated joins across dozens of tables.",w:"If you're defining a new report's data requirements, understanding whether it sits in a star schema tells you roughly how easy (or hard) that report will be to build."},
-{t:"Fact Table",full:"The table holding the actual measurements",c:2,p:"The central table in a star schema, holding the measurable events — transaction amounts, quantities, counts — that reports are actually built to analyze.",m:"Typically very long (millions of rows) but narrow — mostly numbers and foreign keys pointing out to dimension tables for context.",w:"When someone asks \"what's the grain of this fact table\" (daily total? per-transaction?), that question determines what level of detail your report can actually show — worth understanding before promising a report design."},
-{t:"Dimension Table",full:"The table holding descriptive context",c:2,p:"A table holding descriptive, mostly-unchanging context — customer, product, date, region — that a fact table references to give its numbers meaning.",m:"Answers the \"who, what, when, where\" questions around a fact. A sales fact table paired with Customer, Product, and Date dimension tables lets you slice revenue any of those ways.",w:"When a stakeholder wants to \"slice the report by X,\" X almost always needs to exist as its own dimension — if it doesn't yet, that's new scope, not a config change."},
-{t:"Data Mart",full:"A smaller, focused slice of a data warehouse",c:2,p:"A smaller, focused subset of a data warehouse, built for one department or one specific reporting need rather than the whole business.",m:"Faster to build and query than the full warehouse, since it only contains what one audience actually needs — at the cost of yet another place data has to be kept consistent.",w:"If finance and sales each swear by \"the real numbers\" from their own data mart and they disagree, that's a sign the two marts diverged from the source warehouse at some point — worth tracing back."},
-{t:"Stored Procedure",full:"Saved SQL logic that lives in the database",c:2,p:"A saved, reusable block of SQL logic stored inside the database itself, which can be run by calling its name instead of rewriting the whole query each time.",m:"Runs directly on the database server, which can make it faster than sending the same logic from the application every time — but it also means business logic can end up hidden inside the database, invisible to anyone just reading the application code.",w:"Worth asking about explicitly when tracing how a number gets calculated — the real logic may live in a stored procedure, not in the application code a developer would normally point you to."},
-{t:"JOIN",full:"Combining rows from multiple tables",c:2,p:"A SQL operation that combines rows from two or more tables based on a shared column between them, like a foreign key matching a primary key.",m:"The mechanism that makes normalization practical — data can live in separate, clean tables and still be pulled back together into one combined view whenever it's needed.",w:"If a report is slow or a query \"can't find\" data that you know exists, a missing or incorrect join between tables is one of the most common root causes."},
-{t:"Data Lineage",full:"The traceable path data took to get here",c:2,p:"The traceable record of where a piece of data originally came from, and every transformation it passed through on the way to where it is now.",m:"Good lineage lets you answer \"where did this number come from\" precisely — which source system, which pipeline step, which transformation logic — rather than just trusting the final result.",w:"Essential when a number is challenged (\"that can't be right\") — lineage is what lets you actually trace the discrepancy back to its source instead of guessing."},
-{t:"Data Quality",full:"How trustworthy a dataset actually is",c:2,p:"How accurate, complete, consistent, and up to date a dataset actually is — the difference between data that exists and data you can actually rely on.",m:"Commonly assessed across dimensions like completeness (are fields populated?), accuracy (is the value correct?), consistency (does it agree across systems?), and timeliness (is it current?).",w:"When defining requirements for a new report or migration, explicitly calling out data quality expectations up front avoids a painful conversation later about numbers nobody trusts."},
-{t:"Data Validation",full:"Checking data meets the rules before it's accepted",c:2,p:"The process of checking that data meets defined rules — correct format, valid range, required fields present — before it's accepted into a system or used downstream.",m:"Can happen at entry (a form won't accept an invalid email), on import (a migration script rejects malformed rows), or on a schedule (a nightly job flags anomalies).",w:"A core part of testing any data-heavy feature: writing test cases for what SHOULD be rejected is just as important as testing what should be accepted."},
-{t:"Data Profiling",full:"Studying a dataset before you build on it",c:2,p:"Analyzing a dataset upfront — value ranges, missing fields, duplicate rates, unexpected formats — to understand its real shape before building a pipeline, migration, or report on top of it.",m:"Frequently reveals that a source system's data is messier than assumed: dates stored as text, the same customer entered three different ways, fields nobody's populated in years.",w:"Doing this early on a new project surfaces expensive surprises before they're baked into a design — skipping it is a common reason migrations run over budget."},
-{t:"Slowly Changing Dimension (SCD)",full:"Tracking how a dimension's values change over time",c:2,p:"A technique for handling a dimension's values changing over time — like a customer moving address — without losing the history of what used to be true.",m:"A common approach (\"Type 2\") keeps the old row as-is and adds a new row for the updated value, each tagged with an effective date range, so historical reports still reflect what was true at the time.",w:"Relevant whenever a report needs to reflect \"what was true then\" rather than \"what's true now\" — like showing last year's sales attributed to the region a customer lived in last year, not today."},
-{t:"Data Mapping",full:"Defining how source fields become target fields",c:2,p:"Defining exactly how each field in a source system corresponds to a field in a target system — same name, different name, combined, split, or transformed along the way.",m:"The core deliverable of any migration or integration project: a document or spreadsheet pairing every source field with its destination and the transformation rule between them.",w:"Writing and validating the data mapping is classic BA territory — it's usually the single artifact that prevents \"we migrated the data but it doesn't look right\" after go-live."},
-{t:"Data Migration",full:"A one-time move of data to a new system",c:2,p:"Moving data from one system to another, typically as a one-time project tied to a system replacement or upgrade — distinct from an ongoing integration that keeps two systems continuously in sync.",m:"Usually follows a pattern: extract from the old system, transform it to fit the new system's structure (via the data mapping), then load it in — and validate the results before the old system is switched off.",w:"The validation step is where testers and BAs earn their keep — reconciling record counts and spot-checking values between old and new systems before anyone trusts the new one with live use."},
-{t:"ACID Properties",full:"Atomicity, Consistency, Isolation, Durability",c:2,p:"Four guarantees a database transaction makes: it fully happens or not at all (Atomicity), it leaves data in a valid state (Consistency), simultaneous transactions don't interfere with each other (Isolation), and once confirmed, it survives a crash (Durability).",m:"The reason you can trust that a bank transfer either fully completes or doesn't happen at all — never half-done, with money vanishing from one account but not appearing in the other.",w:"When testing anything involving money, inventory, or any value that must never be \"partially\" updated, ACID compliance is what you're implicitly relying on — worth confirming explicitly for anything in that category."},
-{t:"Transaction / Commit / Rollback",full:"An all-or-nothing group of database operations",c:2,p:"A transaction is a group of database operations treated as a single, all-or-nothing unit; committing makes it permanent, rolling back undoes it entirely if something goes wrong partway through.",m:"Example: transferring money is really two operations (debit one account, credit another) wrapped in one transaction — if the credit fails, the whole transaction rolls back so the debit never sticks either.",w:"If a test needs to leave the database exactly as it found it, wrapping the test steps in a transaction and rolling back afterward is the clean way to do it — no manual cleanup, no leftover test data."},
-{t:"CRUD",full:"Create, Read, Update, Delete",c:2,p:"The four basic operations any system performs on data — creating new records, reading existing ones, updating them, and deleting them.",m:"Nearly every feature maps to some combination of these four. A user profile page, for instance, is really just CRUD on a Users table with a UI wrapped around it.",w:"A useful mental checklist when reviewing test coverage for any data-driven feature — for each entity, have all four operations actually been tested, not just Create?"},
-{t:"View (Database)",full:"A saved, virtual table defined by a query",c:2,p:"A saved, virtual table defined by a query — it looks and behaves like a table when you read from it, but doesn't store data of its own.",m:"Often used to present a simplified, combined, or filtered version of underlying tables — hiding complexity (a messy multi-table join) behind something that reads like one simple table.",w:"If a report or export references a \"view\" rather than a real table, remember it reflects whatever the underlying tables contain right now — it's a live lens, not a saved snapshot."},
-{t:"Backup & Restore",full:"Saving and recovering a database's state",c:2,p:"A backup is a saved copy of a database at a point in time; a restore returns the database to that exact saved state.",m:"Backups run on a schedule — nightly, hourly — and are the safety net against data loss from a bad deployment, corruption, or accidental deletion.",w:"Before any risky migration or bulk data change, confirming a recent backup exists — and that restoring from it has actually been tested — is a basic but frequently skipped safeguard."},
-{t:"Replication",full:"Keeping copies of a database in sync",c:2,p:"Automatically copying a database's data to one or more additional servers, kept continuously in sync with the original.",m:"Used for both reliability (if the primary server fails, a replica can take over) and performance (spreading read traffic across multiple copies instead of hammering one server).",w:"Explains why a value updated in one place can briefly appear \"wrong\" when read from another system a second later — replication usually isn't instantaneous, and that lag is called \"replication delay.\""},
-{t:"PII",full:"Personally Identifiable Information",c:2,p:"Any data that could identify a specific individual — name, email, government ID, phone number, and often less obvious things like an IP address or a device ID.",m:"Subject to specific handling rules under regulations like GDPR and CCPA — how it's stored, who can access it, how long it's kept, and what happens if it's requested to be deleted.",w:"When scoping any new data field or report, flagging whether it touches PII early determines a lot: extra approval steps, masking requirements, retention limits — much cheaper to catch at requirements stage than after launch."},
-
-{t:"Sprint",full:"A fixed, short work cycle",c:3,p:"A fixed, short time period — usually 1 to 4 weeks — during which a team commits to completing a specific set of work.",m:"At the end of a sprint, the team reviews what was finished, demos it if possible, and plans the next one — a steady, repeating rhythm rather than one long project timeline.",w:"When you're told something will happen \"next sprint,\" that's a concrete, bounded commitment — worth confirming the actual sprint length and start date, since teams vary."},
-{t:"Backlog",full:"The full, prioritized list of possible work",c:3,p:"The full, prioritized list of everything a team could work on — features, bugs, technical debt — not yet scheduled into a sprint.",m:"Living and constantly reprioritized, not a fixed queue processed in strict order — new information can, and should, reshuffle it.",w:"\"It's in the backlog\" isn't the same as \"it's planned\" — worth asking where in the backlog, and what would need to happen for it to get pulled into an actual sprint."},
-{t:"User Story",full:"A feature described from the user's view",c:3,p:"A short description of a feature from the end user's perspective, usually in the form \"As a [user], I want [goal], so that [reason].\"",m:"Deliberately focused on the who and why, not the how — the implementation detail is left to engineering to figure out.",w:"Writing clear user stories with solid acceptance criteria is core BA work — a vague story is the single biggest cause of \"that's not what I meant\" after delivery."},
-{t:"Epic",full:"A large body of work spanning sprints",c:3,p:"A large body of work, too big to finish in one sprint, made up of multiple smaller user stories.",m:"Epics get broken down over time as understanding improves — you rarely need to fully define every story inside an epic upfront.",w:"If a stakeholder wants one big feature \"done next sprint,\" checking whether it's really an epic (multiple sprints' worth of stories) resets expectations early."},
-{t:"Story Points",full:"A relative measure of effort",c:3,p:"A relative measure of effort or complexity for a piece of work — not a direct measure of time.",m:"Usually estimated by the team using a scale like 1, 2, 3, 5, 8, 13 — a story pointed \"8\" isn't \"8 hours,\" it's \"roughly as complex as our other 8s.\"",w:"Resist converting story points directly into days for external commitments — they're a team's internal calibration tool, not a client-facing time estimate."},
-{t:"Velocity",full:"Average points completed per sprint",c:3,p:"The average number of story points a team completes per sprint, tracked over time.",m:"Used to forecast how much a team can realistically commit to in future sprints — not as a performance score to compare between teams.",w:"Useful for realistic roadmap forecasting (\"at this velocity, the backlog will take roughly 6 sprints\") — but comparing velocity across different teams is close to meaningless, since point scales aren't standardized between them."},
-{t:"Standup (Daily Scrum)",full:"A short daily team check-in",c:3,p:"A short, daily check-in where each team member briefly shares what they did, what's next, and any blockers.",m:"Meant to stay brief, 15 minutes or less, and surface blockers fast — not a status report for management, and not a place to solve problems in the room.",w:"The fastest way to learn about a blocker before it derails a deadline — worth attending or getting a summary of, especially near a release."},
-{t:"Sprint Planning",full:"Deciding what a sprint will include",c:3,p:"A meeting at the start of a sprint where the team decides exactly what work they'll commit to completing.",m:"The team pulls prioritized items from the backlog and estimates whether they realistically fit in the sprint's capacity.",w:"The right moment to get new requirements considered for the upcoming sprint — after planning is locked, adding scope usually means something else gets bumped out."},
-{t:"Sprint Retrospective",full:"Reviewing how the team worked",c:3,p:"A meeting at the end of a sprint focused on how the team worked, not what they built — what went well, what didn't, what to change.",m:"Distinct from a sprint review (which demos the actual output) — retros are about process improvement.",w:"A good venue to raise recurring friction, like unclear requirements or late-breaking changes, constructively, rather than letting it fester silently."},
-{t:"Kanban",full:"A continuous-flow visual workflow",c:3,p:"A visual workflow method that tracks work as it moves through stages, To Do, In Progress, Done, with a limit on how much can be in progress at once.",m:"Unlike sprints, Kanban has no fixed time-boxed cycle — work flows continuously, pulled one item at a time as capacity frees up.",w:"Teams supporting live systems (bug fixes, ops requests) often prefer Kanban over sprints, since incoming work is unpredictable and needs to be handled as it arrives."},
-{t:"MVP",full:"Minimum Viable Product",c:3,p:"The smallest version of a product or feature that's still genuinely usable and delivers real value — not a rough draft, a real (if limited) release.",m:"Built to test a hypothesis or get real feedback fast, before investing in every planned feature — deliberately incomplete by design, not by accident.",w:"When scoping a new initiative, pushing for a true MVP (not a Frankenstein of \"must-haves\") is often the highest-leverage thing a BA can do to get something shipped sooner."},
-{t:"Acceptance Criteria",full:"The testable conditions for \"complete\"",c:3,p:"The specific, testable conditions a piece of work must meet to be considered complete and correct.",m:"Written before development starts, ideally by or with the BA — they're what a story gets tested against, not a vague sense of \"looks right.\"",w:"Weak acceptance criteria is the single most common cause of scope disputes at delivery — \"that's not what we agreed\" almost always traces back to criteria that were too loose."},
-{t:"Definition of Done (DoD)",full:"The team's checklist for \"complete\"",c:3,p:"A team-wide checklist of what \"complete\" means for any piece of work — coded, tested, documented, reviewed, deployed, and so on.",m:"Applies to every story a team completes, distinct from the acceptance criteria specific to one particular story.",w:"Worth knowing explicitly — \"done\" can silently mean very different things (code merged vs. tested vs. actually live) depending on a team's DoD."},
-{t:"Stakeholder",full:"Anyone with a stake in the outcome",c:3,p:"Anyone with an interest in, or influence over, a project's outcome — not just the people paying for it.",m:"Includes end users, sponsors, compliance/legal, support teams, and anyone whose work changes because of what's being built.",w:"Mapping stakeholders early — and who actually has sign-off authority versus just an opinion — prevents late-stage surprises when someone unexpected objects."},
-{t:"Functional vs. Non-Functional Requirements",full:"What a system does vs. how well it does it",c:3,p:"Functional requirements define what a system does — specific features and behaviors; non-functional requirements define how well it does it — speed, security, reliability, usability.",m:"Example: \"users can reset their password\" is functional. \"Password reset emails must arrive within 30 seconds\" and \"the reset link must expire after 1 hour\" are non-functional — quality and constraint requirements layered on top.",w:"Non-functional requirements are the ones most often left undocumented and then argued about at UAT — writing them down explicitly, not just the functional feature list, is core BA work that prevents that fight."},
-{t:"UAT",full:"User Acceptance Testing",c:3,p:"The final round of testing, done by real end users or their representatives, in a production-like environment, before something goes live.",m:"Distinct from QA testing (which checks the software works as built) — UAT checks it actually solves the real business problem.",w:"Often the BA's most hands-on delivery moment — writing UAT scripts and coordinating sign-off is frequently the actual gate that determines go-live."},
-
-{t:"Test Case",full:"A documented scenario with an expected result",c:4,p:"A documented scenario — specific steps, specific input, and the specific expected result — used to verify one particular piece of behavior.",m:"The atomic unit of testing: each test case checks exactly one thing, so when one fails, you know precisely what broke instead of just \"something's wrong.\"",w:"Writing good test cases directly off the acceptance criteria is how requirements actually get verified — vague acceptance criteria produces vague, unreliable test cases."},
-{t:"Test Plan",full:"The document defining a testing effort's scope",c:4,p:"The document defining the scope, approach, resources, and schedule for a testing effort — what will be tested, what won't, and how.",m:"Explicitly states what's out of scope as much as what's in — a well-written test plan prevents the \"wait, was anyone testing that?\" conversation after a defect slips through.",w:"Worth reviewing early, not after testing starts — it's the moment to flag if a business-critical scenario has been left out of scope."},
-{t:"Unit Testing",full:"Testing one small piece of code in isolation",c:4,p:"Testing the smallest possible piece of code — usually a single function — on its own, isolated from the rest of the system.",m:"Written and run by developers, usually automatically on every code change, catching a huge class of bugs before the code ever reaches a human tester.",w:"Explains why some bugs \"should have been caught early\" — a gap in unit test coverage is often the reason a basic error made it all the way to UAT."},
-{t:"Integration Testing",full:"Testing that components work together correctly",c:4,p:"Testing that multiple components — two services, a system and a database, an app and a third-party API — work correctly together, not just individually.",m:"Catches an entire category of bugs that unit testing structurally can't: each piece working perfectly alone, but breaking the moment they have to talk to each other.",w:"If a feature \"worked in isolation\" but breaks in the full flow, that's precisely the gap integration testing exists to catch — worth flagging if it isn't part of the test plan."},
-{t:"End-to-End (E2E) Testing",full:"Testing a full workflow from start to finish",c:4,p:"Testing a complete user workflow from start to finish, across the whole system, the way a real user would actually experience it.",m:"The slowest and most realistic layer of testing — where unit tests check one function and integration tests check two components, E2E testing walks the entire journey (e.g. \"log in, add to cart, check out, receive confirmation\").",w:"The layer most likely to surface a UAT-style issue early — reserving your most business-critical user journeys for E2E coverage is usually worth the extra setup effort."},
-{t:"Regression Testing",full:"Re-checking that old fixes still hold",c:4,p:"Re-running existing tests after a change to confirm that nothing which used to work has broken as a side effect.",m:"Ideally automated, since re-running the full test suite by hand after every change doesn't scale — this is a major reason CI pipelines exist.",w:"If a previously-fixed issue reappears after an unrelated release, ask whether regression testing actually covered that area — it usually points to a gap in the automated suite, not carelessness."},
-{t:"Smoke Testing",full:"A quick pass to confirm the build isn't broken",c:4,p:"A quick, shallow pass over the most critical functions to confirm a new build is stable enough to bother testing further.",m:"Named after the old hardware check of turning on a device and watching for smoke — if the basics don't work at all, there's no point running the full, detailed test suite yet.",w:"If a build fails smoke testing, that's a signal to send it straight back rather than start detailed UAT — a fast, cheap gate that saves everyone's time."},
-{t:"Sanity Testing",full:"A narrow check after a small fix",c:4,p:"A narrow, targeted test after a small change or bug fix, focused only on the specific area affected — not a full regression pass.",m:"Faster and shallower than full regression testing; the tradeoff is that it only gives confidence about the specific area touched, not the whole system.",w:"The right tool for verifying a hotfix quickly, but don't let it substitute for full regression testing before a major release — they answer different questions."},
-{t:"Exploratory Testing",full:"Unscripted testing guided by the tester's judgment",c:4,p:"Unscripted testing where the tester actively explores the application in real time, guided by experience and curiosity rather than a predefined script.",m:"Deliberately complements scripted test cases — scripts catch what you thought to check for, exploratory testing is what catches the things nobody thought to write down.",w:"Some of the best-found, hardest-to-predict defects come from exploratory sessions — worth budgeting time for it even in a heavily scripted test plan."},
-{t:"API Testing",full:"Testing the API directly, no UI involved",c:4,p:"Testing a system's API directly — sending requests and checking responses — without going through the visual user interface at all.",m:"Faster and more stable than testing through the UI, since it skips rendering, styling, and browser quirks entirely — tools like Postman are built specifically for this.",w:"A good API test can catch a broken backend before it ever reaches a screen — worth advocating for on any feature with a meaningful API layer, since it's usually cheaper to write and faster to run than the equivalent UI test."},
-{t:"Performance / Load Testing",full:"Testing how a system holds up under traffic",c:4,p:"Testing how a system behaves under expected (or higher-than-expected) traffic and data volume, rather than just checking whether it works correctly for one user at a time.",m:"Load testing simulates many simultaneous users to find the point where response times degrade or the system fails; a related test, stress testing, deliberately pushes past that point to see how — and whether — it fails gracefully.",w:"Worth requesting explicitly before any big launch or campaign — functional testing confirms a feature works; only performance testing confirms it'll survive real-world traffic."},
-{t:"Positive vs. Negative Testing",full:"Valid input vs. invalid input",c:4,p:"Positive testing checks that the system behaves correctly with valid input; negative testing checks that it fails safely and sensibly with invalid input.",m:"Example: entering a valid email is positive testing; entering no @ symbol, an empty field, or 500 characters of gibberish is negative testing — checking the system rejects it gracefully instead of crashing.",w:"A test plan that's all positive testing will look complete while missing most of where real bugs hide — always ask what negative cases were covered before considering test coverage adequate."},
-{t:"Automation Testing vs. Manual Testing",full:"Scripted tools vs. a human running the steps",c:4,p:"Automation testing uses scripts and tools to run tests without a human clicking through each step; manual testing is a person executing the steps by hand.",m:"Automation excels at fast, repeatable checks (regression, smoke tests) run constantly; manual testing excels at anything requiring human judgment, like exploratory testing or evaluating whether something \"feels\" right.",w:"When someone proposes automating a test, a useful question is whether it'll run often enough to be worth the setup cost — automation pays off on repetition, not on a one-off check."},
-{t:"Test Data",full:"The specific inputs chosen to run a test",c:4,p:"The specific input values used to execute a test, deliberately chosen to exercise a particular scenario — a valid case, an edge case, or an invalid one.",m:"Good test data is designed on purpose, not just \"whatever's already in the system\" — realistic-looking data can still miss the exact edge cases a test is meant to catch.",w:"When a defect can't be reproduced, mismatched or stale test data between environments is a frequent, easy-to-overlook culprit — always confirm what data was actually used."},
-{t:"Boundary Value Analysis",full:"Testing at the edges of a valid range",c:4,p:"A test design technique focused on the edges of an accepted range — just inside the limit, right at the limit, and just outside it — since that's where bugs most often hide.",m:"Example: for a field accepting ages 18–65, test 17, 18, 65, and 66 specifically, not just a \"normal\" value like 30 — off-by-one errors live exactly at those boundaries.",w:"A quick mental checklist for reviewing any test plan touching numeric ranges, dates, or limits — if the boundaries aren't explicitly covered, the plan likely has a gap."},
-{t:"Defect Life Cycle",full:"The stages a reported bug moves through",c:4,p:"The stages a reported defect moves through from discovery to resolution — typically New, Assigned, Fixed, Retest, and Closed (or Reopened if the retest fails).",m:"Each stage usually has an owner: a tester logs and retests it, a developer fixes it, and status changes are tracked so nothing silently falls through the cracks.",w:"Knowing this cycle is what lets you say precisely where a defect is stuck — \"it's been Fixed for a week but nobody's retested it\" is a very different problem than \"nobody's looked at it yet.\""},
-{t:"Severity vs. Priority",full:"How bad it is vs. how soon it must be fixed",c:4,p:"Severity is how bad a defect's impact is on the system; priority is how soon it needs to be fixed — related, but genuinely different judgment calls.",m:"A typo in a footer is low severity and low priority. A crash on a rarely-used admin screen might be high severity but low priority. A slightly wrong number on the homepage might be low severity but high priority, if the CEO will see it in an hour.",w:"Worth pushing back gently when someone conflates the two — \"this is critical\" (severity) doesn't automatically mean \"fix this before anything else\" (priority), and mixing them up derails triage conversations."},
-{t:"Test Coverage",full:"How much of the system your tests actually exercise",c:4,p:"A measure of how much of the system — code paths, requirements, or scenarios — is actually exercised by your tests, versus how much is untested.",m:"High coverage doesn't automatically mean high quality — it's possible to \"cover\" a lot of code with shallow tests that wouldn't catch a real bug. Coverage measures reach, not rigor.",w:"When someone cites a coverage percentage as proof of quality, it's worth asking what that percentage actually measures — code lines touched is a very different claim than \"business scenarios verified.\""},
-{t:"Traceability Matrix",full:"Mapping requirements to the tests that verify them",c:4,p:"A document mapping each requirement to the specific test case(s) that verify it, so you can confirm nothing was left untested.",m:"Read it in both directions: every requirement should trace to at least one test, and every test should trace back to a real requirement — an orphan in either direction is a red flag.",w:"The direct answer to \"how do we know we tested everything we promised\" — core BA/QA collaboration territory, and often the first artifact an auditor or sign-off stakeholder asks to see."}
+/* ---------- category metadata ---------- */
+const CATS = ["Software & Dev","Cloud & Infrastructure","Databases","Testing & QA","Architecture","Agile & Delivery"];
+const CAT_SHORT = ["Software","Cloud","Database","Testing","Architecture","Agile"];
+const CAT_COLOR = ["#6366F1","#0EA5E9","#8B5CF6","#F43F5E","#14B8A6","#10B981"];
+const CAT_ICON = [
+  '<path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/>',
+  '<path d="M6 16a4 4 0 0 1 .5-8 5.5 5.5 0 0 1 10.6 1.6A3.4 3.4 0 0 1 18 16z"/>',
+  '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>',
+  '<path d="M9 3h6M10 3v6l-5.5 9.5A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-3.5L14 9V3"/>',
+  '<circle cx="6" cy="18" r="2.6"/><circle cx="18" cy="18" r="2.6"/><circle cx="12" cy="5" r="2.6"/><path d="M12 7.6v3M10 15.6l1.4-2.6M14 15.6l-1.4-2.6"/>',
+  '<path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1M20.5 4v5h-5"/>'
 ];
 
-/* ---------- decode mode ---------- */
+/* section icons */
+const IC_PLAIN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.3 1 2.5h6c0-1.2.4-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg>';
+const IC_THINK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H4l2.5-2.5A8 8 0 1 1 21 12z"/></svg>';
+const IC_WHY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>';
+const IC_REL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6M10.5 8H8a4 4 0 0 0 0 8h2.5M13.5 8H16a4 4 0 0 1 0 8h-2.5"/></svg>';
+const IC_BOOK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg>';
+const IC_CHEV = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
+const IC_COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg>';
+
+/* ---------- data (c: 0=Software 1=Cloud 2=Databases 3=Testing 4=Architecture 5=Agile) ---------- */
+const ITEMS = [
+{t:"API",full:"Application Programming Interface",c:0,p:"A defined way for two pieces of software to talk to each other, without either needing to know how the other works inside.",a:"A restaurant menu — you order by name without walking into the kitchen.",m:"Think of it as a restaurant menu — you order by name, not by walking into the kitchen. Systems expose an API so other systems (or other teams) can request data or trigger actions in a controlled, documented way.",w:"When someone says \"we'll just integrate via API,\" they mean two systems will exchange data through a defined contract — not that someone will manually copy data between them. That contract is usually what you're documenting in requirements.",rel:["API Gateway","API Integration","SDK","API Testing"]},
+{t:"Database",full:"Where an application's data actually lives",c:0,p:"An organized system for storing data so it can be reliably saved, retrieved, and updated by an application.",a:"A filing cabinet the whole application shares.",m:"Nearly every application has one sitting behind it — user accounts, transactions, content — all living in a database, kept separate from the application code that reads and writes to it.",w:"When behavior changes but \"the data still looks wrong,\" the database (not the code) is usually where to look first — they're separate things that can each be right or wrong independently.",rel:["Database (SQL vs. NoSQL)","Query","Primary Key","Backup & Restore"]},
+{t:"Function",full:"A reusable, named block of code",c:0,p:"A named, reusable block of code that performs one specific task, which other code can call whenever it needs that task done.",a:"A recipe you follow any time, instead of reinventing the dish each meal.",m:"Instead of rewriting the same logic everywhere it's needed, a developer writes it once as a function and calls it by name from anywhere — write once, use many times.",w:"Explains why fixing a bug \"in one place\" can fix it everywhere it shows up — if many parts of the product call the same function, one fix ripples through all of them at once.",rel:["Library","Refactoring","Unit Testing","Algorithm"]},
+{t:"Repository (Repo)",full:"Where a project's code and history live",c:0,p:"The folder where all of a project's code lives, plus its full history of changes.",a:"A shared workshop that records every change anyone ever makes.",m:"Hosted on platforms like GitHub or GitLab. Every saved change (a \"commit\") is kept forever, so nothing is ever truly lost — you can always go back.",w:"If a developer says \"it's in the repo,\" they mean the source of truth for the code, not a shared drive or a ticket. Requirements and specs usually live somewhere else.",rel:["Git / Version Control","Branch","Pull Request (PR)","CI/CD"]},
+{t:"Git / Version Control",full:"Tracking every change to a codebase",c:0,p:"The system that tracks every change ever made to a codebase, by whom, and why.",a:"An unlimited undo history for an entire team's work.",m:"Lets multiple developers work on the same code simultaneously without overwriting each other, and lets any change be undone.",w:"Explains why developers rarely fear \"breaking\" something — almost everything is recoverable. It's also why you can ask \"when did this change and why\" and actually get an answer.",rel:["Repository (Repo)","Branch","Pull Request (PR)","Deployment / Release"]},
+{t:"Branch",full:"An isolated copy of the codebase",c:0,p:"A parallel, isolated copy of the codebase where someone can work without affecting the main version.",a:"A photocopy of the manuscript you can scribble on without touching the original.",m:"Developers create a branch per feature or fix, then merge it back into the main branch (often called \"main\") once it's reviewed and tested.",w:"If a feature is \"on a branch,\" it exists but isn't live yet — useful to know when you're asked to test something that isn't in the production environment.",rel:["Git / Version Control","Pull Request (PR)","Repository (Repo)","Environment (Dev/Staging/Prod)"]},
+{t:"Pull Request (PR)",full:"A request to merge reviewed code",c:0,p:"A formal request to merge one branch's changes into the main codebase, opened for teammates to review first.",a:"Submitting an edit for peer review before it enters the official document.",m:"Nothing gets merged silently — a PR is where other developers comment, request changes, or approve before the code becomes official.",w:"This is the checkpoint where code gets reviewed — if you're tracking whether a fix is \"done,\" merged (not just written) is the real finish line.",rel:["Branch","Git / Version Control","CI/CD","Regression"]},
+{t:"CI/CD",full:"Continuous Integration / Continuous Deployment",c:0,p:"Automated pipelines that test and ship code every time it changes, instead of a person manually doing it.",a:"A conveyor belt that tests and ships every change automatically.",m:"CI automatically runs tests on new code; CD automatically pushes code that passes into staging or production. Together they mean releases can happen daily instead of once a quarter.",w:"Explains why some teams can ship a fix same-day while others need a multi-week release cycle — it's the pipeline, not developer speed.",rel:["Deployment / Release","Regression Testing","Environment (Dev/Staging/Prod)","Pull Request (PR)"]},
+{t:"Framework vs. Library",full:"Who's in control of your code",c:0,p:"A library is a tool you call when you need it; a framework is a structure that calls your code, on its terms.",a:"A library is a rented tool; a framework is the pre-built house you move into.",m:"Using a library is like hiring a contractor for one job. Using a framework is like moving into a pre-built house — you work within its walls.",w:"Explains why \"switching frameworks\" is a much bigger, riskier undertaking than \"swapping a library\" — it's a foundational decision, not a swap.",rel:["Library","Package / Dependency","SDK","Refactoring"]},
+{t:"Library",full:"Pre-written code you plug into your project",c:0,p:"A collection of pre-written, reusable code that a developer pulls into their own project instead of writing that functionality from scratch.",a:"Pre-made ingredients you buy instead of cooking every component from scratch.",m:"Examples: a library for formatting dates, one for drawing charts, one for talking to a payment processor. Almost no application is written 100% from scratch — most of it is libraries, glued together by code the team actually wrote.",w:"Explains why a \"simple\" feature can sometimes ship in a day — if a trusted library already does most of the work, the team isn't building it, just wiring it in.",rel:["Framework vs. Library","Package / Dependency","SDK","Function"]},
+{t:"Package / Dependency",full:"A library your project relies on",c:0,p:"A package is a library published for others to install; once your project uses one, it becomes a \"dependency\" — something your code now relies on to run.",a:"An ingredient your recipe now depends on — if it changes, your dish might too.",m:"Installed and tracked via a package manager (npm for JavaScript, pip for Python, NuGet for .NET). A project can easily have hundreds of dependencies, most of them indirect — libraries that other libraries depend on.",w:"When engineering says a delay is caused by \"updating dependencies,\" they mean updating these external packages — often necessary for security fixes, but risky since an update can subtly change behavior elsewhere.",rel:["Library","SDK","Technical Debt","Framework vs. Library"]},
+{t:"SDK",full:"Software Development Kit",c:0,p:"A bundled kit of libraries, tools, and documentation a platform provides to help developers build on top of it.",a:"A branded starter kit with all the parts and instructions to build on a platform.",m:"Broader than a single library — an SDK (e.g. a payments SDK, a maps SDK) typically includes everything needed to integrate with that specific platform: code, sample projects, and reference docs.",w:"If a vendor says \"just use our SDK,\" they mean integration will lean on their pre-built toolkit rather than your team building the connection from raw API calls alone — usually faster, but ties you to how that SDK works.",rel:["Library","Package / Dependency","API","API Integration"]},
+{t:"Technical Debt",full:"Shortcuts that cost more later",c:0,p:"Shortcuts taken to ship faster now, at the cost of extra work required later.",a:"A credit card for speed — borrow time now, pay interest later.",m:"Like financial debt, it accrues \"interest\" — the longer it's left, the harder and riskier it becomes to fix, and it slows down every future change nearby.",w:"When engineering pushes back on a \"quick\" request, technical debt is often why — they're not being difficult, they're flagging a cost you can't see in the UI.",rel:["Refactoring","Legacy System","Bug vs. Feature vs. Enhancement","Package / Dependency"]},
+{t:"Refactoring",full:"Rewriting code without changing behavior",c:0,p:"Rewriting existing code to be cleaner or more maintainable, without changing what it actually does.",a:"Reorganizing the kitchen so cooking gets faster — the menu doesn't change.",m:"No new features, no visible change to the user — it's an investment in future speed, which makes it a hard thing to justify on a roadmap.",w:"If a sprint is spent \"refactoring,\" nothing will look different to stakeholders afterward — that's expected, not a failure to deliver.",rel:["Technical Debt","Regression","Function","Unit Testing"]},
+{t:"Regression",full:"Something that used to work, breaking again",c:0,p:"A bug where something that used to work breaks again, usually because of an unrelated change elsewhere.",a:"Fixing the sink and the shower suddenly stops working.",m:"The reason automated tests exist — to catch when fixing A accidentally breaks B.",w:"If a resolved issue reappears after an unrelated release, that's a regression — worth flagging specifically, since it usually points to a gap in test coverage.",rel:["Regression Testing","Bug vs. Feature vs. Enhancement","Test Coverage","Deployment / Release"]},
+{t:"Environment (Dev/Staging/Prod)",full:"Separate copies of a system, by stage",c:0,p:"Separate, identical-ish copies of a system used at different stages before real users see anything.",a:"A rehearsal stage, a dress rehearsal, and opening night.",m:"Dev is where developers experiment; Staging (or UAT) mirrors production for final testing; Production (\"prod\") is the real, live system users actually use.",w:"Critical distinction for testing — a bug you can't reproduce in \"prod\" might only exist in staging, or vice versa. Always confirm which environment a defect was found in.",rel:["Deployment / Release","UAT","CI/CD","Branch"]},
+{t:"Legacy System",full:"An older system still relied on",c:0,p:"An older system still in active use, often because it's too risky, costly, or poorly documented to replace.",a:"An old building everyone still uses but nobody has the original blueprints for.",m:"Not necessarily bad — often it's just old, undocumented, and nobody currently on the team fully understands every part of it.",w:"Explains why \"small\" change requests against legacy systems often get inflated estimates — the risk isn't the change, it's the unknowns around it.",rel:["Technical Debt","Data Migration","Monolith","Refactoring"]},
+{t:"Bug vs. Feature vs. Enhancement",full:"Three different reasons work gets requested",c:0,p:"A bug is something broken relative to spec; a feature is something new; an enhancement improves something that already works as intended.",a:"Broken vs. brand-new vs. nicer than before.",m:"The distinction matters for prioritization — bugs are usually treated as unplanned/urgent work, while features and enhancements compete for the same planned capacity.",w:"Miscategorizing a request (calling an enhancement a \"bug\" to jump the queue) is a common friction point between BAs and engineering — get the label right and the conversation gets easier.",rel:["Regression","Backlog","Acceptance Criteria","Defect Life Cycle"]},
+{t:"Deployment / Release",full:"Pushing code live vs. showing it to users",c:0,p:"The act of making a new version of software available — pushing code from built to live.",a:"Stocking the shelf (deploy) vs. unlocking the front door (release).",m:"Not the same as \"done\" — code can be deployed to an environment without being visible to real users yet, depending on release strategy.",w:"When you ask \"is it live,\" you're really asking about release, not deployment — the two can happen at different times.",rel:["CI/CD","Environment (Dev/Staging/Prod)","UAT","Git / Version Control"]},
+
+{t:"Cloud Computing",full:"Running software on someone else's servers",c:1,p:"Running software and storing data on someone else's servers, accessed over the internet, instead of your own local hardware.",a:"Renting electricity from the grid instead of running your own generator.",m:"Major providers: AWS, Microsoft Azure, Google Cloud. You pay for what you use, and capacity can grow or shrink on demand.",w:"Explains why IT can spin up new infrastructure in minutes instead of ordering physical servers — \"the cloud\" is really just someone else's data center, rented flexibly.",rel:["SaaS / PaaS / IaaS","Server","Serverless","Scalability"]},
+{t:"SaaS / PaaS / IaaS",full:"How much of the stack a vendor manages",c:1,p:"Three levels of how much of the technology stack a cloud provider manages for you.",a:"Dining out, renting a kitchen, or buying raw land to build on.",m:"SaaS (Software as a Service) — you just use the app, like Salesforce. PaaS (Platform as a Service) — you deploy your own code onto managed infrastructure. IaaS (Infrastructure as a Service) — you rent raw servers and manage everything yourself.",w:"Helps you scope vendor conversations correctly — a SaaS vendor owns far more responsibility (and risk) than an IaaS one.",rel:["Cloud Computing","Server","Serverless","Uptime / SLA"]},
+{t:"Server",full:"A computer that answers requests",c:1,p:"A computer (physical or virtual) whose job is to respond to requests from other computers.",a:"A waiter that exists only to take and fill requests.",m:"Could be one physical machine in a data center, or a \"virtual\" slice of a much bigger machine shared with others — from the outside, they behave the same.",w:"When something is \"down,\" it usually means a server (or the service running on it) stopped responding — worth asking which one, since systems rarely share a single point of failure by design.",rel:["Cloud Computing","Load Balancer","Downtime / Outage","Container (Docker)"]},
+{t:"Container (Docker)",full:"A self-contained package that runs anywhere",c:1,p:"A lightweight, self-contained package of an application plus everything it needs to run, so it behaves identically anywhere.",a:"A shipping container — packed once, runs the same on any ship or truck.",m:"Solves the classic \"it works on my machine\" problem — the container carries its own environment with it, rather than depending on whatever's installed on the host.",w:"Explains why deployments have gotten more reliable in recent years — much of the \"it broke in production but not in testing\" class of bug has shrunk.",rel:["Kubernetes","Server","Environment (Dev/Staging/Prod)","Serverless"]},
+{t:"Kubernetes",full:"Automatically managing containers at scale",c:1,p:"A system that automatically manages, scales, and restarts containers across many servers.",a:"An air-traffic controller for hundreds of containers.",m:"If a container crashes, Kubernetes restarts it automatically. If traffic spikes, it can spin up more copies without a human intervening.",w:"You'll hear this name a lot in infrastructure conversations — it's the reason many outages self-heal in seconds rather than requiring a 3am page.",rel:["Container (Docker)","Scalability","Load Balancer","Serverless"]},
+{t:"Uptime / SLA",full:"Service Level Agreement",c:1,p:"Uptime is the percentage of time a system is actually available; an SLA is the contractual promise about what that percentage must be.",a:"A written promise for how often the lights stay on.",m:"\"99.9% uptime\" sounds high but still allows about 8.7 hours of downtime a year. \"Five nines\" (99.999%) allows only around 5 minutes.",w:"When negotiating with a vendor, the SLA percentage — and what penalty applies if they miss it — is often more important than the feature list.",rel:["Downtime / Outage","Scalability","Latency","Cloud Computing"]},
+{t:"Latency",full:"The delay before a response comes back",c:1,p:"The delay between a request being made and a response coming back.",a:"The lag between flipping the switch and the light actually coming on.",m:"Measured in milliseconds. Caused by physical distance, network congestion, or slow processing — often a mix of all three.",w:"If users report something \"feels slow\" rather than \"broken,\" that's usually a latency issue, not a functional bug — worth routing to infrastructure, not the feature team.",rel:["Performance / Load Testing","CDN","Uptime / SLA","Downtime / Outage"]},
+{t:"Downtime / Outage",full:"When a system is unavailable",c:1,p:"A period where a system is unavailable or not functioning as expected.",a:"The \"Sorry, we're closed\" sign going up unexpectedly.",m:"Can be planned (scheduled maintenance) or unplanned (a failure). Most mature teams run a \"postmortem\" after unplanned outages to document root cause.",w:"If you're gathering requirements around reliability, ask about historical outage frequency and cause — it tells you far more than an uptime percentage alone.",rel:["Uptime / SLA","Server","Replication","Backup & Restore"]},
+{t:"Firewall",full:"A filter for network traffic",c:1,p:"A security barrier that filters network traffic, allowing only approved connections in or out.",a:"A bouncer checking every connection at the door.",m:"Sits at the edge of a network (or around individual services) deciding, connection by connection, what's allowed through.",w:"Relevant when an integration \"can't connect\" — a firewall rule blocking the specific port or address is one of the most common culprits.",rel:["VPN","API Gateway","Authentication vs. Authorization","Encryption"]},
+{t:"VPN",full:"Virtual Private Network",c:1,p:"An encrypted tunnel that lets a device securely access a private network over the public internet.",a:"A private tunnel that makes your laptop act like it's inside the office.",m:"Makes a remote laptop behave, from the network's point of view, as if it were physically inside the office.",w:"Explains why some internal tools are only reachable \"on VPN\" — it's a deliberate access boundary, not a technical limitation to work around.",rel:["Firewall","Encryption","Authentication vs. Authorization","Server"]},
+{t:"CDN",full:"Content Delivery Network",c:1,p:"A network of servers spread across the world that cache and serve content from the location nearest the user.",a:"Local warehouses so every customer gets fast delivery.",m:"Instead of every request traveling to one central server, a CDN serves a cached copy from a nearby node — much faster, especially for images, video, and static files.",w:"Explains why a website can load fast for someone in Singapore and someone in London simultaneously, without one central server buckling under global traffic.",rel:["Latency","Server","Cloud Computing","Scalability"]},
+{t:"Authentication vs. Authorization",full:"Who you are vs. what you're allowed to do",c:1,p:"Authentication verifies who you are (logging in); authorization determines what you're allowed to do once you're in — which pages, data, or actions you can access.",a:"Showing your ID to get in vs. what your keycard actually unlocks inside.",m:"A classic mix-up: \"the login is broken\" (authentication) is a completely different problem from \"this user can see data they shouldn't\" (authorization) — they fail in different systems and need different fixes.",w:"When writing or testing access-control requirements, always specify both separately — \"only managers can approve requests\" is an authorization rule, entirely independent of how a manager logs in.",rel:["Role-Based Access Control (RBAC)","Encryption","Firewall","PII"]},
+{t:"Encryption",full:"Scrambling data so only authorized parties can read it",c:1,p:"Converting data into a scrambled form that's unreadable without the right key, protecting it from anyone who intercepts or steals it.",a:"A locked box only the key-holder can open.",m:"\"In transit\" encryption protects data while it's traveling over a network (like HTTPS); \"at rest\" encryption protects data while it's stored on disk. A system can have one without the other, which matters for compliance.",w:"When a requirement says \"sensitive data must be encrypted,\" always clarify whether that means in transit, at rest, or both — they're separate technical implementations, and \"encrypted\" alone is an incomplete requirement.",rel:["Authentication vs. Authorization","PII","VPN","Firewall"]},
+{t:"Role-Based Access Control (RBAC)",full:"Permissions assigned by role, not by person",c:1,p:"An access-control model where permissions are assigned to roles — Admin, Manager, Viewer — rather than to individual people, and users get access by being assigned a role.",a:"Handing out keycards by job title, not by individual person.",m:"Makes access far easier to manage at scale — promote someone to Manager and they instantly inherit everything a Manager can do, rather than manually granting a dozen individual permissions.",w:"When testing access control, the efficient approach is testing each role's boundaries once, rather than testing every individual user — the role, not the person, is what actually determines behavior.",rel:["Authentication vs. Authorization","PII","Data Governance","Encryption"]},
+
+{t:"Database (SQL vs. NoSQL)",full:"Structured vs. flexible data storage",c:2,p:"A structured system for storing and retrieving data — SQL databases organize it into strict tables; NoSQL databases allow more flexible, less rigid structures.",a:"A tidy spreadsheet vs. a flexible pile of labeled folders.",m:"SQL (e.g. PostgreSQL, Oracle) is ideal when relationships between data matter and structure won't change often. NoSQL (e.g. MongoDB) suits data whose shape varies or evolves quickly.",w:"When a request is \"just add a new field,\" whether that's trivial or a real migration project often comes down to which type of database is underneath.",rel:["Data Model / Schema","Query","Primary Key","Structured vs. Unstructured Data"]},
+{t:"Data Warehouse",full:"A central repository built for analysis",c:2,p:"A large, central repository built specifically for analysis and reporting, pulling data together from many source systems.",a:"A library organized for research, not for daily errands.",m:"Unlike an operational database (built for day-to-day transactions), a warehouse is optimized for big, complex queries across historical data — dashboards, trend analysis, reporting.",w:"If you're asked to define reporting requirements, this is usually where the numbers will actually come from — not the live production system.",rel:["Data Mart","ETL / ELT","OLTP vs. OLAP","Star Schema"]},
+{t:"ETL / ELT",full:"Extract, Transform, Load (or Load, then Transform)",c:2,p:"The process of pulling data out of source systems, reshaping it, and loading it somewhere it can be analyzed.",a:"Harvest, clean, and stock the pantry before you cook.",m:"ETL transforms data before loading it into the warehouse; ELT loads raw data first and transforms it afterward, taking advantage of modern warehouses' processing power.",w:"When a report shows stale or wrong-looking numbers, the ETL/ELT pipeline schedule and logic is often where to look first — not the report tool itself.",rel:["Data Pipeline","Data Warehouse","Data Mapping","Data Quality"]},
+{t:"Data Pipeline",full:"Automated movement of data between systems",c:2,p:"An automated sequence of steps that moves data from one system to another, reliably and on a schedule.",a:"A conveyor belt carrying data from source to shelf on a schedule.",m:"Pipelines can run every few minutes (near real-time) or once a day (batch) — the choice trades freshness against cost and complexity.",w:"If stakeholders want \"real-time\" reporting, ask what pipeline currently feeds that data — real-time is a meaningfully bigger ask than daily batch, and should be scoped (and costed) as one.",rel:["ETL / ELT","Data Warehouse","Data Lineage","Data Migration"]},
+{t:"Machine Learning",full:"Software that learns patterns from data",c:2,p:"Software that learns patterns from data, rather than being explicitly programmed with fixed rules for every scenario.",a:"Learning to recognize cats from thousands of photos, not from a rulebook.",m:"Instead of writing \"if X then Y\" for every case, you show the system many examples and it learns the pattern itself — which is why it can handle cases it's never explicitly seen.",w:"Useful for distinguishing genuinely \"intelligent\" automation (which can generalize and improve with more data) from simple rules-based automation (which only does exactly what it's told, every time).",rel:["Algorithm","Structured vs. Unstructured Data","Data Quality","Data Pipeline"]},
+{t:"Algorithm",full:"A step-by-step procedure",c:2,p:"A defined, step-by-step procedure for solving a problem or completing a task.",a:"A recipe: precise steps that turn inputs into a result.",m:"Every piece of software is built from algorithms, whether it's sorting a list or deciding what content to show a user — \"the algorithm\" isn't one mysterious thing, it's shorthand for whichever specific logic is running.",w:"When someone says \"that's just how the algorithm works,\" it's worth asking which specific logic they mean — it's rarely as immutable or mysterious as the phrase implies.",rel:["Machine Learning","Function","Query","Index (Database)"]},
+{t:"Data Lake",full:"Raw data stored in its original format",c:2,p:"A large storage pool that holds raw data in its original format, structured or not, until someone needs it.",a:"A giant garage where everything's dumped raw until someone needs it.",m:"Unlike a warehouse (structured, ready for analysis), a lake stores everything cheaply now and figures out structure later — flexible, but easier to end up messy and hard to query.",w:"If data \"exists somewhere\" but nobody can easily report on it, it's often sitting unstructured in a lake, waiting for a pipeline to shape it into something usable.",rel:["Data Warehouse","Structured vs. Unstructured Data","Data Pipeline","Data Governance"]},
+{t:"Data Model / Schema",full:"The blueprint that defines what data exists",c:2,p:"The blueprint that defines what data exists, what type it is, and how different pieces of data relate to each other.",a:"The architect's blueprint for what data can exist and how it connects.",m:"Changing a schema (adding a field, changing a data type) can ripple through every system and report that depends on it — it's rarely a one-line change.",w:"When scoping a \"simple\" data change, always ask what schema it touches — that's usually the real driver of effort and risk, not the visible feature.",rel:["Database (SQL vs. NoSQL)","Primary Key","Foreign Key","Normalization"]},
+{t:"Structured vs. Unstructured Data",full:"Rows and columns vs. everything else",c:2,p:"Structured data fits neatly into rows and columns, like a spreadsheet; unstructured data doesn't — think emails, PDFs, images, free-text notes.",a:"A spreadsheet vs. a shoebox of receipts and photos.",m:"Structured data is easy to query and report on directly. Unstructured data usually needs extra processing (or AI) before it can be analyzed at scale.",w:"Explains why \"just analyze all our customer emails\" is a much bigger project than \"just analyze our sales table\" — the data shape drives the effort, not just the volume.",rel:["Data Lake","Data Warehouse","Machine Learning","Metadata"]},
+{t:"Data Governance",full:"Rules about who owns and can trust data",c:2,p:"The rules, ownership, and processes that determine who can access, change, or rely on a given piece of data.",a:"The rulebook for who owns, defines, and can trust each field.",m:"Covers things like: who owns this field, what does it actually mean, who's allowed to see it, and how do we know it's still accurate.",w:"Central to a BA's job whenever two teams disagree about \"the real number\" — that's usually a governance gap (different definitions or owners), not a data quality bug.",rel:["Master Data","Data Quality","Metadata","PII"]},
+{t:"Master Data",full:"The authoritative version of core entities",c:2,p:"The core, authoritative version of key business entities — customers, products, accounts — that many systems reference.",a:"The single official spelling of a customer's name everyone must use.",m:"When master data is inconsistent across systems (a customer's address differs in three places), every report and process built on top of it inherits that inconsistency.",w:"Often the real root cause behind \"the numbers don't match\" complaints — worth tracing back to which system is supposed to be the master before assuming it's a calculation error.",rel:["Data Governance","Data Quality","Referential Integrity","Data Mapping"]},
+{t:"Dashboard / BI",full:"Business Intelligence",c:2,p:"Tools and visual reports that turn raw data into something people can actually read and act on.",a:"A car dashboard turning raw engine data into readable dials.",m:"BI tools (Tableau, Power BI, Looker) sit on top of a data warehouse, letting non-technical users explore and visualize data without writing queries themselves.",w:"When defining reporting requirements, be specific about the underlying metric definitions — a dashboard is only as trustworthy as the data governance behind it.",rel:["Data Warehouse","Query","Data Quality","Metadata"]},
+{t:"Query",full:"A request for specific data",c:2,p:"A request for specific data from a database, written in a language the database understands, usually SQL.",a:"Asking the database a precise question and getting matching rows back.",m:"Ranges from simple (\"give me all customers in France\") to highly complex (joining a dozen tables with conditional logic) — complexity is a major driver of how long a report takes to build.",w:"If a \"simple\" report request actually requires a complex query across many systems, that's worth surfacing early — it changes the estimate significantly.",rel:["JOIN","Index (Database)","Stored Procedure","View (Database)"]},
+{t:"Metadata",full:"Data about data",c:2,p:"Data about data — labels describing what a piece of data is, where it came from, and what it means.",a:"The label on a jar telling you what's inside and when it was made.",m:"Examples: a field's name, its data type, when it was last updated, who owns it. Good metadata is what makes a data catalog searchable and trustworthy.",w:"When data feels \"undocumented,\" it usually means the metadata is missing or stale — a foundational (if unglamorous) gap that undermines every downstream analysis.",rel:["Data Governance","Data Lineage","Data Model / Schema","Master Data"]},
+{t:"API Integration",full:"An ongoing, automated connection between systems",c:2,p:"Connecting two systems so they can automatically exchange data, using one system's API rather than manual export/import.",a:"A permanent phone line between two systems, always kept in sync.",m:"Distinct from a one-time data migration — an integration is an ongoing, automated connection that keeps both systems in sync.",w:"When scoping \"connect System A to System B,\" clarify whether it's a one-time transfer or an ongoing integration — the effort and design differ enormously.",rel:["API","Data Migration","API Gateway","SDK"]},
+{t:"Primary Key",full:"The field that uniquely identifies a row",c:2,p:"A field (or combination of fields) that uniquely identifies each row in a table — no two rows can ever share one, and it can never be blank.",a:"A passport number — unique to exactly one record, never blank.",m:"Usually a simple ID number, assigned automatically when a row is created. Every other table that needs to reference that row does so by storing its primary key.",w:"If two records ever appear to be \"the same\" but behave differently, checking whether they actually have different primary keys is a good first step — visually identical data can still be two separate rows.",rel:["Foreign Key","Referential Integrity","Index (Database)","Data Model / Schema"]},
+{t:"Foreign Key",full:"A field that links to another table's primary key",c:2,p:"A field in one table that stores the primary key of a row in another table, creating a link between the two.",a:"A record that references someone's passport number instead of copying their whole file.",m:"This is how relational databases represent relationships — an \"order\" row doesn't repeat all of a customer's details, it just stores that customer's primary key as a foreign key.",w:"Explains why deleting a record can be blocked or cause cascading effects elsewhere — if other rows hold a foreign key pointing to it, the database has to decide what happens to those too.",rel:["Primary Key","Referential Integrity","JOIN","Normalization"]},
+{t:"Referential Integrity",full:"The rule that foreign keys must point somewhere real",c:2,p:"A database rule ensuring a foreign key always points to a record that actually exists — never a dead reference.",a:"The rule that no ticket can point to a flight that doesn't exist.",m:"Enforced by the database itself in well-designed systems, which is why you often can't delete a \"parent\" record (like a customer) while related \"child\" records (like their orders) still reference it.",w:"When a migration or bulk data load throws unexpected errors on delete or insert, referential integrity rules are frequently the reason — worth checking before assuming it's a bug.",rel:["Foreign Key","Primary Key","Data Quality","Transaction / Commit / Rollback"]},
+{t:"Index (Database)",full:"A shortcut that speeds up searches",c:2,p:"A lookup structure built on a table that dramatically speeds up searches, the same way a book's index lets you skip straight to a page instead of reading cover to cover.",a:"A book's index — jump straight to the page instead of reading every one.",m:"Comes at a cost: indexes take up extra storage and slightly slow down writes (since the index has to update too), so they're added deliberately on fields that get searched often, not on everything.",w:"If a specific search or report is mysteriously slow while everything else is fine, ask whether the field being searched on is indexed — a missing index is one of the most common, and cheapest to fix, causes.",rel:["Query","Primary Key","Performance / Load Testing","JOIN"]},
+{t:"Normalization",full:"Splitting data to eliminate duplication",c:2,p:"Organizing a database by splitting data across multiple related tables so no piece of information is stored more than once.",a:"Storing an address once and pointing to it, never rewriting it everywhere.",m:"Example: instead of repeating a customer's address on every one of their orders, the address lives once in a Customers table, and each order just links to it via a foreign key.",w:"Explains why fixing a customer's address in one place updates it everywhere instantly — the data was never duplicated to begin with, so there's nothing else to keep in sync.",rel:["Denormalization","Foreign Key","Data Model / Schema","JOIN"]},
+{t:"Denormalization",full:"Deliberately duplicating data for speed",c:2,p:"The opposite of normalization — deliberately duplicating data across tables so a query doesn't have to gather it from many places, at the cost of extra storage and more complex updates.",a:"Photocopying the address onto every order so reports read faster.",m:"Common in data warehouses and reporting systems, where fast reads matter more than avoiding duplication — the tradeoff normalization makes is flipped on purpose.",w:"If a reporting table looks \"messier\" or more repetitive than the source system, that's often intentional denormalization for speed, not a data quality problem.",rel:["Normalization","Star Schema","Data Warehouse","Fact Table"]},
+{t:"OLTP vs. OLAP",full:"Transactional systems vs. analytical systems",c:2,p:"OLTP systems handle fast, everyday transactions (placing an order, updating a balance); OLAP systems are built for complex analysis over large volumes of historical data.",a:"A cash register vs. the end-of-year sales analysis.",m:"OLTP databases are optimized for many small, quick reads and writes. OLAP systems (like a data warehouse) are optimized for big, slow-moving queries across millions of rows at once.",w:"Explains why running a huge report directly against the live production system is risky — that system (OLTP) wasn't built for it, which is exactly why data warehouses (OLAP) exist.",rel:["Data Warehouse","Star Schema","Query","Database (SQL vs. NoSQL)"]},
+{t:"Star Schema",full:"A data warehouse's typical table layout",c:2,p:"A data warehouse design with one central \"fact\" table surrounded by several \"dimension\" tables it links out to — visually resembling a star.",a:"A sun (the facts) with dimension 'planets' orbiting it.",m:"Deliberately denormalized and simple by design, so reporting tools can query it fast without complicated joins across dozens of tables.",w:"If you're defining a new report's data requirements, understanding whether it sits in a star schema tells you roughly how easy (or hard) that report will be to build.",rel:["Fact Table","Dimension Table","Data Warehouse","Denormalization"]},
+{t:"Fact Table",full:"The table holding the actual measurements",c:2,p:"The central table in a star schema, holding the measurable events — transaction amounts, quantities, counts — that reports are actually built to analyze.",a:"The scoreboard — all the numbers, keyed out to the details.",m:"Typically very long (millions of rows) but narrow — mostly numbers and foreign keys pointing out to dimension tables for context.",w:"When someone asks \"what's the grain of this fact table\" (daily total? per-transaction?), that question determines what level of detail your report can actually show — worth understanding before promising a report design.",rel:["Dimension Table","Star Schema","Data Warehouse","OLTP vs. OLAP"]},
+{t:"Dimension Table",full:"The table holding descriptive context",c:2,p:"A table holding descriptive, mostly-unchanging context — customer, product, date, region — that a fact table references to give its numbers meaning.",a:"The 'who, what, when, where' context around each number.",m:"Answers the \"who, what, when, where\" questions around a fact. A sales fact table paired with Customer, Product, and Date dimension tables lets you slice revenue any of those ways.",w:"When a stakeholder wants to \"slice the report by X,\" X almost always needs to exist as its own dimension — if it doesn't yet, that's new scope, not a config change.",rel:["Fact Table","Star Schema","Slowly Changing Dimension (SCD)","Data Warehouse"]},
+{t:"Data Mart",full:"A smaller, focused slice of a data warehouse",c:2,p:"A smaller, focused subset of a data warehouse, built for one department or one specific reporting need rather than the whole business.",a:"A department's private mini-library carved from the big one.",m:"Faster to build and query than the full warehouse, since it only contains what one audience actually needs — at the cost of yet another place data has to be kept consistent.",w:"If finance and sales each swear by \"the real numbers\" from their own data mart and they disagree, that's a sign the two marts diverged from the source warehouse at some point — worth tracing back.",rel:["Data Warehouse","Star Schema","Data Governance","Dashboard / BI"]},
+{t:"Stored Procedure",full:"Saved SQL logic that lives in the database",c:2,p:"A saved, reusable block of SQL logic stored inside the database itself, which can be run by calling its name instead of rewriting the whole query each time.",a:"A saved macro living inside the database, run by name.",m:"Runs directly on the database server, which can make it faster than sending the same logic from the application every time — but it also means business logic can end up hidden inside the database, invisible to anyone just reading the application code.",w:"Worth asking about explicitly when tracing how a number gets calculated — the real logic may live in a stored procedure, not in the application code a developer would normally point you to.",rel:["Query","JOIN","Data Validation","Database (SQL vs. NoSQL)"]},
+{t:"JOIN",full:"Combining rows from multiple tables",c:2,p:"A SQL operation that combines rows from two or more tables based on a shared column between them, like a foreign key matching a primary key.",a:"Stapling two lists together on a column they share.",m:"The mechanism that makes normalization practical — data can live in separate, clean tables and still be pulled back together into one combined view whenever it's needed.",w:"If a report is slow or a query \"can't find\" data that you know exists, a missing or incorrect join between tables is one of the most common root causes.",rel:["Primary Key","Foreign Key","Query","Normalization"]},
+{t:"Data Lineage",full:"The traceable path data took to get here",c:2,p:"The traceable record of where a piece of data originally came from, and every transformation it passed through on the way to where it is now.",a:"A receipt trail showing every step a number took to get here.",m:"Good lineage lets you answer \"where did this number come from\" precisely — which source system, which pipeline step, which transformation logic — rather than just trusting the final result.",w:"Essential when a number is challenged (\"that can't be right\") — lineage is what lets you actually trace the discrepancy back to its source instead of guessing.",rel:["Data Pipeline","ETL / ELT","Data Governance","Metadata"]},
+{t:"Data Quality",full:"How trustworthy a dataset actually is",c:2,p:"How accurate, complete, consistent, and up to date a dataset actually is — the difference between data that exists and data you can actually rely on.",a:"The difference between data that exists and data you'd actually bet on.",m:"Commonly assessed across dimensions like completeness (are fields populated?), accuracy (is the value correct?), consistency (does it agree across systems?), and timeliness (is it current?).",w:"When defining requirements for a new report or migration, explicitly calling out data quality expectations up front avoids a painful conversation later about numbers nobody trusts.",rel:["Data Validation","Data Profiling","Data Governance","Master Data"]},
+{t:"Data Validation",full:"Checking data meets the rules before it's accepted",c:2,p:"The process of checking that data meets defined rules — correct format, valid range, required fields present — before it's accepted into a system or used downstream.",a:"A form that refuses a phone number with letters in it.",m:"Can happen at entry (a form won't accept an invalid email), on import (a migration script rejects malformed rows), or on a schedule (a nightly job flags anomalies).",w:"A core part of testing any data-heavy feature: writing test cases for what SHOULD be rejected is just as important as testing what should be accepted.",rel:["Data Quality","Data Profiling","Boundary Value Analysis","Data Mapping"]},
+{t:"Data Profiling",full:"Studying a dataset before you build on it",c:2,p:"Analyzing a dataset upfront — value ranges, missing fields, duplicate rates, unexpected formats — to understand its real shape before building a pipeline, migration, or report on top of it.",a:"X-raying a dataset to see its true shape before you build on it.",m:"Frequently reveals that a source system's data is messier than assumed: dates stored as text, the same customer entered three different ways, fields nobody's populated in years.",w:"Doing this early on a new project surfaces expensive surprises before they're baked into a design — skipping it is a common reason migrations run over budget.",rel:["Data Quality","Data Validation","Data Migration","Data Mapping"]},
+{t:"Slowly Changing Dimension (SCD)",full:"Tracking how a dimension's values change over time",c:2,p:"A technique for handling a dimension's values changing over time — like a customer moving address — without losing the history of what used to be true.",a:"Keeping every old address on file, each stamped with its date range.",m:"A common approach (\"Type 2\") keeps the old row as-is and adds a new row for the updated value, each tagged with an effective date range, so historical reports still reflect what was true at the time.",w:"Relevant whenever a report needs to reflect \"what was true then\" rather than \"what's true now\" — like showing last year's sales attributed to the region a customer lived in last year, not today.",rel:["Dimension Table","Data Warehouse","Data Lineage","Fact Table"]},
+{t:"Data Mapping",full:"Defining how source fields become target fields",c:2,p:"Defining exactly how each field in a source system corresponds to a field in a target system — same name, different name, combined, split, or transformed along the way.",a:"A translation dictionary pairing every old field to its new home.",m:"The core deliverable of any migration or integration project: a document or spreadsheet pairing every source field with its destination and the transformation rule between them.",w:"Writing and validating the data mapping is classic BA territory — it's usually the single artifact that prevents \"we migrated the data but it doesn't look right\" after go-live.",rel:["Data Migration","ETL / ELT","Data Validation","Data Quality"]},
+{t:"Data Migration",full:"A one-time move of data to a new system",c:2,p:"Moving data from one system to another, typically as a one-time project tied to a system replacement or upgrade — distinct from an ongoing integration that keeps two systems continuously in sync.",a:"Moving house — pack, relabel, unpack, then check nothing broke.",m:"Usually follows a pattern: extract from the old system, transform it to fit the new system's structure (via the data mapping), then load it in — and validate the results before the old system is switched off.",w:"The validation step is where testers and BAs earn their keep — reconciling record counts and spot-checking values between old and new systems before anyone trusts the new one with live use.",rel:["Data Mapping","Data Validation","ETL / ELT","Legacy System"]},
+{t:"ACID Properties",full:"Atomicity, Consistency, Isolation, Durability",c:2,p:"Four guarantees a database transaction makes: it fully happens or not at all (Atomicity), it leaves data in a valid state (Consistency), simultaneous transactions don't interfere with each other (Isolation), and once confirmed, it survives a crash (Durability).",a:"A bank transfer that never leaves money half-moved between accounts.",m:"The reason you can trust that a bank transfer either fully completes or doesn't happen at all — never half-done, with money vanishing from one account but not appearing in the other.",w:"When testing anything involving money, inventory, or any value that must never be \"partially\" updated, ACID compliance is what you're implicitly relying on — worth confirming explicitly for anything in that category.",rel:["Transaction / Commit / Rollback","Referential Integrity","Data Quality","Replication"]},
+{t:"Transaction / Commit / Rollback",full:"An all-or-nothing group of database operations",c:2,p:"A transaction is a group of database operations treated as a single, all-or-nothing unit; committing makes it permanent, rolling back undoes it entirely if something goes wrong partway through.",a:"An all-or-nothing move you can fully undo if it half-fails.",m:"Example: transferring money is really two operations (debit one account, credit another) wrapped in one transaction — if the credit fails, the whole transaction rolls back so the debit never sticks either.",w:"If a test needs to leave the database exactly as it found it, wrapping the test steps in a transaction and rolling back afterward is the clean way to do it — no manual cleanup, no leftover test data.",rel:["ACID Properties","CRUD","Stored Procedure","Backup & Restore"]},
+{t:"CRUD",full:"Create, Read, Update, Delete",c:2,p:"The four basic operations any system performs on data — creating new records, reading existing ones, updating them, and deleting them.",a:"The four verbs behind almost any screen: add, view, edit, delete.",m:"Nearly every feature maps to some combination of these four. A user profile page, for instance, is really just CRUD on a Users table with a UI wrapped around it.",w:"A useful mental checklist when reviewing test coverage for any data-driven feature — for each entity, have all four operations actually been tested, not just Create?",rel:["Query","Database (SQL vs. NoSQL)","Test Case","API"]},
+{t:"View (Database)",full:"A saved, virtual table defined by a query",c:2,p:"A saved, virtual table defined by a query — it looks and behaves like a table when you read from it, but doesn't store data of its own.",a:"A saved question that reads like a table but stores nothing itself.",m:"Often used to present a simplified, combined, or filtered version of underlying tables — hiding complexity (a messy multi-table join) behind something that reads like one simple table.",w:"If a report or export references a \"view\" rather than a real table, remember it reflects whatever the underlying tables contain right now — it's a live lens, not a saved snapshot.",rel:["Query","JOIN","Stored Procedure","Metadata"]},
+{t:"Backup & Restore",full:"Saving and recovering a database's state",c:2,p:"A backup is a saved copy of a database at a point in time; a restore returns the database to that exact saved state.",a:"A save point you can reload after a disaster.",m:"Backups run on a schedule — nightly, hourly — and are the safety net against data loss from a bad deployment, corruption, or accidental deletion.",w:"Before any risky migration or bulk data change, confirming a recent backup exists — and that restoring from it has actually been tested — is a basic but frequently skipped safeguard.",rel:["Replication","Data Migration","Downtime / Outage","Transaction / Commit / Rollback"]},
+{t:"Replication",full:"Keeping copies of a database in sync",c:2,p:"Automatically copying a database's data to one or more additional servers, kept continuously in sync with the original.",a:"Keeping synced copies so one server failure doesn't lose everything.",m:"Used for both reliability (if the primary server fails, a replica can take over) and performance (spreading read traffic across multiple copies instead of hammering one server).",w:"Explains why a value updated in one place can briefly appear \"wrong\" when read from another system a second later — replication usually isn't instantaneous, and that lag is called \"replication delay.\"",rel:["Backup & Restore","Scalability","Downtime / Outage","Latency"]},
+{t:"PII",full:"Personally Identifiable Information",c:2,p:"Any data that could identify a specific individual — name, email, government ID, phone number, and often less obvious things like an IP address or a device ID.",a:"Any data that points a finger at one specific person.",m:"Subject to specific handling rules under regulations like GDPR and CCPA — how it's stored, who can access it, how long it's kept, and what happens if it's requested to be deleted.",w:"When scoping any new data field or report, flagging whether it touches PII early determines a lot: extra approval steps, masking requirements, retention limits — much cheaper to catch at requirements stage than after launch.",rel:["Encryption","Data Governance","Role-Based Access Control (RBAC)","Authentication vs. Authorization"]},
+
+{t:"Test Case",full:"A documented scenario with an expected result",c:3,p:"A documented scenario — specific steps, specific input, and the specific expected result — used to verify one particular piece of behavior.",a:"A single scripted experiment with one clearly expected outcome.",m:"The atomic unit of testing: each test case checks exactly one thing, so when one fails, you know precisely what broke instead of just \"something's wrong.\"",w:"Writing good test cases directly off the acceptance criteria is how requirements actually get verified — vague acceptance criteria produces vague, unreliable test cases.",rel:["Test Plan","Acceptance Criteria","Traceability Matrix","Test Data"]},
+{t:"Test Plan",full:"The document defining a testing effort's scope",c:3,p:"The document defining the scope, approach, resources, and schedule for a testing effort — what will be tested, what won't, and how.",a:"The battle map: what gets tested, what doesn't, and how.",m:"Explicitly states what's out of scope as much as what's in — a well-written test plan prevents the \"wait, was anyone testing that?\" conversation after a defect slips through.",w:"Worth reviewing early, not after testing starts — it's the moment to flag if a business-critical scenario has been left out of scope.",rel:["Test Case","Test Coverage","Traceability Matrix","Regression Testing"]},
+{t:"Unit Testing",full:"Testing one small piece of code in isolation",c:3,p:"Testing the smallest possible piece of code — usually a single function — on its own, isolated from the rest of the system.",a:"Checking each Lego brick before building anything with it.",m:"Written and run by developers, usually automatically on every code change, catching a huge class of bugs before the code ever reaches a human tester.",w:"Explains why some bugs \"should have been caught early\" — a gap in unit test coverage is often the reason a basic error made it all the way to UAT.",rel:["Integration Testing","Regression Testing","Function","Test Coverage"]},
+{t:"Integration Testing",full:"Testing that components work together correctly",c:3,p:"Testing that multiple components — two services, a system and a database, an app and a third-party API — work correctly together, not just individually.",a:"Checking that two Lego bricks actually snap together.",m:"Catches an entire category of bugs that unit testing structurally can't: each piece working perfectly alone, but breaking the moment they have to talk to each other.",w:"If a feature \"worked in isolation\" but breaks in the full flow, that's precisely the gap integration testing exists to catch — worth flagging if it isn't part of the test plan.",rel:["Unit Testing","End-to-End (E2E) Testing","API Testing","Regression Testing"]},
+{t:"End-to-End (E2E) Testing",full:"Testing a full workflow from start to finish",c:3,p:"Testing a complete user workflow from start to finish, across the whole system, the way a real user would actually experience it.",a:"Walking the entire customer journey, front door to checkout.",m:"The slowest and most realistic layer of testing — where unit tests check one function and integration tests check two components, E2E testing walks the entire journey (e.g. \"log in, add to cart, check out, receive confirmation\").",w:"The layer most likely to surface a UAT-style issue early — reserving your most business-critical user journeys for E2E coverage is usually worth the extra setup effort.",rel:["Integration Testing","UAT","Test Case","Automation Testing vs. Manual Testing"]},
+{t:"Regression Testing",full:"Re-checking that old fixes still hold",c:3,p:"Re-running existing tests after a change to confirm that nothing which used to work has broken as a side effect.",a:"Re-checking the old rooms after renovating one.",m:"Ideally automated, since re-running the full test suite by hand after every change doesn't scale — this is a major reason CI pipelines exist.",w:"If a previously-fixed issue reappears after an unrelated release, ask whether regression testing actually covered that area — it usually points to a gap in the automated suite, not carelessness.",rel:["Regression","Smoke Testing","Test Coverage","CI/CD"]},
+{t:"Smoke Testing",full:"A quick pass to confirm the build isn't broken",c:3,p:"A quick, shallow pass over the most critical functions to confirm a new build is stable enough to bother testing further.",a:"Turning it on to see if it catches fire before testing anything deeper.",m:"Named after the old hardware check of turning on a device and watching for smoke — if the basics don't work at all, there's no point running the full, detailed test suite yet.",w:"If a build fails smoke testing, that's a signal to send it straight back rather than start detailed UAT — a fast, cheap gate that saves everyone's time.",rel:["Sanity Testing","Regression Testing","Test Plan","Deployment / Release"]},
+{t:"Sanity Testing",full:"A narrow check after a small fix",c:3,p:"A narrow, targeted test after a small change or bug fix, focused only on the specific area affected — not a full regression pass.",a:"A quick spot-check on just the one thing you touched.",m:"Faster and shallower than full regression testing; the tradeoff is that it only gives confidence about the specific area touched, not the whole system.",w:"The right tool for verifying a hotfix quickly, but don't let it substitute for full regression testing before a major release — they answer different questions.",rel:["Smoke Testing","Regression Testing","Defect Life Cycle","Test Case"]},
+{t:"Exploratory Testing",full:"Unscripted testing guided by the tester's judgment",c:3,p:"Unscripted testing where the tester actively explores the application in real time, guided by experience and curiosity rather than a predefined script.",a:"Wandering the app like a curious tourist with no fixed map.",m:"Deliberately complements scripted test cases — scripts catch what you thought to check for, exploratory testing is what catches the things nobody thought to write down.",w:"Some of the best-found, hardest-to-predict defects come from exploratory sessions — worth budgeting time for it even in a heavily scripted test plan.",rel:["Test Case","Automation Testing vs. Manual Testing","Defect Life Cycle","Positive vs. Negative Testing"]},
+{t:"API Testing",full:"Testing the API directly, no UI involved",c:3,p:"Testing a system's API directly — sending requests and checking responses — without going through the visual user interface at all.",a:"Testing the plumbing directly, skipping the faucet handle.",m:"Faster and more stable than testing through the UI, since it skips rendering, styling, and browser quirks entirely — tools like Postman are built specifically for this.",w:"A good API test can catch a broken backend before it ever reaches a screen — worth advocating for on any feature with a meaningful API layer, since it's usually cheaper to write and faster to run than the equivalent UI test.",rel:["API","Integration Testing","Automation Testing vs. Manual Testing","Positive vs. Negative Testing"]},
+{t:"Performance / Load Testing",full:"Testing how a system holds up under traffic",c:3,p:"Testing how a system behaves under expected (or higher-than-expected) traffic and data volume, rather than just checking whether it works correctly for one user at a time.",a:"A stress test on a bridge with hundreds of trucks at once.",m:"Load testing simulates many simultaneous users to find the point where response times degrade or the system fails; a related test, stress testing, deliberately pushes past that point to see how — and whether — it fails gracefully.",w:"Worth requesting explicitly before any big launch or campaign — functional testing confirms a feature works; only performance testing confirms it'll survive real-world traffic.",rel:["Scalability","Latency","Test Plan","Uptime / SLA"]},
+{t:"Positive vs. Negative Testing",full:"Valid input vs. invalid input",c:3,p:"Positive testing checks that the system behaves correctly with valid input; negative testing checks that it fails safely and sensibly with invalid input.",a:"Does it work with good input — and fail gracefully with bad?",m:"Example: entering a valid email is positive testing; entering no @ symbol, an empty field, or 500 characters of gibberish is negative testing — checking the system rejects it gracefully instead of crashing.",w:"A test plan that's all positive testing will look complete while missing most of where real bugs hide — always ask what negative cases were covered before considering test coverage adequate.",rel:["Boundary Value Analysis","Test Case","Data Validation","Exploratory Testing"]},
+{t:"Automation Testing vs. Manual Testing",full:"Scripted tools vs. a human running the steps",c:3,p:"Automation testing uses scripts and tools to run tests without a human clicking through each step; manual testing is a person executing the steps by hand.",a:"A robot re-running the same checks vs. a human using judgment.",m:"Automation excels at fast, repeatable checks (regression, smoke tests) run constantly; manual testing excels at anything requiring human judgment, like exploratory testing or evaluating whether something \"feels\" right.",w:"When someone proposes automating a test, a useful question is whether it'll run often enough to be worth the setup cost — automation pays off on repetition, not on a one-off check.",rel:["Regression Testing","API Testing","Test Coverage","Exploratory Testing"]},
+{t:"Test Data",full:"The specific inputs chosen to run a test",c:3,p:"The specific input values used to execute a test, deliberately chosen to exercise a particular scenario — a valid case, an edge case, or an invalid one.",a:"The specific props chosen to stage each test scene.",m:"Good test data is designed on purpose, not just \"whatever's already in the system\" — realistic-looking data can still miss the exact edge cases a test is meant to catch.",w:"When a defect can't be reproduced, mismatched or stale test data between environments is a frequent, easy-to-overlook culprit — always confirm what data was actually used.",rel:["Test Case","Boundary Value Analysis","Data Validation","Environment (Dev/Staging/Prod)"]},
+{t:"Boundary Value Analysis",full:"Testing at the edges of a valid range",c:3,p:"A test design technique focused on the edges of an accepted range — just inside the limit, right at the limit, and just outside it — since that's where bugs most often hide.",a:"Testing right at the fence line — 17, 18, 65, 66 — not just the middle.",m:"Example: for a field accepting ages 18–65, test 17, 18, 65, and 66 specifically, not just a \"normal\" value like 30 — off-by-one errors live exactly at those boundaries.",w:"A quick mental checklist for reviewing any test plan touching numeric ranges, dates, or limits — if the boundaries aren't explicitly covered, the plan likely has a gap.",rel:["Positive vs. Negative Testing","Test Case","Data Validation","Test Data"]},
+{t:"Defect Life Cycle",full:"The stages a reported bug moves through",c:3,p:"The stages a reported defect moves through from discovery to resolution — typically New, Assigned, Fixed, Retest, and Closed (or Reopened if the retest fails).",a:"A bug's journey from 'New' to 'Closed' — or back to 'Reopened.'",m:"Each stage usually has an owner: a tester logs and retests it, a developer fixes it, and status changes are tracked so nothing silently falls through the cracks.",w:"Knowing this cycle is what lets you say precisely where a defect is stuck — \"it's been Fixed for a week but nobody's retested it\" is a very different problem than \"nobody's looked at it yet.\"",rel:["Severity vs. Priority","Bug vs. Feature vs. Enhancement","Regression","Test Case"]},
+{t:"Severity vs. Priority",full:"How bad it is vs. how soon it must be fixed",c:3,p:"Severity is how bad a defect's impact is on the system; priority is how soon it needs to be fixed — related, but genuinely different judgment calls.",a:"How bad the injury is vs. how soon the doctor should see it.",m:"A typo in a footer is low severity and low priority. A crash on a rarely-used admin screen might be high severity but low priority. A slightly wrong number on the homepage might be low severity but high priority, if the CEO will see it in an hour.",w:"Worth pushing back gently when someone conflates the two — \"this is critical\" (severity) doesn't automatically mean \"fix this before anything else\" (priority), and mixing them up derails triage conversations.",rel:["Defect Life Cycle","Bug vs. Feature vs. Enhancement","Backlog","Acceptance Criteria"]},
+{t:"Test Coverage",full:"How much of the system your tests actually exercise",c:3,p:"A measure of how much of the system — code paths, requirements, or scenarios — is actually exercised by your tests, versus how much is untested.",a:"How much of the map your tests have actually walked.",m:"High coverage doesn't automatically mean high quality — it's possible to \"cover\" a lot of code with shallow tests that wouldn't catch a real bug. Coverage measures reach, not rigor.",w:"When someone cites a coverage percentage as proof of quality, it's worth asking what that percentage actually measures — code lines touched is a very different claim than \"business scenarios verified.\"",rel:["Test Plan","Traceability Matrix","Unit Testing","Regression Testing"]},
+{t:"Traceability Matrix",full:"Mapping requirements to the tests that verify them",c:3,p:"A document mapping each requirement to the specific test case(s) that verify it, so you can confirm nothing was left untested.",a:"A checklist linking every promise to the test that proves it.",m:"Read it in both directions: every requirement should trace to at least one test, and every test should trace back to a real requirement — an orphan in either direction is a red flag.",w:"The direct answer to \"how do we know we tested everything we promised\" — core BA/QA collaboration territory, and often the first artifact an auditor or sign-off stakeholder asks to see.",rel:["Test Case","Acceptance Criteria","Test Coverage","Functional vs. Non-Functional Requirements"]},
+
+{t:"Microservices",full:"Many small, independent services",c:4,p:"An architecture where an application is built as many small, independent services instead of one big program.",a:"A food court of independent stalls, each cooking one thing well.",m:"Each service owns one job (payments, notifications, search) and can be updated or scaled on its own without touching the others.",w:"If one \"part\" of a product is down while the rest works fine, that's microservices at work — it also explains why a single bug rarely takes the whole system down.",rel:["Monolith","API Gateway","Container (Docker)","Scalability"]},
+{t:"Monolith",full:"One single, tightly-connected codebase",c:4,p:"An application built as one single, tightly-connected codebase, where every part depends on every other part.",a:"One giant kitchen where every dish shares the same stove.",m:"Simpler to build and deploy early on, but a small change can require retesting the entire application — and it can only be scaled as one whole unit.",w:"If \"that would touch too much of the system\" is a common answer to your change requests, you're likely dealing with a monolith.",rel:["Microservices","Legacy System","Technical Debt","Scalability"]},
+{t:"API Gateway",full:"The single front door for external requests",c:4,p:"A single front door that all external requests pass through before reaching internal services.",a:"A building's single reception desk that checks everyone in.",m:"Handles shared concerns once — authentication, rate limiting, logging — instead of every individual service reimplementing them.",w:"Relevant when scoping integrations: external partners usually talk to the gateway, not directly to the internal system doing the actual work.",rel:["API","Microservices","Load Balancer","Authentication vs. Authorization"]},
+{t:"Load Balancer",full:"Spreading traffic across servers",c:4,p:"A traffic director that spreads incoming requests across multiple servers so no single one gets overwhelmed.",a:"A host seating diners evenly across all the restaurant's waiters.",m:"If one server fails, the load balancer stops sending it traffic and routes around it — often invisibly to the end user.",w:"Part of why large systems can handle sudden traffic spikes (a product launch, a marketing push) without falling over.",rel:["Server","Scalability","Kubernetes","Uptime / SLA"]},
+{t:"Serverless",full:"Code that runs without managing servers",c:4,p:"Running code without provisioning or managing any servers yourself — the cloud provider handles it entirely, on demand.",a:"A taxi you summon per trip instead of owning and parking a car.",m:"Confusingly, servers are still involved — you just never see or manage them. Code runs only when triggered, and you're billed only for that execution time.",w:"A cost and speed lever: good for infrequent or spiky workloads, since you're not paying for idle server time between requests.",rel:["Cloud Computing","Container (Docker)","Scalability","Microservices"]},
+{t:"Scalability",full:"Handling more load without falling over",c:4,p:"A system's ability to handle more load — more users, more data, more requests — without falling over or slowing down.",a:"Opening more checkout lanes as the queue grows.",m:"\"Horizontal\" scaling adds more machines; \"vertical\" scaling makes one machine bigger. Most modern cloud systems favor horizontal, since it has no hard ceiling.",w:"Worth asking about explicitly before a big launch or campaign — \"does this scale\" is really asking \"will this survive a traffic spike.\"",rel:["Load Balancer","Kubernetes","Performance / Load Testing","Microservices"]},
+
+{t:"Sprint",full:"A fixed, short work cycle",c:5,p:"A fixed, short time period — usually 1 to 4 weeks — during which a team commits to completing a specific set of work.",a:"A short, timed lap the team commits to finishing.",m:"At the end of a sprint, the team reviews what was finished, demos it if possible, and plans the next one — a steady, repeating rhythm rather than one long project timeline.",w:"When you're told something will happen \"next sprint,\" that's a concrete, bounded commitment — worth confirming the actual sprint length and start date, since teams vary.",rel:["Backlog","Sprint Planning","Velocity","Standup (Daily Scrum)"]},
+{t:"Backlog",full:"The full, prioritized list of possible work",c:5,p:"The full, prioritized list of everything a team could work on — features, bugs, technical debt — not yet scheduled into a sprint.",a:"A prioritized wish list, constantly reshuffled as things change.",m:"Living and constantly reprioritized, not a fixed queue processed in strict order — new information can, and should, reshuffle it.",w:"\"It's in the backlog\" isn't the same as \"it's planned\" — worth asking where in the backlog, and what would need to happen for it to get pulled into an actual sprint.",rel:["Sprint","User Story","Sprint Planning","MVP"]},
+{t:"User Story",full:"A feature described from the user's view",c:5,p:"A short description of a feature from the end user's perspective, usually in the form \"As a [user], I want [goal], so that [reason].\"",a:"A feature told as 'As a ___, I want ___, so that ___.'",m:"Deliberately focused on the who and why, not the how — the implementation detail is left to engineering to figure out.",w:"Writing clear user stories with solid acceptance criteria is core BA work — a vague story is the single biggest cause of \"that's not what I meant\" after delivery.",rel:["Acceptance Criteria","Epic","Backlog","Story Points"]},
+{t:"Epic",full:"A large body of work spanning sprints",c:5,p:"A large body of work, too big to finish in one sprint, made up of multiple smaller user stories.",a:"A boxset — too big for one sitting, split into episodes.",m:"Epics get broken down over time as understanding improves — you rarely need to fully define every story inside an epic upfront.",w:"If a stakeholder wants one big feature \"done next sprint,\" checking whether it's really an epic (multiple sprints' worth of stories) resets expectations early.",rel:["User Story","Backlog","Story Points","MVP"]},
+{t:"Story Points",full:"A relative measure of effort",c:5,p:"A relative measure of effort or complexity for a piece of work — not a direct measure of time.",a:"T-shirt sizes for effort, not hours on a clock.",m:"Usually estimated by the team using a scale like 1, 2, 3, 5, 8, 13 — a story pointed \"8\" isn't \"8 hours,\" it's \"roughly as complex as our other 8s.\"",w:"Resist converting story points directly into days for external commitments — they're a team's internal calibration tool, not a client-facing time estimate.",rel:["Velocity","User Story","Sprint Planning","Epic"]},
+{t:"Velocity",full:"Average points completed per sprint",c:5,p:"The average number of story points a team completes per sprint, tracked over time.",a:"A team's average pace, used to forecast — not to race against others.",m:"Used to forecast how much a team can realistically commit to in future sprints — not as a performance score to compare between teams.",w:"Useful for realistic roadmap forecasting (\"at this velocity, the backlog will take roughly 6 sprints\") — but comparing velocity across different teams is close to meaningless, since point scales aren't standardized between them.",rel:["Story Points","Sprint","Sprint Planning","Backlog"]},
+{t:"Standup (Daily Scrum)",full:"A short daily team check-in",c:5,p:"A short, daily check-in where each team member briefly shares what they did, what's next, and any blockers.",a:"A 15-minute huddle to surface blockers fast, then break.",m:"Meant to stay brief, 15 minutes or less, and surface blockers fast — not a status report for management, and not a place to solve problems in the room.",w:"The fastest way to learn about a blocker before it derails a deadline — worth attending or getting a summary of, especially near a release.",rel:["Sprint","Kanban","Sprint Planning","Sprint Retrospective"]},
+{t:"Sprint Planning",full:"Deciding what a sprint will include",c:5,p:"A meeting at the start of a sprint where the team decides exactly what work they'll commit to completing.",a:"Deciding what the team will actually commit to this lap.",m:"The team pulls prioritized items from the backlog and estimates whether they realistically fit in the sprint's capacity.",w:"The right moment to get new requirements considered for the upcoming sprint — after planning is locked, adding scope usually means something else gets bumped out.",rel:["Sprint","Backlog","Story Points","Velocity"]},
+{t:"Sprint Retrospective",full:"Reviewing how the team worked",c:5,p:"A meeting at the end of a sprint focused on how the team worked, not what they built — what went well, what didn't, what to change.",a:"A team looking in the mirror, not at the scoreboard.",m:"Distinct from a sprint review (which demos the actual output) — retros are about process improvement.",w:"A good venue to raise recurring friction, like unclear requirements or late-breaking changes, constructively, rather than letting it fester silently.",rel:["Sprint","Standup (Daily Scrum)","Kanban","Definition of Done (DoD)"]},
+{t:"Kanban",full:"A continuous-flow visual workflow",c:5,p:"A visual workflow method that tracks work as it moves through stages, To Do, In Progress, Done, with a limit on how much can be in progress at once.",a:"A continuous To-Do / Doing / Done board with a work-in-progress cap.",m:"Unlike sprints, Kanban has no fixed time-boxed cycle — work flows continuously, pulled one item at a time as capacity frees up.",w:"Teams supporting live systems (bug fixes, ops requests) often prefer Kanban over sprints, since incoming work is unpredictable and needs to be handled as it arrives.",rel:["Sprint","Backlog","Standup (Daily Scrum)","Velocity"]},
+{t:"MVP",full:"Minimum Viable Product",c:5,p:"The smallest version of a product or feature that's still genuinely usable and delivers real value — not a rough draft, a real (if limited) release.",a:"A skateboard before the car — the smallest thing that truly works.",m:"Built to test a hypothesis or get real feedback fast, before investing in every planned feature — deliberately incomplete by design, not by accident.",w:"When scoping a new initiative, pushing for a true MVP (not a Frankenstein of \"must-haves\") is often the highest-leverage thing a BA can do to get something shipped sooner.",rel:["Backlog","Acceptance Criteria","User Story","Epic"]},
+{t:"Acceptance Criteria",full:"The testable conditions for \"complete\"",c:5,p:"The specific, testable conditions a piece of work must meet to be considered complete and correct.",a:"The exact pass/fail conditions a story must meet.",m:"Written before development starts, ideally by or with the BA — they're what a story gets tested against, not a vague sense of \"looks right.\"",w:"Weak acceptance criteria is the single most common cause of scope disputes at delivery — \"that's not what we agreed\" almost always traces back to criteria that were too loose.",rel:["User Story","Definition of Done (DoD)","Test Case","Traceability Matrix"]},
+{t:"Definition of Done (DoD)",full:"The team's checklist for \"complete\"",c:5,p:"A team-wide checklist of what \"complete\" means for any piece of work — coded, tested, documented, reviewed, deployed, and so on.",a:"The team's universal 'not done until…' checklist.",m:"Applies to every story a team completes, distinct from the acceptance criteria specific to one particular story.",w:"Worth knowing explicitly — \"done\" can silently mean very different things (code merged vs. tested vs. actually live) depending on a team's DoD.",rel:["Acceptance Criteria","UAT","CI/CD","Sprint Retrospective"]},
+{t:"Stakeholder",full:"Anyone with a stake in the outcome",c:5,p:"Anyone with an interest in, or influence over, a project's outcome — not just the people paying for it.",a:"Anyone whose world changes because of what you ship.",m:"Includes end users, sponsors, compliance/legal, support teams, and anyone whose work changes because of what's being built.",w:"Mapping stakeholders early — and who actually has sign-off authority versus just an opinion — prevents late-stage surprises when someone unexpected objects.",rel:["User Story","UAT","Backlog","Functional vs. Non-Functional Requirements"]},
+{t:"Functional vs. Non-Functional Requirements",full:"What a system does vs. how well it does it",c:5,p:"Functional requirements define what a system does — specific features and behaviors; non-functional requirements define how well it does it — speed, security, reliability, usability.",a:"What it does vs. how fast, secure, and reliable it does it.",m:"Example: \"users can reset their password\" is functional. \"Password reset emails must arrive within 30 seconds\" and \"the reset link must expire after 1 hour\" are non-functional — quality and constraint requirements layered on top.",w:"Non-functional requirements are the ones most often left undocumented and then argued about at UAT — writing them down explicitly, not just the functional feature list, is core BA work that prevents that fight.",rel:["Acceptance Criteria","User Story","Performance / Load Testing","Traceability Matrix"]},
+{t:"UAT",full:"User Acceptance Testing",c:5,p:"The final round of testing, done by real end users or their representatives, in a production-like environment, before something goes live.",a:"The customer's final 'yes, this solves my problem' before go-live.",m:"Distinct from QA testing (which checks the software works as built) — UAT checks it actually solves the real business problem.",w:"Often the BA's most hands-on delivery moment — writing UAT scripts and coordinating sign-off is frequently the actual gate that determines go-live.",rel:["Acceptance Criteria","End-to-End (E2E) Testing","Environment (Dev/Staging/Prod)","Stakeholder"]}
+];
+
+/* ---------- theme ---------- */
+const THEME_KEY="tech-jargon-theme-v2";
+const themeBtn=document.getElementById("themeBtn");
+const SUN='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+const MOON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+function applyTheme(t){
+  document.documentElement.classList.toggle("dark", t==="dark");
+  themeBtn.innerHTML = t==="dark" ? SUN : MOON;
+  localStorage.setItem(THEME_KEY,t);
+}
+let savedTheme=localStorage.getItem(THEME_KEY)|| "light";
+applyTheme(savedTheme);
+themeBtn.addEventListener("click",()=>applyTheme(document.documentElement.classList.contains("dark")?"light":"dark"));
+
+/* ---------- saved (bookmarks) ---------- */
+const SAVED_KEY="tech-jargon-saved";
+let saved=new Set(JSON.parse(localStorage.getItem(SAVED_KEY)||"[]"));
+function persistSaved(){localStorage.setItem(SAVED_KEY,JSON.stringify([...saved]));}
+
+/* ---------- render ---------- */
 const grid=document.getElementById("grid");
 const countEl=document.getElementById("count");
 const q=document.getElementById("q");
-const chipsEl=document.getElementById("chips");
-let activeCat=-1;
+const tabsRow=document.getElementById("tabsRow");
+let activeCat=-1; // -1 all, -2 saved, 0..5 category
 
 function esc(s){const d=document.createElement("div");d.textContent=s;return d.innerHTML;}
+
+function catIcon(i,cls){return `<svg class="${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${CAT_ICON[i]}</svg>`;}
 
 function render(){
   const query=q.value.trim().toLowerCase();
   const list=ITEMS.filter(x=>{
-    const catOk = activeCat===-1 || x.c===activeCat;
-    const qOk = !query || x.t.toLowerCase().includes(query) || x.full.toLowerCase().includes(query) || x.p.toLowerCase().includes(query) || x.m.toLowerCase().includes(query) || x.w.toLowerCase().includes(query);
+    let catOk;
+    if(activeCat===-1) catOk=true;
+    else if(activeCat===-2) catOk=saved.has(x.t);
+    else catOk=x.c===activeCat;
+    const qOk=!query || x.t.toLowerCase().includes(query) || x.full.toLowerCase().includes(query) || x.p.toLowerCase().includes(query) || x.a.toLowerCase().includes(query) || x.m.toLowerCase().includes(query) || x.w.toLowerCase().includes(query);
     return catOk && qOk;
   });
   if(!list.length){
-    grid.innerHTML=`<div class="empty"><div class="big">Not on the page — yet.</div>Try another term, or clear a filter.</div>`;
+    grid.innerHTML=`<div class="empty"><div class="big">${activeCat===-2?"Nothing saved yet.":"Not on the page — yet."}</div>${activeCat===-2?"Tap the bookmark on any card to save it here.":"Try another term, or clear a filter."}</div>`;
   }else{
     grid.innerHTML=list.map(x=>{
+      const col=CAT_COLOR[x.c];
+      const isSaved=saved.has(x.t);
+      const relTags=(x.rel||[]).map(r=>`<button class="rtag" type="button" data-goto="${esc(r)}">${esc(r)}</button>`).join("");
       return `
       <div class="card" data-term="${esc(x.t)}">
-        <div class="top">
-          <div class="cat">${CATS[x.c]}</div>
-          <div class="top-actions">
-            <button class="link-badge" type="button" data-term="${esc(x.t)}">copy link</button>
-            <button class="badge" type="button" data-why="${esc(x.t)}">why it matters</button>
+        <div class="chead">
+          <div class="cico" style="background:${col}1F;color:${col}">${catIcon(x.c)}</div>
+          <div class="ctitles">
+            <h3>${esc(x.t)}</h3>
+            <div class="full">${esc(x.full)}</div>
           </div>
+          <button class="bookmark${isSaved?' saved':''}" type="button" data-save="${esc(x.t)}" aria-label="${isSaved?'Remove bookmark':'Save term'}" aria-pressed="${isSaved}">${IC_BOOK}</button>
         </div>
-        <h3>${esc(x.t)}</h3>
-        <div class="full">${esc(x.full)}</div>
-        <p class="plain">${esc(x.p)}</p>
-        <p class="more">${esc(x.m)}</p>
-        <div class="why"><b>Why it matters</b>${esc(x.w)}</div>
+        <div class="sec"><div class="slabel">${IC_PLAIN} Plain English</div><div class="stext">${esc(x.p)}</div></div>
+        <div class="sec analogy"><div class="slabel">${IC_THINK} Think of it like</div><div class="stext">${esc(x.a)}</div></div>
+        <div class="sec"><div class="slabel">${IC_WHY} Why it matters</div><div class="stext">${esc(x.w)}</div></div>
+        <div class="sec"><div class="slabel">${IC_REL} Related terms</div><div class="related-tags">${relTags}</div></div>
+        <div class="details">${esc(x.m)}</div>
+        <div class="cfoot">
+          <button class="detail-toggle" type="button">View details ${IC_CHEV}</button>
+          <button class="copy-link" type="button" data-copy="${esc(x.t)}">${IC_COPY} Copy link</button>
+        </div>
       </div>`;
     }).join("");
-    grid.querySelectorAll(".badge").forEach(b=>{
-      b.addEventListener("click",e=>{
-        e.currentTarget.closest(".card").classList.toggle("open");
-      });
-    });
-    grid.querySelectorAll(".link-badge").forEach(b=>{
-      b.addEventListener("click",e=>{
-        const btn=e.currentTarget;
-        const term=btn.getAttribute("data-term");
-        const url=`${window.location.origin}${window.location.pathname}?term=${encodeURIComponent(term)}`;
-        const showState=(text,cls)=>{
-          const original="copy link";
-          btn.textContent=text;
-          if(cls)btn.classList.add(cls);
-          setTimeout(()=>{btn.textContent=original;btn.classList.remove("copied");},1500);
-        };
-        const fallbackCopy=()=>{
-          const ta=document.createElement("textarea");
-          ta.value=url;ta.style.position="fixed";ta.style.opacity="0";
-          document.body.appendChild(ta);ta.select();
-          try{
-            document.execCommand("copy");
-            showState("copied!","copied");
-          }catch(err){
-            showState("couldn't copy");
-          }
-          document.body.removeChild(ta);
-        };
-        if(navigator.clipboard&&navigator.clipboard.writeText){
-          navigator.clipboard.writeText(url).then(()=>showState("copied!","copied")).catch(fallbackCopy);
-        }else{
-          fallbackCopy();
-        }
-      });
-    });
+    wireCards();
   }
-  countEl.innerHTML = `<b>${list.length}</b> of ${ITEMS.length} terms mapped`;
+  const label = activeCat===-2 ? "saved" : "concepts";
+  countEl.innerHTML=`Showing <b>${list.length}</b> of ${ITEMS.length} ${label}`;
 }
 
-const allChip=document.createElement("button");
-allChip.className="chip active";allChip.textContent="All";
-allChip.addEventListener("click",()=>{activeCat=-1;setChip(allChip,chipsEl);render();});
-chipsEl.appendChild(allChip);
-CATS.forEach((c,i)=>{
+function wireCards(){
+  grid.querySelectorAll(".detail-toggle").forEach(b=>{
+    b.addEventListener("click",e=>{
+      const card=e.currentTarget.closest(".card");
+      const open=card.classList.toggle("open");
+      e.currentTarget.childNodes[0].textContent = open ? "Hide details " : "View details ";
+    });
+  });
+  grid.querySelectorAll(".bookmark").forEach(b=>{
+    b.addEventListener("click",e=>{
+      const term=e.currentTarget.getAttribute("data-save");
+      if(saved.has(term)) saved.delete(term); else saved.add(term);
+      persistSaved();
+      buildTabs();
+      if(activeCat===-2) render();
+      else{
+        const btn=e.currentTarget;
+        const on=saved.has(term);
+        btn.classList.toggle("saved",on);
+        btn.setAttribute("aria-pressed",on);
+        btn.setAttribute("aria-label",on?"Remove bookmark":"Save term");
+      }
+    });
+  });
+  grid.querySelectorAll(".rtag").forEach(b=>{
+    b.addEventListener("click",e=>{
+      const term=e.currentTarget.getAttribute("data-goto");
+      gotoTerm(term);
+    });
+  });
+  grid.querySelectorAll(".copy-link").forEach(b=>{
+    b.addEventListener("click",e=>{
+      const btn=e.currentTarget;
+      const term=btn.getAttribute("data-copy");
+      const url=`${location.origin}${location.pathname}?term=${encodeURIComponent(term)}`;
+      const done=()=>{const o=btn.innerHTML;btn.innerHTML=`${IC_COPY} Copied!`;btn.classList.add("copied");setTimeout(()=>{btn.innerHTML=o;btn.classList.remove("copied");},1400);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(()=>fallbackCopy(url,done));}
+      else fallbackCopy(url,done);
+    });
+  });
+}
+function fallbackCopy(url,done){
+  const ta=document.createElement("textarea");ta.value=url;ta.style.position="fixed";ta.style.opacity="0";
+  document.body.appendChild(ta);ta.select();try{document.execCommand("copy");done();}catch(err){}document.body.removeChild(ta);
+}
+
+function gotoTerm(term){
+  const match=ITEMS.find(x=>x.t.toLowerCase()===term.toLowerCase());
+  activeCat=-1;setActiveTab();
+  q.value=term;render();
+  if(match){
+    const card=grid.querySelector(`.card[data-term="${CSS.escape(match.t)}"]`);
+    if(card){card.scrollIntoView({behavior:"smooth",block:"center"});}
+  }
+}
+
+/* ---------- tabs ---------- */
+function buildTabs(){
+  const savedCount=saved.size;
+  let html=`<button class="tab" data-cat="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg> All</button>`;
+  CAT_SHORT.forEach((c,i)=>{
+    html+=`<button class="tab" data-cat="${i}">${catIcon(i)} ${esc(c)}</button>`;
+  });
+  if(savedCount>0){
+    html+=`<button class="tab" data-cat="-2">${IC_BOOK} Saved (${savedCount})</button>`;
+  }
+  tabsRow.innerHTML=html;
+  tabsRow.querySelectorAll(".tab").forEach(t=>{
+    t.addEventListener("click",()=>{activeCat=parseInt(t.getAttribute("data-cat"),10);setActiveTab();render();});
+  });
+  setActiveTab();
+}
+function setActiveTab(){
+  tabsRow.querySelectorAll(".tab").forEach(t=>{
+    t.classList.toggle("active", parseInt(t.getAttribute("data-cat"),10)===activeCat);
+  });
+}
+
+/* ---------- popular searches ---------- */
+const POPULAR=["API","SQL","ETL","Docker","Kubernetes","Sprint","Primary Key","UAT"];
+const popEl=document.getElementById("popular");
+POPULAR.forEach(term=>{
   const b=document.createElement("button");
-  b.className="chip";b.textContent=c;
-  b.addEventListener("click",()=>{activeCat=i;setChip(b,chipsEl);render();});
-  chipsEl.appendChild(b);
+  b.className="pchip";b.type="button";b.textContent=term;
+  b.addEventListener("click",()=>{activeCat=-1;setActiveTab();q.value=term;render();q.focus();});
+  popEl.appendChild(b);
 });
-
-function setChip(el,container){container.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));el.classList.add("active");}
-
-q.addEventListener("input",render);
-document.getElementById("surprise").addEventListener("click",()=>{
+const dice=document.createElement("button");
+dice.className="pchip dice";dice.type="button";dice.textContent="🎲 Random";
+dice.addEventListener("click",()=>{
   const t=ITEMS[Math.floor(Math.random()*ITEMS.length)];
-  activeCat=-1;setChip(allChip,chipsEl);
-  q.value=t.t;render();
+  gotoTerm(t.t);
   const card=grid.querySelector(`.card[data-term="${CSS.escape(t.t)}"]`);
   if(card)card.classList.add("open");
 });
+popEl.appendChild(dice);
 
+/* ---------- search + shortcuts ---------- */
+q.addEventListener("input",render);
+document.getElementById("navSearch").addEventListener("click",()=>{q.focus();q.scrollIntoView({behavior:"smooth",block:"center"});});
+document.addEventListener("keydown",e=>{
+  if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();q.focus();q.select();}
+  if(e.key==="Escape"&&document.activeElement===q){q.value="";render();q.blur();}
+});
+
+/* ---------- init ---------- */
+buildTabs();
 render();
 
-/* ---------- deep link: ?term=API ---------- */
-const linkedTerm = new URLSearchParams(window.location.search).get("term");
-if (linkedTerm) {
-  const match = ITEMS.find(x => x.t.toLowerCase() === linkedTerm.toLowerCase());
-  if (match) {
-    q.value = match.t;
-    render();
-    const card = grid.querySelector(`.card[data-term="${CSS.escape(match.t)}"]`);
-    if (card) card.classList.add("open");
-  }
+/* deep link ?term= */
+const linked=new URLSearchParams(location.search).get("term");
+if(linked){
+  const match=ITEMS.find(x=>x.t.toLowerCase()===linked.toLowerCase());
+  if(match){q.value=match.t;render();const card=grid.querySelector(`.card[data-term="${CSS.escape(match.t)}"]`);if(card)card.classList.add("open");}
 }
 </script>
 </body>
