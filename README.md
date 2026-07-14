@@ -1,6 +1,6 @@
 # Technical Jargon Decoder
 
-**116 technical terms across 5 categories — software & dev, cloud & infrastructure, data & databases, agile & delivery, testing & QA. Search, category filters, dark/light mode.**
+**116 technical terms across 6 categories — software & dev, cloud & infrastructure, databases, architecture, testing & QA, agile & delivery. Each term gets a plain-English definition, a real-world "think of it like" analogy, a "why it matters" note, and links to related terms. Search, ⌘K, category filters, bookmarks, dark/light mode.**
 
 Live demo → https://bodhiprotocol.github.io/technical-jargon-decoder/
 
@@ -14,15 +14,16 @@ This is a compact reference: one card per term, a plain-language explanation, an
 
 ## What's inside
 
-- 102 technical term cards across 5 categories (Software & Dev, Cloud & Infrastructure, Data & Databases, Agile & Delivery, Testing & QA)
-- Search bar + category chip filters
-- "Surprise me" button for random exploration
-- Expandable "why it matters" note per card, written for a business analyst or tester's perspective
-- Copy-link deep linking to any individual term
+- 116 technical term cards across 6 categories (Software & Dev, Cloud & Infrastructure, Databases, Architecture, Testing & QA, Agile & Delivery)
+- Four layers per card: **Plain English** definition · **Think of it like** real-world analogy · **Why it matters** for a BA/tester · **Related terms**
+- Clickable related-term chips that jump straight to the connected concept
+- Search (with ⌘K shortcut) + category tab filters + popular searches + 🎲 random
+- Bookmark any term — saved cards get their own filter
+- "View details" expander for extra depth, copy-link deep linking to any term
 
 ## Tech
 
-One self-contained `index.html`. No frameworks, no build step, no API calls. Dark/light theme toggle. Data lives in a single in-file JS array — no database, manual edits only.
+One self-contained `index.html`. No frameworks, no build step, no API calls. Light/dark theme toggle. Data lives in a single in-file JS array — no database, manual edits only.
 
 ## Part of BodhiProtocol
 
