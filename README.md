@@ -1,6 +1,6 @@
 # Technical Jargon Decoder
 
-**63 technical terms across 4 categories — software & dev, cloud & infrastructure, data & AI/ML, agile & delivery. Search, category filters, dark/light mode.**
+**102 technical terms across 5 categories — software & dev, cloud & infrastructure, data & databases, agile & delivery, testing & QA. Search, category filters, dark/light mode.**
 
 Live demo → https://bodhiprotocol.github.io/technical-jargon-decoder/
 
@@ -8,16 +8,16 @@ Live demo → https://bodhiprotocol.github.io/technical-jargon-decoder/
 
 ## Why this exists
 
-Working alongside engineers, architects, and product teams means hearing "API," "sprint," "Kubernetes," and "technical debt" thrown around constantly — often without a clear, plain-language anchor for what each term actually means or why it matters to a business analyst specifically.
+Working alongside engineers, architects, DBAs, and product teams means hearing "API," "primary key," "star schema," and "regression testing" thrown around constantly — often without a clear, plain-language anchor for what each term actually means or why it matters to a business analyst or tester specifically.
 
-This is a compact reference: one card per term, a plain-language explanation, and an expandable "why it matters" note aimed at a BA's day-to-day work — built for quick lookups, not a textbook read-through.
+This is a compact reference: one card per term, a plain-language explanation, and an expandable "why it matters" note aimed at BA and QA day-to-day work — built for quick lookups, not a textbook read-through. It leans especially deep on databases and data warehousing (primary/foreign keys, normalization, star schemas, OLTP vs. OLAP, data lineage, SCDs) and core testing vocabulary (test cases, regression vs. smoke vs. sanity testing, defect life cycle, severity vs. priority) — the two areas non-technical BAs and testers run into constantly but rarely get explained plainly.
 
 ## What's inside
 
-- 63 technical term cards across 4 categories (Software & Dev, Cloud & Infrastructure, Data & AI/ML, Agile & Delivery)
+- 102 technical term cards across 5 categories (Software & Dev, Cloud & Infrastructure, Data & Databases, Agile & Delivery, Testing & QA)
 - Search bar + category chip filters
 - "Surprise me" button for random exploration
-- Expandable "why it matters" note per card, written for a business analyst's perspective
+- Expandable "why it matters" note per card, written for a business analyst or tester's perspective
 - Copy-link deep linking to any individual term
 
 ## Tech
