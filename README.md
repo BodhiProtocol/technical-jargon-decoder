@@ -1,6 +1,6 @@
 # Technical Jargon Decoder
 
-**102 technical terms across 5 categories — software & dev, cloud & infrastructure, data & databases, agile & delivery, testing & QA. Search, category filters, dark/light mode.**
+**116 technical terms across 5 categories — software & dev, cloud & infrastructure, data & databases, agile & delivery, testing & QA. Search, category filters, dark/light mode.**
 
 Live demo → https://bodhiprotocol.github.io/technical-jargon-decoder/
 
