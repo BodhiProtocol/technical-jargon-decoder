@@ -2,7 +2,7 @@
 
 **116 technical terms across 6 categories — software & dev, cloud & infrastructure, databases, architecture, testing & QA, agile & delivery. Each term gets a plain-English definition, a real-world "think of it like" analogy, a "why it matters" note, and links to related terms. Search, ⌘K, category filters, bookmarks, dark/light mode.**
 
-Live demo → https://bodhiprotocol.github.io/technical-jargon-decoder/
+Live demo → https://tech-jargon-decoder.bodhiprotocol.com/
 
 ---
 
