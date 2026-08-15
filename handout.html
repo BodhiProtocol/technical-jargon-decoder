@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tech Jargon Handout · BodhiProtocol</title>
+<meta name="description" content="116+ technical concepts, one continuous visual handout — plain English, a mental model and related terms for each.">
+<style>
+:root{
+  --bg:#f7f8fb;--ink:#111527;--muted:#667085;--line:#e6e9f1;--card:#fff;
+  --accent:#0f8f67;--soft:#eef9f4;--soft-line:#bfe6d7;
+  --blue:#2879d0;--blue-soft:#eaf3fc;--blue-line:#bcdcf5;
+  --amber:#c2760c;--shadow:0 20px 55px rgba(17,21,39,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+.shell{max-width:880px;margin:auto;padding:0 22px}
+.topbar{position:sticky;top:0;z-index:30;height:64px;background:rgba(247,248,251,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.topbar .shell{height:100%;display:flex;align-items:center;justify-content:space-between;max-width:1000px}
+.logo{text-decoration:none;color:var(--ink);font-weight:850}
+.logo b{color:#6f55e8}
+.topbar-actions{display:flex;gap:8px}
+.ghost{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:10px;padding:9px 13px;font-size:.8rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+.ghost:hover{border-color:#c8cede}
+.intro{padding:44px 0 8px;max-width:1000px}
+.kicker{display:inline-flex;padding:6px 10px;border:1px solid var(--soft-line);border-radius:999px;background:var(--soft);color:var(--accent);font-size:.68rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+.intro h1{font-size:clamp(2rem,4.2vw,2.9rem);letter-spacing:-.04em;margin:16px 0 8px}
+.intro p{color:var(--muted);max-width:620px;margin:0 0 22px}
+.catnav{display:flex;gap:8px;flex-wrap:wrap;padding-bottom:26px;border-bottom:1px solid var(--line)}
+.catnav a{text-decoration:none;font-size:.76rem;font-weight:750;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 12px}
+.catnav a:hover{color:var(--accent);border-color:var(--soft-line)}
+.feed{max-width:1000px;padding:36px 0 90px;display:flex;flex-direction:column;align-items:stretch}
+.catbreak{padding:34px 4px 18px;scroll-margin-top:80px}
+.catbreak .eyebrow{font-size:.68rem;font-weight:850;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.catbreak h2{margin:6px 0 0;font-size:1.5rem;letter-spacing:-.03em}
+.connector{display:flex;justify-content:flex-start;padding-left:38px;height:38px;color:#c7cddb}
+.connector svg{animation:drift 2.4s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+@media(prefers-reduced-motion:reduce){.connector svg{animation:none}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow);padding:32px 36px 26px;scroll-margin-top:80px}
+.card-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.num{width:32px;height:32px;flex:none;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:900;font-size:.86rem}
+.card-head h3{margin:0;font-size:1.55rem;letter-spacing:-.03em}
+.expansion{color:var(--accent);font-weight:800;font-size:.82rem}
+.block{padding:18px 0}
+.block-label{font-size:.72rem;font-weight:850;text-transform:uppercase;letter-spacing:.06em;margin-bottom:9px;color:var(--ink)}
+.plain-box{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:.92rem;line-height:1.55}
+.viz-wrap{padding:22px 0 8px;display:flex;align-items:center;justify-content:center;min-height:190px}
+.related{border-top:1px solid var(--line);padding:16px 0 4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.related b{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em}
+.tag{border:1px solid var(--soft-line);background:var(--soft);color:var(--accent);padding:6px 12px;border-radius:999px;font-size:.72rem;font-weight:700}
+
+/* icon badges shared by all diagrams */
+.node{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;min-width:110px}
+.node strong{font-size:.82rem;font-weight:800}
+.node small{font-size:.68rem;color:var(--muted)}
+.badge{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--bg);border:1px solid var(--line);color:var(--ink)}
+.badge.green{background:var(--soft);border-color:var(--soft-line);color:var(--accent)}
+.badge.blue{background:var(--blue-soft);border-color:var(--blue-line);color:var(--blue)}
+.badge svg{width:24px;height:24px}
+
+/* API diagram */
+.api-viz{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
+.api-swap{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:.66rem;font-weight:800;color:var(--muted);min-width:110px}
+.api-swap .req{color:var(--amber)}
+.api-swap .res{color:var(--blue)}
+.api-swap .arrow-line{width:70px;height:1px;background:var(--line);position:relative;margin:2px 0}
+.api-center{display:flex;flex-direction:column;align-items:center;gap:6px}
+.api-center .badge{width:92px;height:92px;border-radius:50%}
+.api-center strong{font-size:.9rem;font-weight:900;color:var(--blue)}
+.api-center small{font-size:.62rem;color:var(--muted)}
+.plain-arrow{color:var(--line);font-size:1.4rem;font-weight:900;padding:0 2px}
+
+/* Kafka diagram */
+.kafka-viz{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
+.kcol{display:flex;flex-direction:column;gap:8px}
+.kcol .klabel{font-size:.66rem;font-weight:850;color:var(--muted);text-align:center;margin-bottom:2px}
+.kcard{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:.74rem;font-weight:750;background:#fff}
+.kcard svg{width:16px;height:16px;flex:none;color:var(--muted)}
+.ktopic{background:var(--soft);border:1px solid var(--soft-line);border-radius:20px;padding:18px 20px;text-align:center;color:var(--accent);font-weight:900;font-size:.82rem}
+.kevents{display:flex;gap:5px;justify-content:center;margin-top:10px}
+.kevents svg{width:18px;height:18px;color:var(--accent)}
+
+/* pipeline */
+.pipeline{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center}
+.pstep{width:96px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.pstep strong{font-size:.72rem;font-weight:800}
+
+/* auth */
+.auth-viz{display:grid;grid-template-columns:1fr 40px 1fr;gap:10px;align-items:center;width:100%;max-width:560px}
+.auth-box{border:1px solid var(--soft-line);background:var(--soft);border-radius:16px;padding:16px}
+.auth-head{display:flex;align-items:center;gap:8px;font-size:.78rem;font-weight:900;color:var(--accent);margin-bottom:10px}
+.auth-step{font-size:.7rem;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;margin:6px 0}
+
+/* generic flow */
+.flow-viz{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.flow-node{padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:13px;text-align:center;font-size:.8rem;font-weight:800;min-width:100px}
+.flow-node.core{background:var(--soft);border-color:var(--soft-line);color:var(--accent)}
+
+/* boundary */
+.numline{width:min(560px,100%);height:7px;background:linear-gradient(90deg,#f3cccc 0 20%,#ccebdc 20% 80%,#f3cccc 80%);border-radius:99px;position:relative;margin:48px 20px 30px}
+.mark{position:absolute;top:-27px;transform:translateX(-50%);font-size:.68rem;font-weight:850}
+.mark:after{content:'';display:block;width:2px;height:34px;background:#333;margin:5px auto}
+.m17{left:7%}.m18{left:20%}.m19{left:32%}.m59{left:68%}.m60{left:80%}.m61{left:93%}
+
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:.78rem}
+footer .shell{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;max-width:1000px}
+
+@media(max-width:700px){
+  .card{padding:24px 20px 20px}
+  .api-viz,.kafka-viz{gap:16px 10px}
+  .auth-viz{grid-template-columns:1fr}
+}
+@media print{
+  .topbar,.catnav,.connector{display:none}
+  body{background:#fff}
+  .card{box-shadow:none;border:1px solid #ddd;break-inside:avoid;margin-bottom:18px}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="shell">
+    <a class="logo" href="index.html">Bodhi<b>Protocol</b></a>
+    <div class="topbar-actions">
+      <a class="ghost" href="pilot.html">← Interactive mode</a>
+      <button class="ghost" onclick="window.print()">Print handout</button>
+    </div>
+  </div>
+</header>
+<div class="intro shell">
+  <span class="kicker">Handout Mode</span>
+  <h1>Technical jargon, one continuous reference.</h1>
+  <p>Every concept in one scroll — plain English, a mental model and related terms — built for reading or printing straight through.</p>
+  <nav class="catnav" id="catnav"></nav>
+</div>
+<main class="feed shell" id="feed"><div class="shell" style="padding:40px 0;color:var(--muted)">Loading…</div></main>
+<footer><div class="shell"><span>© BodhiProtocol · Learn the machinery behind technology.</span><a href="https://bodhiprotocol.com/">bodhiprotocol.com</a></div></footer>
+<script>
+const ARCHIVE='https://raw.githubusercontent.com/BodhiProtocol/technical-jargon-decoder/8853a32fe2c8bba4ad92dbfd1889e592ec8b885f/index.html';
+const CATS=['Software & Development','Cloud & Infrastructure','Data & Databases','Testing & QA','Architecture','Agile & Delivery'];
+const EXTRA=[['Kafka','Apache Kafka',2,'A distributed event-streaming platform that lets systems publish, store and consume events at scale.','Like a durable shared news feed.','OrderCreated can feed payments, analytics and notifications.',['Message Queue','Microservices','API']],['OAuth','Open Authorization',0,'A standard for giving an app limited access without sharing your password.','Like giving a valet key instead of your master key.','An app can read approved Google data without seeing your password.',['Authentication vs. Authorization','API']],['Webhook','Webhook',0,'An automatic HTTP message sent when a specific event happens.','The courier texts you when the parcel arrives.','A payment provider calls your webhook after payment succeeds.',['API','REST','JSON']],['REST','Representational State Transfer',0,'A common style for designing web APIs around resources and HTTP actions.','A predictable counter: resource + action.','GET /orders reads; POST /orders creates.',['API','JSON']],['JSON','JavaScript Object Notation',2,'A lightweight text format for structured data.','A labelled form humans and software can read.','APIs commonly return fields and values as JSON.',['API','REST','SQL']],['Message Queue','Message Queue',4,'A buffer that lets systems send work for later independent processing.','A ticket tray where work waits safely.','Checkout queues an email instead of waiting for email delivery.',['Kafka','Microservices']],['DNS','Domain Name System',1,'The system that translates domain names into IP addresses.','Your contacts turning a name into a phone number.','DNS tells the browser which server hosts a domain.',['CDN','Load Balancer']],['Docker','Docker / Container',1,'A way to package an app with its dependencies so it runs consistently.','A standardized shipping container for software.','The same image runs in dev, test and production.',['Kubernetes','CI/CD']],['Git','Git / Version Control',5,'A version-control system that records file changes and supports collaboration.','A detailed history you can branch, compare and restore.','Teams commit, branch and merge reviewed code.',['CI/CD','Docker']],['SQL','Structured Query Language',2,'A language for reading, joining and changing relational data.','Asking a precise question of tables.','A BA can compare source and target records with SQL.',['Database Index','Data Lineage']],['Database Index','Database Index',2,'A structure that helps a database find rows without scanning the whole table.','A book index taking you to the right page.','An index on customer_id speeds repeated lookups.',['SQL','Cache']],['Cache','Cache',1,'A fast temporary store for frequently needed data.','Keeping common documents on your desk.','A service caches product data to avoid repeated database calls.',['CDN','Database Index']]];
+const ALIAS={'container (docker)':'Docker','git / version control':'Git','index (database)':'Database Index'};
+function esc(s){return String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')}
+function norm(s){return String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'')}
+function parse(t){let m=t.match(/const ITEMS = \[([\s\S]*?)\n\];/);if(!m)throw Error('Library data not found');return Function('return ['+m[1]+']')()}
+function canon(base){let out=[],seen=new Set;[...base.map(x=>ALIAS[x.t.toLowerCase()]?{...x,t:ALIAS[x.t.toLowerCase()]}:x),...EXTRA.map(x=>({t:x[0],full:x[1],c:x[2],p:x[3],a:x[4],w:x[5],rel:x[6]}))].forEach(x=>{let k=norm(x.t);if(!seen.has(k)){seen.add(k);out.push(x)}});return out}
+const FLOW={OAuth:['You','Consent','Token','App'],Webhook:['Event','Webhook','App'],REST:['Client','HTTP action','Resource'],JSON:['Field','Value','Object'],'Message Queue':['Producer','Queue','Consumer'],DNS:['Domain','DNS','IP','Server'],CDN:['User','Nearby CDN','Origin'],Docker:['Code','Container','Host'],Kubernetes:['Containers','Kubernetes','Scale'],Git:['Working copy','Commit','History'],SQL:['Question','SQL','Rows'],Encryption:['Plain data','Encrypt','Ciphertext'],'Load Balancer':['Users','Load Balancer','Servers'],'Database Index':['Query','Index','Rows'],Cache:['Request','Cache','Source'],Microservices:['Client','Gateway','Services'],ETL:['Extract','Transform','Load'],'Data Lineage':['Source','Transform','Target'],'API Gateway':['Client','Gateway','Services'],'Unit Testing':['Function','Test','Pass / Fail'],'Integration Testing':['System A','Integration','System B'],'Regression Testing':['Existing feature','Change','Re-test'],UAT:['Business need','UAT','Accept'],'User Story':['User','Need','Value'],'Acceptance Criteria':['Story','Rules','Done'],Sprint:['Backlog','Sprint','Increment']};
+
+/* ---- flat outline icon set (24x24, stroke=currentColor) ---- */
+const ICONS={
+  phone:'<path d="M8 2h8a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"/><path d="M10.5 18h3"/>',
+  server:'<rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><circle cx="6.5" cy="7" r=".6" fill="currentColor" stroke="none"/><circle cx="6.5" cy="17" r=".6" fill="currentColor" stroke="none"/>',
+  database:'<ellipse cx="12" cy="5.5" rx="8" ry="2.7"/><path d="M4 5.5V18c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7V5.5"/><path d="M4 11.8c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7"/>',
+  swap:'<path d="M4 7h13l-3-3"/><path d="M20 17H7l3 3"/>',
+  cart:'<circle cx="9" cy="20" r="1.3" fill="currentColor" stroke="none"/><circle cx="17" cy="20" r="1.3" fill="currentColor" stroke="none"/><path d="M2.5 3h2l2.3 12.2a1.8 1.8 0 0 0 1.8 1.5h8a1.8 1.8 0 0 0 1.75-1.4L20.5 8H6"/>',
+  camera:'<rect x="2.5" y="6.5" width="19" height="13" rx="2.2"/><circle cx="12" cy="13" r="3.6"/><path d="M8.5 6.5 10 4h4l1.5 2.5"/>',
+  gear:'<circle cx="12" cy="12" r="3"/><path d="M12 3v2.4M12 18.6V21M4.9 6.5l1.7 1.7M17.4 15.8l1.7 1.7M3 12h2.4M18.6 12H21M4.9 17.5l1.7-1.7M17.4 8.2l1.7-1.7"/>',
+  chart:'<path d="M4 20V10M11 20V4M18 20v-7"/><path d="M2.5 20.5h19"/>',
+  monitor:'<path d="M2.5 12h4l2.2 6.5L13.5 4l2.3 8h5.7"/>',
+  envelope:'<rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/>',
+  key:'<circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M13.5 9.5l2.4 2.4"/>',
+  id:'<rect x="2.5" y="5" width="19" height="14" rx="2.2"/><circle cx="8.5" cy="12" r="2.2"/><path d="M6 16.3c.6-1.4 1.6-2.1 2.5-2.1s1.9.7 2.5 2.1M14.5 9.5h4M14.5 13h4M14.5 16.5h2.5"/>',
+  keyboard:'<rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M9.5 10h.01M13 10h.01M16.5 10h.01M6 14h12"/>',
+  check:'<path d="M4.5 12.5 9.5 17.5 19.5 6.5"/>',
+  rocket:'<path d="M12 2.5c3 1 5.5 4 5.5 9-1 .5-2.5 1-3.5 1-.3-2-1.2-4.2-2-5.2-.8 1-1.7 3.2-2 5.2-1-.1-2.5-.5-3.5-1 0-5 2.5-8 5.5-9Z"/><path d="M9 14l-2.5 2.5M15 14l2.5 2.5M10 17.5l-1 3M14 17.5l1 3"/>',
+  box:'<rect x="3" y="8" width="18" height="12" rx="1.5"/><path d="M3 8l9-5 9 5M12 3v5"/>'
+};
+function icon(name){return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICONS[name]||ICONS.box}</svg>`}
+function badge(name,variant){return `<span class="badge ${variant||''}">${icon(name)}</span>`}
+function node(iconName,label,sub,variant){return `<div class="node">${badge(iconName,variant)}<strong>${esc(label)}</strong>${sub?`<small>${esc(sub)}</small>`:''}</div>`}
+
+function apiViz(){
+  return `<div class="api-viz">
+    ${node('phone','Your App','','green')}
+    <div class="api-swap">
+      <span class="req">Request → <span style="font-weight:600">ask for data</span></span>
+      <span class="arrow-line"></span>
+      <span class="res">← Response <span style="font-weight:600">get data</span></span>
+    </div>
+    <div class="api-center"><span class="badge blue">${icon('swap')}</span><strong>API</strong><small>the messenger</small></div>
+    <span class="plain-arrow">⇄</span>
+    <div class="node">${badge('server','green')}<strong>Service / System</strong></div>
+    <div class="node">${badge('database','green')}<strong>Data</strong></div>
+  </div>`;
+}
+function kafkaViz(){
+  return `<div class="kafka-viz">
+    <div class="kcol"><div class="klabel">Producers</div>
+      <div class="kcard">${icon('cart')} Orders</div>
+      <div class="kcard">${icon('phone')} App events</div>
+      <div class="kcard">${icon('camera')} Services</div>
+    </div>
+    <span class="plain-arrow">→</span>
+    <div class="ktopic">Kafka Topic<div class="kevents">${icon('envelope')}${icon('envelope')}${icon('envelope')}${icon('envelope')}</div><div style="font-size:.6rem;color:var(--muted);margin-top:8px;font-weight:600">durable event stream</div></div>
+    <span class="plain-arrow">→</span>
+    <div class="kcol"><div class="klabel">Consumers</div>
+      <div class="kcard">${icon('chart')} Analytics</div>
+      <div class="kcard">${icon('database')} Database</div>
+      <div class="kcard">${icon('monitor')} Monitoring</div>
+    </div>
+  </div>`;
+}
+function cicdViz(){
+  const steps=[['keyboard','Code'],['gear','Build'],['check','Test'],['rocket','Deploy'],['box','Production']];
+  return `<div class="pipeline">${steps.map((s,i)=>`${i?'<span class="plain-arrow">→</span>':''}<div class="pstep">${badge(s[0],i===steps.length-1?'green':'')}<strong>${s[1]}</strong></div>`).join('')}</div>`;
+}
+function authViz(){
+  return `<div class="auth-viz">
+    <div class="auth-box"><div class="auth-head">${icon('id')} Authentication</div><div class="auth-step">Who are you? Identity proof</div><div class="auth-step">✓ Identity verified</div></div>
+    <span class="plain-arrow">→</span>
+    <div class="auth-box"><div class="auth-head">${icon('key')} Authorization</div><div class="auth-step">What can you do? Role / permissions</div><div class="auth-step">✓ Access allowed</div></div>
+  </div>`;
+}
+function boundaryViz(){
+  return `<div class="numline"><span class="mark m17">17</span><span class="mark m18">18</span><span class="mark m19">19</span><span class="mark m59">59</span><span class="mark m60">60</span><span class="mark m61">61</span></div>`;
+}
+function bespoke(t){
+  const n=norm(t);
+  if(n==='api')return apiViz();
+  if(n==='kafka')return kafkaViz();
+  if(n==='cicd')return cicdViz();
+  if(n==='authenticationvsauthorization')return authViz();
+  if(n==='boundaryvalueanalysis')return boundaryViz();
+  return '';
+}
+function genericViz(x){
+  let ns=FLOW[x.t]||(x.c===2?['Question',x.t,'Data']:x.c===3?['Scenario',x.t,'Result']:x.c===1?['Request',x.t,'Service']:x.c===4?['Input',x.t,'Components']:x.c===5?['Backlog',x.t,'Outcome']:['Need',x.t,'Outcome']);
+  return `<div class="flow-viz">${ns.map((v,i)=>`${i?'<span class="plain-arrow">→</span>':''}<div class="flow-node ${i===1?'core':''}">${esc(v)}</div>`).join('')}</div>`;
+}
+function visual(x){return bespoke(x.t)||genericViz(x)}
+
+const connectorSvg=`<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v13"/><path d="M7 13l5 5 5-5"/></svg>`;
+
+function card(x,i){
+  return `<article class="card" id="t-${norm(x.t)}">
+    <div class="card-head"><span class="num">${i+1}</span><h3>${esc(x.t)}</h3><span class="expansion">${esc(x.full)}</span></div>
+    <div class="block"><div class="block-label">Plain English</div><div class="plain-box">${esc(x.p)}</div></div>
+    <div class="block"><div class="block-label">See the Concept</div><div class="viz-wrap">${visual(x)}</div>${x.a?`<div style="text-align:center;font-size:.78rem;color:var(--muted)">💡 ${esc(x.a)}</div>`:''}</div>
+    <div class="related"><b>Related Concepts:</b>${(x.rel||[]).map(r=>`<span class="tag">${esc(r)}</span>`).join('')}</div>
+  </article>`;
+}
+
+function render(data){
+  let html='',nav='',i=0;
+  CATS.forEach((g,c)=>{
+    const items=data.filter(x=>x.c===c);
+    if(!items.length)return;
+    nav+=`<a href="#cat-${c}">${esc(g)} · ${items.length}</a>`;
+    html+=`<div class="catbreak" id="cat-${c}"><div class="eyebrow">Section ${c+1} of ${CATS.length}</div><h2>${esc(g)}</h2></div>`;
+    items.forEach((x,idx)=>{
+      html+=card(x,i);
+      i++;
+      if(idx<items.length-1)html+=`<div class="connector">${connectorSvg}</div>`;
+    });
+  });
+  document.getElementById('catnav').innerHTML=nav;
+  document.getElementById('feed').innerHTML=html;
+}
+
+fetch(ARCHIVE).then(r=>r.text()).then(t=>{
+  const data=canon(parse(t));
+  render(data);
+  const q=new URLSearchParams(location.search).get('term');
+  if(q){const el=document.getElementById('t-'+norm(q));if(el)setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),50)}
+}).catch(()=>{document.getElementById('feed').innerHTML='<div class="shell" style="padding:40px 0;color:var(--muted)">Library unavailable. Please refresh.</div>'});
+</script>
+</body>
+</html>
